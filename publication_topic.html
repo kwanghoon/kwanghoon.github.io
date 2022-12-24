@@ -63,67 +63,342 @@
 
 <hr>
 <a name="polymorphicrpccalculus">
+  <h3>A Polymorphic RPC Calculus</h3> </a>
 
-  <h3>A Polymorphic RPC Calculus, Science of Computer Programming, 197(102499), October 2020 (with James Cheney, Simon Fowler, and Sam Lindley). 
-    (<a href="https://www.sciencedirect.com/science/article/pii/S0167642320301088">LINK</a>,<a href="https://arxiv.org/abs/1910.10988">arXiv</a>) 
+   Kwanghoon Choi, James Cheney, Simon Fowler, and Sam Lindley,
+Science of Computer Programming, Vol.197(102499), October 2020.
+<p>
+  The RPC calculus is a simple semantic foundation for multi-tier
+  programming languages such as Links in which located functions can
+  be written for the client-server model. Subsequently, the typed RPC
+  calculus is designed to capture the location information of
+  functions by types and to drive location type-directed slicing
+  compilations. However, the use of locations is currently limited to
+  monomorphic ones, which is one of the gaps to overcome to put into
+  practice the theory of RPC calculi for client-server model.
+  This paper proposes a polymorphic RPC calculus to allow programmers
+to write succinct multi-tier programs using polymorphic location
+constructs. Then the polymorphic multi-tier programs can be
+automatically translated into programs only containing location
+constants amenable to the existing slicing compilation methods. We
+formulate a type system for the polymorphic RPC calculus, and prove
+its type soundness. Also, we design a monomorphization translation
+together with proofs on its type and semantic correctness for the
+translation.
+</p>
+
+<h4> Available in:
+  <a href="https://www.sciencedirect.com/science/article/pii/S0167642320301088">LINK</a>
+  <a href="https://arxiv.org/abs/1910.10988">arXiv</a>  </h4>
+
+<hr>
     
-    <li> A theory of RPC calculi, Journal of Functional Programming (JFP), Vol.29, pp.1-39, Cambridge University Press, March 2019. (<a href="https://arxiv.org/abs/2110.15183">ArXiv</a>)
+<a name="typedrpccalculus"><h3>A theory of RPC calculi for client-server model</h3></a>
+Kwanghoon Choi, Byeong-Mo Chang,
+Journal of Functional Programming (JFP), Vol.29, pp.1-39, Cambridge University Press, March 2019.
+
+<p>
+  With multi-tier programming languages, programmers can specify the locations of code to run in order to reduce development efforts for the web-based client-server model where programmers write client and server programs separately and test the multiple programs together. The RPC calculus, one of the foundations of those languages by Cooper and Wadler, has the feature of symmetric communication in programmer's writing arbitrarily deep nested client-server interactions. However, the existing research only considers dynamically typed locations. We propose a typed RPC calculus where locations are tracked in type-level. A new located type system paves the way for a theory of RPC calculi for the client-server model.
+  <br>
+(In the following papers published in SCP2020 and PPDP2021, the typed RPC calculus will be enhanced with polymorphic locations and a type-based slicing compilation.)  
+</p>
+
+<h4> Available in:
+  <a href="https://arxiv.org/abs/2110.15183">ArXiv</a>,
+  <a href="https://www.cambridge.org/core/journals/journal-of-functional-programming/article/theory-of-rpc-calculi-for-clientserver-model/15DC9096F78E604ABD5F34A96F277EFE">LINK</a>
+</h4>  
+
+<hr>
     
-    </ul>
+
+<div id="topic_compiler"></div>
+
+<h2> Compiler - A programmable LALR parser builder in Haskell </h2>
+
+<hr>
+
+   <a name="syntaxcompletion">
+    <h3> A text-based syntax completion method using LR parsing</h3></a>
+Isao Sasano, Kwanghoon Choi, PEPM 2021, January 2021.
+
+<p>
+  This paper presents a text-based syntax completion method using an
+  LR parser. We propose formal definitions of candidate text to be
+  completed based on the sentential forms, and we design algorithms
+  for computing candidates through reductions in the LR parsing. This
+  is in contrast to the existing methods that have not clearly stated
+  what candidates they intend to produce. This is also different from
+  a transformation approach using an LR parser, which transforms the
+  grammar of the programming language, a burdensome task at this
+  moment. The advantage of our method is that LR parsers can be
+  adopted without modification, and a syntax completion system can be
+  built using them, without incurring efforts. We implemented the
+  algorithms as an Emacs server to demonstrate the feasibility of
+  their application.
+</P>
+
+<h4> Available in:
+    <a href="https://doi.org/10.1145/3441296.3441395">DOI</a>,
+    <a href="/paper/pepm2021final.pdf">PDF</a> </h4>
+
+
+<hr>
     
-    <br>
+<a name="yapb"> <h3> LR 오토마타 생성 모듈을 공유하고 범용 프로그래밍언어로 명세를 작성하는 파서 생성 도구 (Parser Generators Sharing LR Automaton Generators and
+Accepting General Purpose Programming
+Language-based Specifications) </h3> </a>
+
+임진택, 김가영, 신승현, 김익순, 최광훈, 정보과학회논문지(소프트웨어및응용), Vol.47, No.1, pp52-60, 2020년 1월.
+
+<p> 
+본 논문은 LR 파서를 쉽게 개발하기 위하여 두 가지 아이디어를 제안한다. 첫째, 오토마타 생
+성을 모듈화하여 새로운 프로그래밍 언어를 위한 파서 생성 도구를 쉽게 개발 할 수 있다. 둘째, 파서 명
+세를 일반 프로그래밍언어로 작성하도록 구성하여 이 언어 개발 환경에서 제공하는 구문 오류, 자동 완성,
+타입 오류 검사 기능들을 이용하여 파서 명세의 오류를 바로잡을 수 있다. 이 연구에서 제안한 아이디어
+로 Python, Java, C++, Haskell로 파서를 작성할 수 있는 도구를 개발하였고, 실험을 통하여 위 두 가지
+장점을 보였다. 
+</p>
+
+<p>
+This paper proposes two ways to develop LR parsers easily. First, one can write a
+parser specification in a general programming language and derive the benefits of syntax error
+checking, code completion, and type-error checking over the specification from the language’s
+development environment. Second, to make it easy to develop a parser tool for a new programming
+language, the automata generation for the parser specifications is in a modular form. With the idea
+proposed in this study, we developed a tool for writing parsers in Python, Java, C++, and Haskell. We
+also demonstrated the two aforementioned advantages in an experiment.  
+  </p>
+
+  <h4> Available in: <a href="/paper/kiise202001.pdf">PDF</a>
+    </h4>
     
-    <div id="topic_compiler"></div>
-    <li> Compiler - A programmable LALR parser builder in Haskell
-    <ul>
-    <li> A text-based syntax completion method using LR parsing.
-    PEPM 2021, January 2021 (with Isao Sasano).
-    (<a href="https://doi.org/10.1145/3441296.3441395">DOI</a>,
-    <a href="/paper/pepm2021final.pdf">PDF</a>)
-    <li> LR 오토마타 생성 모듈을 공유하고 범용 프로그래밍언어로 명세를 작성하는 파서 생성 도구, 정보과학회논문지(소프트웨어및응용), Vol.47, No.1, pp52-60, 2020년 1월(with 임진택, 김가영, 신승현, 김익순). (<a href="/paper/kiise202001.pdf">PDF</a>)
+<hr>
+
     
-    </ul>
+<div id="topic_softwareengineering"></div>
+<h2>
+     Software engineering - Programming IoTA calculus for IoT/Home automation </h2>
+
+<hr>
     
-    <br>
-    
-    <div id="topic_softwareengineering"></div>
-    <li> Software engineering - Programming IoTA calculus for IoT/Home automation
-    <ul>
-    
-    <li> SmartProvenance: User-friendly Provenance System for IoT Applications Based on Event Flow Graphs,
+<a name="smartprovenance"><h3> SmartProvenance: User-friendly Provenance System for IoT Applications Based on Event Flow Graphs</h3></a>
+Byeong-Mo Chang, Kyung-Min Lee, Ga-Young Koh, Kwanghoon Choi, 
         IET Software, Vol.16, No. 6, pp. 576-602, December 2022
-     (with Byeong-Mo Chang, Kyung-Min Lee, Ga-Young Koh).
-    (<a href="http://doi.org/10.1049/sfw2.12071">DOI</a>,
-    <a href="https://ietresearch.onlinelibrary.wiley.com/doi/epdf/10.1049/sfw2.12071">PDF</a>)
+
+<p>
+Internet of things (IoT) applications called SmartApps are
+event-driven programs running on the SmartThings cloud. To understand
+the behaviour of SmartApps, users may have questions regarding which
+execution flows follow particular events or why specific actions
+occur. However, checking internal programme behaviours, such as
+event-driven execution flows, is more difficult for users because
+SmartApps run on the cloud. In this paper, we propose SmartProvenance,
+which is a provenance system for IoT applications and provides a
+graphical user interface (GUI) environment for provenance queries on
+event flow graphs. The event flow graph of a SmartApp visualises all
+execution control flows initiated by events, which are constructed by
+performing static programme analysis. The graph is decorated with
+dynamically collected event and action information in the GUI
+interface for provenance queries. Then, users can query the provenance
+by simply clicking on the graph. An event flow graph as the form of a
+GUI for queries in the SmartProvenance system allows users to view IoT
+services by all possible event flow paths in a SmartApp. Thus, the
+provenance information being visualised on the event flow graph can be
+intuitively understood in the context of IoT services. Therefore,
+users can answer provenance questions themselves without difficulty.
+</p>
+
+<h4>Available in:
+    <a href="http://doi.org/10.1049/sfw2.12071">DOI</a>,
+    <a href="https://ietresearch.onlinelibrary.wiley.com/doi/epdf/10.1049/sfw2.12071">PDF</a>
+
+</h4>
+
+<hr>
     
+    <a name="smartblock"> <h3> Smart Block: A Visual Block Language and its Programming
+	Environment for IoT</h3></a>
+    Na-Yeon Bak and Byeong-Mo Chang, Kwanghoon Choi,
+    Journal of Computer Languages, 60(100999) October 2020.
+
+<p>
+A visual block programming language allows users to make their own
+programs by dragging and dropping graphic blocks rather than by
+writing the program. This enables users who are not proficient in
+programming to create programs easily. Although existing studies have
+applied this idea to programming Internet of things (IoT)
+applications, existing visual language tools have certain limitations
+in terms of expressiveness, extensibility, and error prevention. In
+this paper, we propose a visual block language called Smart Block for
+SmartThings home automation, together with a visual programming
+environment that supports the three properties. We designed the visual
+block language based on the Internet of things automation (IoTa)
+calculus, a core calculus for IoT automation that generalizes
+event-condition-action (ECA) rules. Each ECA rule specifies that when
+an event occurs, and if a condition is met, a certain action is
+performed. Smart Block supports writing IoT applications in the ECA
+style and is implemented with Google Blockly, a client-side JavaScript
+library for creating visual block languages. Smart Block can help
+users develop reliable SmartApps by checking for redundancy,
+inconsistency, and circularity in the ECA rules before generating the
+code. We demonstrate that Smart Block can build 54 out of 56 (96.4%)
+of the SmartApps provided by the official SmartThings
+IDE. Furthermore, a user study with 33 participants shows that our
+approach, based on the foundation of the IoTa calculus, is
+understandable for users.
+</p>
+
+<h4> Available in:
+  <a href="https://www.sciencedirect.com/science/article/pii/S2590118420300599">LINK</a>
+</h4>
+
+<hr>
     
-    <li> Smart Block: A Visual Block Language and its Programming
-    Environment for IoT, Journal of Computer Languages, 60(100999) October
-    2020 (with Na-Yeon Bak and Byeong-Mo
-    Chang). (<a href="https://www.sciencedirect.com/science/article/pii/S2590118420300599">LINK</a>)
+    <a name="smartvisual"><h3> SmartVisual: A Visualisation Tool for SmartThings IoT Apps Using
+	Static Analysis</h3></a>
+    Na-Yeon Bak, Byeong-Mo Chang, Kwanghoon Choi
+    IET Software, 14(4), August 2020.
+
+<p>
+SmartThings is one of the most widely used smart home platforms for
+the internet of things (IoT). SmartApps are IoT applications on the
+SmartThings platform that enables automation of home
+devices. SmartApps are event-driven; inputs are received from device
+events, and outputs are issued to control devices. Understanding the
+behaviour of IoT applications is a challenge because the inputs and
+outputs are rarely visible. To tackle the challenge, the proposed
+approach is to visualise IoT applications as a set of IoT
+services. The authors propose an event-flow-based visualisation method
+where a flow from an event to action is viewed as an IoT service. The
+authors implement a tool called SmartVisual that performs a static
+analysis on SmartApps to generate a diagram of event flows. The tool
+also provides a tree model of the static structure of SmartApps and
+software metrics relevant to the event-driven nature. The tool was
+applied to 64 SmartApp samples provided by SmartThings. Each SmartApp
+had four event flows on average, although the most complex SmartApp
+had 58 event flows, and two inputs and two outputs, and the average
+length of the event flows was 1.43 methods.
+</P>
+
+<h4>
+  Available in:
+  <a href="https://digital-library.theiet.org/content/journals/10.1049/iet-sen.2019.0344">PDF</a></h4>
+
+<hr>
     
-    <li> SmartVisual: A Visualisation Tool for SmartThings IoT Apps Using
-    Static Analysis, IET Software, 14(4), August 2020 (with Na-Yeon Bak
-    and Byeong-Mo
-    Chang). (<a href="https://digital-library.theiet.org/content/journals/10.1049/iet-sen.2019.0344">PDF</a>)
+    <a name="securecodingforiot"><h3> A GQM Approach to Evaluation of the Quality of SmartThings
+	Applications Using Static Analysis</h3>
+    Byeong-Mo Chang, Janine Cassandra Son, Kwanghoon Choi
+      KSII TIIS, 14(6), June 2020.
+      
+      <p>
+SmartThings is one of the most popular open platforms for home
+automation IoT solutions that allows users to create their own
+applications called SmartApps for personal use or for public
+distribution. The nature of openness demands high standards on the
+quality of SmartApps, but there have been few studies that have
+evaluated this thoroughly yet. As part of software quality practice,
+code reviews are responsible for detecting violations of coding
+standards and ensuring that best practices are followed. The purpose
+of this research is to propose systematically designed quality metrics
+under the well-known Goal/Question/Metric methodology and to evaluate
+the quality of SmartApps through automatic code reviews using a static
+analysis. We first organize our static analysis rules by following the
+GQM methodology, and then we apply the rules to real-world SmartApps
+to analyze and evaluate them. A study of 105 officially published and
+74 community-created real-world SmartApps found a high ratio of
+violations in both types of SmartApps, and of all violations, security
+violations were most common. Our static analysis tool can effectively
+inspect reliability, maintainability, and security violations. The
+results of the automatic code review indicate the common violations
+among SmartApps.
+      </p>
+      
+      <h4> Available in:
+	<a href="http://itiis.org/digital-library/23583">PDF</a>
+	</h4>
     
-    <li> A GQM Approach to Evaluation of the Quality of SmartThings
-    Applications Using Static Analysis, KSII TIIS, 14(6), June 2020(with
-    Byeong-Mo Chang and Janine Cassandra
-    Son). (<a href="http://itiis.org/digital-library/23583">PDF</a>)
-    
-    </ul>
-    
-    <br>
-    
-    <div id="topic_security"></div>
-    <li> Security - Self-modifying code, Web vulnerabilities, etc.
-      <ul>
-        <li> 다계층 프로그래밍언어 Links의 웹 취약점 분석, 한국소프트웨어종합학술대회(KSC2022), 2022년 12월20일-23일 (wih 이규해, 창병모).
-      <li> 자체수정 코드를 탐지하는 정적 분석 방법의 LLVM 프레임워크 기반 구현 및 실험, 한국정보보호학회 논문지, 32권, 2호, Pages 171-179, 2022년 4월. (with 유재일)
-        (<a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11056765">LINK</a>)
-    <li> OWASP ZAP을 이용한 다계층 프로그래밍 언어 Links의 웹 취약점 분석, 한국소프트웨어종합학술대회(KSC2021), 2021년 12월20일-22일 (wih 이규해, 창병모).
-    </ul>
+      <hr>
+      
+      <div id="topic_security"></div>
+
+      
+<h2> Security - Self-modifying code, Web vulnerabilities, etc. </h2>
+
+<a name="websecurityinlinks"> <h3>다계층 프로그래밍언어 Links의 웹 취약점 분석 (A Web vulnerability analysis of multi-tier language Links)</h3></a>
+이규해, 창병모, 최광훈, 한국소프트웨어종합학술대회(KSC2022), 2022년 12월20일-23일.
+
+      <p>
+다계층 프로그래밍 언어(Multi-tier programming language)란 시스템의 각
+계층의 구성 요소를 같은 컴파일 단위로 혼합해 개발과정 중 오류가
+발생하기 쉬운 단점을 개선하기 위해 제안된 언어이다. 그 결과 각 계층을
+개발할 때 발생할 수 있는 오류를 줄이는 장점이 있다. 그러나 현재까지
+다계층 프로그래밍 언어로 작성한 웹 프로그램의 취약점을 분석하는 연구가
+없었다. 이러한 다계층 프로그래밍 언어의 한 종류인 Links로 작성된
+프로그램을 대상으로 Links 프로그램의 웹 취약점을 분석한 결과를 리포트
+한다.
+	<br>
+	(이 논문은 OWASP ZAP을 이용한 다계층 프로그래밍 언어 Links의 웹 취약점 분석(이규해, 창병모, 최광훈, 한국소프트웨어종합학술대회-KSC2021, 2021년 12월20일-22일) 포스터 논문을 확장한 구두 발표 논문임)
+
+	</P>
+
+	  <h4> Available in:
+	    <!-- <a href="">PDF</a> -->
+	  </h4>
+
+<hr>
+
+	
+	  <a name="smcstaticanalyzer"> <h3>자체수정 코드를 탐지하는 정적 분석 방법의 LLVM 프레임워크 기반 구현 및 실험 (An LLVM-Based Implementation of Static Analysis for Detecting Self-Modifying Code and Its Evaluation)</h3>
+	    유재일, 최광훈,
+	    한국정보보호학회 논문지, 32권, 2호, Pages 171-179, 2022년 4월.
+
+	    <p>
+자체 수정 코드(Self-Modifying-Code)란 실행 시간 동안 스스로 실행
+코드를 변경하는 코드를 말한다. 이런 기법은 특히 악성코드가 정적 분석을
+우회하는 데 악용된다. 따라서 이러한 악성코드를 효과적으로 검출하려면
+자체 수정 코드를 파악하는 것이 중요하다. 그동안 동적 분석 방법으로
+자체 수정 코드를 분석해왔으나 이는 시간과 비용이 많이 든다. 만약 정적
+분석으로 자체 수정 코드를 검출할 수 있다면 악성코드 분석에 큰 도움이
+될 것이다.  본 논문에서는 LLVM IR로 변환한 바이너리 실행 프로그램을
+대상으로 자체 수정 코드를 탐지하는 정적 분석방법을 제안하고, 자체 수정
+코드 벤치마크를 만들어 이 방법을 적용했다. 본 논문의 실험 결과
+벤치마크 프로그램을 컴파일로 변환한 최적화된 형태의 LLVM IR 프로그램에
+대해서는 설계한 정적 분석 방법이 효과적이었다. 하지만 바이너리를
+리프팅 변환한 비정형화된 LLVM IR 프로그램에 대해서는 자체 수정 코드를
+검출하기 어려운 한계가 있었다. 이를 극복하기 위해 바이너리를 리프팅
+하는 효과적인 방법이 필요하다.
+	    </P>
+
+	    <p>
+Self-Modifying-Code is a code that changes the code by itself during
+execution time. This technique is particularly abused by malicious
+code to bypass static analysis. Therefor, in order to effectively
+detect such malicious codes, it is important to identify
+self-modifying-codes. In the meantime, Self-modify-codes have been
+analyzed using dynamic analysis methods, but this is time-consuming
+and costly. If static analysis can detect self-modifying-code it will
+be of great help to malicious code analysis.  In this paper, we
+propose a static analysis method to detect self-modified code for
+binary executable programs converted to LLVM IR and apply this method
+by making a self-modifying-code benchmark. As a result of the
+experiment in this paper, the designed static analysis method was
+effective for the standardized LLVM IR program that was compiled and
+converted to the benchmark program. However, there was a limitation in
+that it was difficult to detect the self-modifying-code for the
+unstructured LLVM IR program in which the binary was lifted and
+transformed. To overcome this, we need an effective way to lift the
+binary code.
+	      </P>
+
+	    <h4> Available in:
+		<a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11056765">LINK</a>
+		</h3>
+
+<hr>
+	
+	
+
     
  
 </html> 
