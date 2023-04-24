@@ -117,6 +117,39 @@ Journal of Functional Programming (JFP), Vol.29, pp.1-39, Cambridge University P
 
 <hr>
 
+    <h3> A text-based syntax completion method using LR parsing</h3></a>
+Isao Sasano, Kwanghoon Choi, Science of Computer Programming, 2023 (Accepted for publication)
+
+<p>
+  This paper presents a text-based syntax completion method that uses
+  an LR parser. We propose formal definitions of candidate text to be
+  completed based on the sentential forms. Moreover, we design basic
+  algorithms for computing candidate texts through reductions in the
+  LR parsing. This is unlike most existing methods, wherein the definition
+  of candidates that are intended to be generated are given
+  informally. In addition, this is unlike grammar transformation
+  approaches that use LR parsers and is a currently burdensome
+  task. The proposed method allows LR parsers to be adopted without
+  modification and a syntax completion system to be built without
+  incurring efforts. For practical purposes, we extended the basic
+  algorithms using a new definition of refined candidates and a new
+  strategy. The extended algorithms can compute more useful candidates
+  for realistic programming language grammars than those of existing
+  ones; Further, we implemented the algorithms on an Emacs server to
+  demonstrate the feasibility of their application. We evaluated the
+  extended algorithm with three real-world programming languages,
+  Small Basic, C, and Haskell. The extended algorithm computes
+  half of all candidates in less than or equal to 0.2 seconds and
+  89.2\% in approximately one second in the evaluation
+  while computing the remaining candidates took a long time. We
+  discuss its evaluation in detail.
+</P>
+
+<h4> Will be available here</h4>
+
+
+<hr>
+
    <a name="syntaxcompletion">
     <h3> A text-based syntax completion method using LR parsing</h3></a>
 Isao Sasano, Kwanghoon Choi, PEPM 2021, January 2021.
