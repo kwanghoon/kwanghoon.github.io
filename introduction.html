@@ -1,0 +1,101 @@
+<html>
+  <head>
+  </head>
+  
+  <body>
+    <h3> Those who are interested in my laboratory (Updated: 11 August 2023)
+    </h3>
+
+    <pre>
+Two papers may serve as an excellent starting point for your research here with me. 
+
+(1) Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano, A ranked text-based syntax completion method using LR parsing, Submitted to the SLE 2023 conference. 
+
+This represents the latest work in a series of studies from our group on automatic syntax completion [1][2][3] as:
+ - https://kwanghoon.github.io/publication_topic.html#topic_compiler
+
+The paper introduces a method for collecting syntax (structure) completion candidates from open-source software, and then suggests these candidates, ranking them based on the frequency with which each candidate appeared in the software being investigated.
+
+This paper is intended for a conference presentation, possibly at SLE 2023 (Software Language Engineering 2023), after which we plan to write an extended journal version. If you identify any areas where you can contribute, you are welcome to join us as a co-author. There is at least one. :)
+
+(2) Julie L. Newcomb, Satish Chandra, Jean-Baptiste Jeannin, Cole Schlesinger, and Manu Sridharan. 2017. IOTA: a calculus for internet of things automation. In Proceedings of the 2017 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! 2017). Association for Computing Machinery, New York, NY, USA, 119–133. https://doi.org/10.1145/3133850.3133860
+
+While this paper was not written by our group, it has greatly inspired us, leading to the publication of a series of software engineering papers focused on IoT and home automation from our research group as [4][5][6][7]. 
+
+I strongly recommend reading this IOTA calculus paper carefully before delving into our research works, as it will provide you with essential background information.
+
+We have begun the development of a programming language that is based on the IoTa calculus, as follows:
+ - https://github.com/kwanghoon/iotacalculus
+
+This programming language will serve as the focal point for several future research projects within our group. It's coming, please stay tuned! :)
+
+ 2-1) Programs for home automation platforms, like SmartThings, are intended to be developed by end-users. Therefore, it is essential to provide a method that enables end-users to write these programs with ease.
+
+One solution for simplifying programming is a visual programming environment called Smartblock [5]. Rather than writing text-based programs, the end-users can compose home automation programs by dragging and dropping visual blocks, making the process more intuitive and user-friendly.
+
+Alternatively, a natural language interface that translates everyday language into programming languages based on the IoTa calculus could be developed. The study of recent advancements like LLM (large language models) could be instrumental in implementing the latter solution.
+
+A single trial translation based on LLM may not be likely to result in satisfactory home automation programs. There must be a method for end-users to intervene and control the translation or the translated programs themselves. The existing Smartblock [5] system could facilitate this by enabling translation from the IoTa calculus based programs into the visual block programs and back. 
+
+ 2-2) Debugging home automation programs is notoriously challenging. 
+
+ A smart provenance system [4] was one solution where end-users can explore timed events and actions to investigate their problems, for example, why the light would not be turned on when a person opened the door. 
+
+One solution to the challenge of debugging home automation programs is a smart provenance system [4], allowing end-users to explore timed events and actions to diagnose problems. An example of this might be investigating why the light did not turn on when a person opened the door at home.
+
+We could integrate this system with SmartBlock, enabling debugging to be conducted directly through the visual block programs, thereby simplifying the process and making it more intuitive.
+
+
+ 2-3) Samsung SmartThings is a leading home automation system, but it's not the only one available. Other intriguing options include IFTTT, OpenHap, and more. A significant issue is that programming methods used for one home automation system are often incompatible with others, leading to what is known as the fragmentation problem. We believe that a programming language based on the IoTa calculus could provide a solution to this challenge by compiling it into the other home automation programming languages as:
+
+  The IoTa calculus-based language 
+    --> SmartThings programs (SmartApps)
+    --> IFTTT programs
+    --> OpenHap programs
+    --> ...
+
+We hope to submit initial results from this topic to the SERP4IoT workshop by January 2024.
+
+
+(3) Before deeply delving into these research areas, I recommend acquiring a solid foundation in programming language and compiler skills. A suggestion for learning these skills is to study the book "Essentials of Programming Languages" (3rd Ed.), a renowned text in the field.
+
+ - https://eopl3.com/
+
+The pdf version is available on the Internet:
+ - https://faculty.ksu.edu.sa/sites/default/files/essproglan.pdf
+
+One effective method to study this book is to rewrite the example programs found within, using a programming language of your choice. 
+
+Haskell is my favorite programming language, so I have already worked on some examples from Chapter 3, 4, 5, 7 as:
+  - https://github.com/kwanghoon/Lecture_EOPL_Exercise (public repository)
+  - https://github.com/kwanghoon/Lecture_EOPL (private repository -  you cannot access it yet.)
+
+To begin learning Haskell, you can explore the following excellent MOOC (Massive Open Online Course) site:
+  - https://haskell.mooc.fi/
+
+
+I hope this provides further insight into my laboratory.
+
+Kwanghoon Choi
+
+
+=====
+References
+
+[1] Isao Sasano and Kwanghoon Choi. 2023. A Text-Based Syntax Completion Method using LR Parsing and Its Evaluation. Science of Computer Programming (2023), 102957. https://doi.org/10.1016/j.scico.2023.102957
+
+[2] Isao Sasano and Kwanghoon Choi. 2021. A text-based syntax completion method using LR parsing. In Proceedings of the 2021 ACM SIGPLAN Workshop on Partial Evaluation and Program Manipulation (PEPM 2021). Association for Computing Machinery, New York, NY, USA, 32–43. https://doi.org/10.1145/3441296.3441395
+
+[3] Jintaeck Lim, Gayoung Kim, Seunghyun Shin, Kwanghoon Choi, and Iksoon Kim. 2020. Parser generators sharing LR automaton generators and accepting general purpose programming language based specifications. Journal of KIISE 47, 1 (2020), 52–60. https://doi.org/10.5626/JOK.2020.47.1.52 (in Korean).
+
+[4] Byeong-Mo Chang, Kyung-Min Lee, Ga-Young Koh, Kwanghoon Choi, SmartProvenance: user-friendly provenance system for internet of things applications based on event flow graphs. IET Soft. 16(6), 576–602 (2022). https://doi.org/10.1049/sfw2.12071
+
+[5] Na-Yeon Bak, Byeong-Mo Chang, Kwanghoon Choi, Smart Block: A Visual Block Language and its Programming Environment for IoT, Journal of Computer Languages, Vol.60, 100999, October 2020.
+
+[6] Na-Yeon Bak, Byeong-Mo Chang, Kwanghoon Choi, SmartVisual: A Visualisation Tool for SmartThings IoT Apps Using Static Analysis, IET Software, Vol.14, Issue 4, pp.411-422, August 2020.
+
+[7] Byeong-Mo Chang, Janine Cassandra Son, Kwanghoon Choi, A GQM Approach to Evaluation of the Quality of SmartThings Applications Using Static Analysis, KSII Transactions on Internet and Information Systems, Vol.14, Issue 6, pp. 2354-2376, June 2020.
+</pre>
+      
+  </body>
+</html>
