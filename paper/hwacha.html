@@ -1,0 +1,94 @@
+
+<html>
+<head>
+</head>
+<body>
+<h1>
+Hwacha: A Flexible Intent Fuzzer with an Automatic Tally of Failures for Robustness of Inter-Component Communication in Android Apps
+</h1>
+
+<center>
+<img src="./picture/singijeon.gif" width="320" height="240"
+     align="absmiddle"> 
+<br>
+<a href="https://en.wikipedia.org/wiki/Hwacha">Hwa-Cha(Multiple Rocket Launcher)</a>
+firing
+<a href="https://en.wikipedia.org/wiki/Singijeon">Sin-Gi-Jeon(Fire Arrow Rocket)</a>
+</center>
+
+<br>
+
+
+<h2> Overview</h2>
+<p>
+Hwacha is a flexible Intent fuzzer with an automatic tally of failures for robustness of inter-component communication in Android apps. The flexibility comes from the use of Intent specification language to decouple Intent testcase generators from executors. This Intent fuzzer employs a traditional longest common subsequence algoritm to classify failures automatically. 
+
+<p>Hwacha provides a GUI-based interactive mode and
+a command-line based mode for testing a single Android app; a batch mode for testing multiple Android apps.
+
+<br>
+
+<p>
+<h2>Instructions</h2>
+<ul>
+<li> <a href="./intent_spec_run.html">How to Install and Run</a>
+<li> <a href="./intent_spec_screenshot.html">Screen Shots and Features</a>
+<li> <a href="./document/grammar.pdf">LL(1) Grammar of the Intent Specification Language</a>
+</ul>
+
+<p>
+<h2>Download (for Windows)</h2>
+<ul>
+<li> <a href="./hwacha/AndroidAppTester.zip">A Snapshot of Binary & Source</a>, 
+also available in <a href="https://github.com/kwanghoon/AndroidAppTester/">GitHub</a>
+<ul>
+<li>
+The binary executables are compiled on Windows 10 using Javac 1.8.0_45 and GHC 7.4.1 and higher.
+<li>The source code consists of a Java project for UI, a Haskell project for Test data/code generation, and some auxiliary library. 
+<li>In Eclipse, import only the Java project with the pre-compiled binary of the Haskell project unless you are familar with Haskell.
+</ul>
+<li>
+<p>
+<a href="./hwacha/APKFiles50.zip">Android APK files and Analysis Results (822MB)</a>
+</ul>
+
+<!--
+<p>
+<h2>Technical Description</h2>
+
+<ul>
+<li> 
+<a href="./hwacha2017.pdf">
+A Flexible Intent Fuzzer with an Automatic Tally of Failures for Robustness of Inter-Component Communication in Android Apps (K. Choi, M. Ko, B-M. Chang, June 2017)</a>
+</ul>
+-->
+
+
+<p>
+<h2>Publication</h2>
+<ul>
+<li> Kwanghoon Choi, Myungpil Ko, Byeong-Mo Chang, A Practical Intent Fuzzing Tool for Robustness of Inter-Component Communication in Android Apps, KSII Transactions on Internet and Information Systems, Vol.12, Issue 9, pp.4248-4270, September 30, 2018. (<a href="http://www.itiis.org/journals/tiis/digital-library/manuscript/file/21866/TIISVol12No9-8.pdf">PDF</a>) 
+</ul>
+
+<p>
+<h2>Contributors</h2>
+
+<ul>
+<li> Kwanghoon Choi : Android JUnit Test Code Generator, Command-line based Processing, Main UI
+<li> Myung-Pil Ko : Main UI, ADB Command Runner, Intent Specification Parser (both Java and Haskell versions), Intents Generator
+<li> Seungwhi Lee : Batch mode, Watch dog
+<li> Sung-Bin Yoon : Intent Specfication Generator (from APK files and AndroidManifest.xml)
+<li> Ji-Sun Choi : Gathering 20 Android App Binaries for Testing (including Facebook, KakaoTalk, etc.)
+<li> Hyun-Soon Kim : Grouping Similar Logs into the same single failure
+</ul>
+
+<p>
+<h2>Any Questions?</h2>
+<ul>
+<li> Email : kwanghoon.choiXyonsei.ac.kr (where X is @) 
+</ul>
+
+<hr>
+Last Updated: September 1st, 2018.
+</body>
+</html>

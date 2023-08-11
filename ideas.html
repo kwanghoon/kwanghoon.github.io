@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <h1>학부생/대학원생을 위한 프로젝트 아이디어 (Project Ideas for Undergraduate/graduate students)</h1>
+  </head>
+  <body>
+    <ul>
+      <li> <h3>프로그래밍 언어 파서 만드는 도구 <a href="https://github.com/kwanghoon/yapb">YAPB</a> </h3>
+
+	<ul>
+	  <li>
+	    <p> YAPB을 사용한 파서 템플릿 생성(난이도 중): YAPB을 이용하여 파서를 만들려면
+	      기본적으로 Token.hs, Lexer.hs, Parser.hs, Expr.hs,
+	      Run.hs를 만들어야 한다. 현재는 YAPB을 이용한 다른 파서
+	      프로젝트에서 이 5개의 파일을 복사하고 적절히 편집해서
+	      준비한다. YAPB에 이러한 초기 파일을 생성하는 기능을
+              추가하는 프로젝트를 제안한다.
+	    </p>
+	    
+	  <li>
+	    <p> YAPB의 어휘 분석(lexical analysis) 성능 향상(난이도
+                상): YAPB에서 어휘 분석 구현 방법이 아주 비효율적인
+                방식 으로 구현되어 있다. 각 어휘에 대한 정규식을 모두
+                합하여 하나의 오토마톤을 구성하는 방식이 아니라 각
+                정규식에 대해 각 오토마톤을 매번 생성하고 테스트하는
+                방식이다. 아마도 YAPB에서 사용하는 tdfa-regex를
+                수정해서 YAPB의 어휘 분석 명세에서 지정한 여러
+                정규식을 하나로 모아서 오토마톤을 구성하는 방식으로
+                수정해야한다.
+         </ul>
+      </li>
+      
+      <li> <h3> <a href="https://tree-sitter.github.io/tree-sitter/">tree-sitter</a>로
+           파서 만들기(난이도 중) </h3>
+	<ul>
+	  <li>
+	    <p> tree-sitter는 github에서 사용하는 파서 만들기 도구로
+	        110여가지 이상의 프로그래밍 언어들의 파서를 현재 지원
+	        가능하다. tree-sitter로 파서를 만들면 프로그래밍
+	        환경(IDE)에서 구문 종류를 구분하는 색깔 입히기(syntax
+	        highlighting)와 같은 기능을 자동으로
+	        제공한다. tree-sitter는 GLR 파서 방식으로 에러가
+	        포함된 구문도 쉽게 넘어가도록 고려되어 있다. 참고로
+	        YAPB은 LR 파서 방식으로 에러가 포함된 구문의 경우
+	        파서를 진행하지 않는다.
+              <br>
+	        tree-sitter를 사용하여 새로운 프로그래밍 언어의 파서를
+	        만들어본다. 예를 들어 스몰베이직(SmallBasic) 파서는
+	        아직 지원하지 않는다. 스몰베이직
+	        문법은 <a href="https://github.com/kwanghoon/sbparser">sbparser</a>의
+	        Parser.hs에 작성된 파서 명세를 참고할 수 있다.
+	    </p>
+	
+      </li>
+	
+      <li> <p>
+      </li>
+      
+    </ul>
+  </body>
+</html>

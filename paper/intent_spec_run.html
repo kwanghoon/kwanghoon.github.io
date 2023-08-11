@@ -1,0 +1,447 @@
+
+<html>
+<head>
+</head>
+<body>
+
+<p>
+<h1>
+How to Install and Run
+</h1>
+
+<p>
+<h3>A Few Preliminaries</h3>
+<ul>
+<li> 
+<p>
+Java 1.8 JRE (SE), Android Studio 1.2.2 (including SDK)
+<li> 
+<p>
+Separators in Java class path
+<ul>
+<li> On Windows, use a semicolon as -cp "bin;lib/*;tool/*".
+<!--
+<li> On Mac, use a colon as -cp "bin:lib/*:tool/*".
+-->
+</ul>
+<li>
+<p>
+Make sure that the binaries (GenTestsfromIntentSpec/bin/{gen_mac,gen.exe}) are executable. 
+<ul>
+<li>(Particularly, on Mac, you can check "r-x r-x r-x"  permission of gen_mac by ls -l AndroidAppTester/GenTestsfromIntentSpec/bin/gen_mac.)
+</ul>
+</ul>
+
+<p>
+<h3>GUI-based Interactive Mode for a Single App</h3>
+
+<ul>
+<li> 
+<p>
+Download the up-to-date binary package (AndroidAppTester.zip) from <a href="./hwacha.html">the software site</a> into, for example, D:\ on Windows. Then,
+<ul>
+<li> D:\> unzip AndroidAppTester.zip
+<li> D:\> cd AndroidAppTester\UIforIntentSpec
+<li> D:\AndroidAppTester\UIforIntentSpec> java -cp "bin;lib/*;tool/*" kr_ac_yonsei_mobilesw_UI.Main 
+<ul>
+<li> (Do run the java command in ${Unzipped Directory}\UIforIntentSpec})
+<li> (On Mac, the class path must be seprated by a colon, not by a semicolon as -cp "bin:lib/*:tool/*")
+</ul>
+</ul>
+
+<li>
+<p>
+Generating ADB commands from an intent specification {cmp=Activity com.example.android/.MainActivity}, which is written, for example, by a programmer.
+
+<ul>
+
+<li>  
+<a href="./picture/GenADB_step1.JPG">Step 1</a>
+: You write the intent specification in the text window. Then press "ADB Command" button.
+<li>  
+<a href="./picture/GenADB_step2.JPG">Step 2</a>
+: Press "Generate ADB Command" button to see ADB commands generated in the bottom of the screen.
+
+</ul>
+
+
+<li> 
+<p>
+Run the ADB commands generated from a saved intent specification file, which is generated from AndroidManfiest.xml in the example.
+
+<ul>
+
+<li>  
+<a href="./picture/GenADBFromMeta_step1.JPG">Step 1</a>
+: Instead of writing an intent specification, you can import it from an AndroidManifest.xml. Press "Import" button to find it in D:\AndroidAppTester\Example\NotesList\app\src\main.
+<li>
+<a href="./picture/GenADBFromMeta_step2.JPG">Step 2</a>
+: You can see an imported intent specification from the AndroidManifest.xml. Then press "ADB Command" button.
+
+<li>
+<a href="./picture/GenADBFromMeta_step3.JPG">Step 3</a>
+: Press "Generate ADB Command" button to generate a set of ADB commands. Then press "Run" button.
+
+<li>
+<a href="./picture/GenADBFromMeta_step4.JPG">Step 4</a>,
+<a href="./picture/GenADBFromMeta_step5.JPG">Step 5</a>,
+<a href="./picture/GenADBFromMeta_step6.JPG">Step 6</a>
+: Press "Find ADB" button to locate ADB.exe (on Windows). You can see an ADB path properly set up in the step 6.
+<ul>
+<li> Before you do Step 4, 5, and 6, either an Android device should be connected to your PC via USB or you should launch an Android emulator. 
+<li> Also, you need to build NotesList app and to install on the target Android device or emulator. You can use Android studio to do these.
+</ul>
+
+<li>
+<a href="./picture/GenADBFromMeta_step7.JPG">Step 7</a> :
+Press "ReadDevice" button to find the ID of Android Device to which we send the generated ADB commands to.
+
+<li>
+<a href="./picture/GenADBFromMeta_step8.JPG">Step 8</a> :
+Press "ViewLogcat" button to receive logs from the connected Android device.
+
+<li>
+<a href="./picture/GenADBFromMeta_step10.JPG">Step 9</a>,
+<a href="./picture/GenADBFromMeta_step9.JPG">Step 10</a> :
+Press "Run" button to start a testing by sending ADB commands to the Android device. You see a screen shot of the Android device under testing in Step 10. 
+
+<li>
+<a href="./picture/GenADBFromMeta_step11.JPG">Step 11</a> :
+You have finished testing all ADB commands, and you can see the test results (Pass/Fail). 
+
+<li>
+<a href="./picture/Excel.JPG">Step 12</a> :
+Later, you can review all the logs recorded in Microsoft Excel file.
+
+</ul>
+
+<li> 
+<p>
+Generating Android JUnit Test class files from a saved intent specification file, which is generated from AndroidManfiest.xml in the example.
+
+<ul>
+<li> Refer to <a href="./intent_spec_screenshot.html">the Screen shot site</a> for this feature.
+
+</ul>
+
+</ul>
+
+<br>
+
+
+<p>
+<h3>Command-line based Mode for a Single App (MS-DOS Terminal on Windows or Bash Shell on Mac)</h3>
+
+<ul>
+<li> 
+<p>
+Download the up-to-date binary package (AndroidAppTester.zip) from <a href="./hwacha.html">the software site</a> into, for example, D:\ on Windows. Then,
+<ul>
+<li> D:\> unzip AndroidAppTester.zip
+<li> D:\> cd AndroidAppTester\UIforIntentSpec
+<li> Refer to the step-by-step guide in the following.
+<ul>
+<li> (Do run the following java commands in ${Unzipped Directory}\UIforIntentSpec})
+</ul>
+</ul>
+
+<li>
+<p>
+Generating ADB commands from an intent specification {cmp=Activity com.example.android/.MainActivity}, which is written, for example, by a programmer.
+
+<pre>
+D:\AndroidAppTester\UIforIntentSpec>  ..\GenTestsfromIntentSpec\bin\gen.exe AdbCommand 0 3 "{cmp=Activity com.example.android/.MainActivity}"
+
+adb shell am start -n com.example.android/.MainActivity --efa key3 34.0,39.0,-146.0,-501.0,226.0,-72.0,-787.0,285.0,100.0,-360.0,-854.0  --eia key1 -336,178,-233,-399,-162,115,-218,31,103,156  --ei key2 -247 -c HcOR -c lHMOBqI.sQy -c _fjdmsnCsVLa -a com.android.action.Add -d tel:123
+adb shell am start -n com.example.android/.MainActivity -d tel:123
+adb shell am start -n com.example.android/.MainActivity -d tel:123
+</pre>
+
+<li> 
+<p>
+Generating an Intent specification from AndroidManfiest.xml in the example.
+<ul>
+<li> (On Mac, the class path must be seprated by a colon, not by a semicolon as -cp "bin:lib/*:tool/*")
+</ul>
+
+<pre>
+D:\AndroidAppTester\UIforIntentSpec>  java -cp "bin;lib/*;tool/*" com.example.java.GenIntentSpecFromAPK -console ..\Example\NotesList\app\src\main\AndroidManifest.xml
+
+{cmp=Activity com.example.android.notepad/.NotesList
+ act=android.intent.action.MAIN
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NotesList
+ act=android.intent.action.MAIN
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NotesList
+ act=android.intent.action.VIEW
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NotesList
+ act=android.intent.action.EDIT
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NotesList
+ act=android.intent.action.MAIN
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NoteEditor
+ act=android.intent.action.MAIN
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NoteEditor
+ act=android.intent.action.VIEW
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NoteEditor
+ act=android.intent.action.EDIT
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NoteEditor
+ act=android.intent.action.MAIN
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NoteEditor
+ act=android.intent.action.VIEW
+ cat=[android.intent.category.LAUNCHER]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.TitleEditor
+ act=android.intent.action.MAIN
+ cat=[android.intent.category.LAUNCHER, android.intent.category.DEFAULT, android.intent.category.DEFAULT]
+ }
+ || 
+{cmp=Activity com.example.android.notepad/.NotesLiveFolder
+ act=android.intent.action.MAIN
+ cat=[android.intent.category.LAUNCHER]
+ }
+</pre>
+
+<li> 
+<p>
+Generating ADB commands from a saved intent specification file, which is generated from AndroidManfiest.xml in the example.
+
+<pre>
+D:\AndroidAppTester\UIforIntentSpec>  java -cp "bin;lib/*;tool/*" com.example.java.GenIntentSpecFromAPK -console ..\Example\NotesList\app\src\main\AndroidManifest.xml > notelist.is
+
+D:\AndroidAppTester\UIforIntentSpec>  ..\GenTestsfromIntentSpec\bin\gen.exe AdbCommand 0 3 -f notelist.is
+
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d tel:123 --ela IKkKX8xNrYZ -390,-169,440,-304,60,-76,506,-411,-246,32,266,-115,-528,672,311  --ef eEV 16.683836 --ei Jdw8 461 --el ZcpPXt8NF -12 --ei aNL 11 --el 2kH -7 --ei qs3yezJheqf 0 --ez uX8tGg0 False --ela hP1J9acXUg -664,-178,619,-828,547  -t o*AXNwOLhrq.B
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d tel:123
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -t PKeTnDK -d L3102
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d ?9r8 --efa qVDu0zUG9mz 865.0,11.0,240.0,790.0,661.0,950.0,-494.0,50.0,-703.0  --eu eWT query --eu jj S/k8FdcYESnkER? --ela Mzv6oZunBO8R 264  --ei BMPDG1zik4Uw -12 --eia aZXEaJxuc 292,408,-442,-145,494,-409,-163  --el LqFZkfJqksdQKY -6 --eu k8Fkcy1ibDT host --ez w6UJkR3w False --ei 1wwHyAZ -4
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d e2i0J8WwJ --es key1 "j2BzXB5ZNhzp1R" --eia key3 493,419,8,204,35,-32,137,-68,-400  --es key2 "U6Zx8Y" -t text/plain
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d uxhlcCh@JLVFtXa --eia key1 -261,-97,278,-148,-436,362,-98,394  --ei key2 -14 --ela key3 551,-545,264,736,416,595,156,148,530,-503,-211,387  -t text/plain
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.VIEW -c android.intent.category.LAUNCHER -d tel:123
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.VIEW -c android.intent.category.LAUNCHER -d content://contacts/people/1 --ela AHMlyG0z3jjErO -449,-444,-89,99,179,-187,449  --ei MDbrMQf 12 --el Qek -12 --efa KTqULzZSaCU -59.0,137.0,-845.0,-490.0,731.0,509.0,261.0,-580.0,-346.0  --es bIflEEuPyLX40M "it is string value5" --ei xu8eXYtbEm6 90 --es NycSNOw24buYPJg "it is string value4" --eu ETO .pu:dGx_yjfX --eu ii1 username:password --ela X 840  -t IH_.fOsQVLkr
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.VIEW -c android.intent.category.LAUNCHER -t video/* -d tel:123
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.EDIT -c android.intent.category.LAUNCHER -d yq
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.EDIT -c android.intent.category.LAUNCHER --el key2 8 --ela key1 -51,634,-386,936,-481,-889,961,410  -t r.LukU
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.EDIT -c android.intent.category.LAUNCHER --ela key3 -941,315,-610,-432,-223,869,854,14,-581,168  --es key2 "it is string value3" --ez key1 True -d Ggg
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d /lh1_VzoyEL -t video/* --ez VJK0cs4rFa False --ela KRgnaR -240,-445,425,300,983,543  --ela Bsgfpdd3Qaug -231,724,671  --el Ao3UMTN01kiHg 7 --eu Cz9SQfeXDAbc fragment --ela v4uXb8IRKJIa7tP 999,846,-179,788,313,309,792,-138,-392,830,-489,346,862  --el V 430 --eia NdPi08IzisQIlTR 81,-397,88,-105,-424,476,-168,-91  --efa 8sSIp3sWtR -253.0,-108.0  --efa 3e3K -451.0,-245.0,-809.0,-569.0,476.0,672.0,-887.0,594.0,-108.0,259.0,778.0,-330.0,501.0  --efa K8n -124.0,268.0,-437.0,297.0,-949.0,-560.0,-500.0,-651.0,780.0,627.0,538.0,-629.0,-266.0  --efa ocAgOY6wyW 932.0,802.0,712.0,400.0,767.0,-58.0,308.0,420.0,665.0 
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d fS0 -t iZvNs_NpnsBbB
+adb shell am start -n com.example.android.notepad/.NotesList -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -t video/* -d 8z --ez key3 False --es key1 "it is string value4" --ela key2 138,611,694,-100,411,885,-902,-995,-127 
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d tel:123 --ef fBIn1y3 -7.6001577 --el n4dFrlR 3 --ei qiedSWUcdzl9glb -175 --eu QTlWInD0Wu2DF3e //username:password@host:8080/directory/file?query#fragment --eia eqX5DeX -417,209,-14,-111,327,-336,387  --eu A559mbuxztcae host --eu ktR1NV81Q fragment --el Rn6GW0i0uy2mCh 588 --ei E -10 --ei QE1BNvv -14 -t image/*
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d Zucn5 -t YznWyHzxQtiN_ --efa key2 -378.0,-647.0,126.0,-884.0,-451.0,-389.0  --ei key1 334
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -t text/plain --ela key1 -469,-286,760,912,-704,-495,191,778,211,-3,-81,94,-391  --ez key3 False --el key2 4
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.VIEW -c android.intent.category.LAUNCHER
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.VIEW -c android.intent.category.LAUNCHER --eia key1 -270,310,-281,240,-82,-147  --el key3 -15 --ela key2 -299,378,9,-805,-358,95,971,-845,266,-683,976,321,965 
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.VIEW -c android.intent.category.LAUNCHER --eu HR7Ja6d7 9YA?dNvUDe --efa DQZc -594.0,-5.0,678.0,200.0,783.0  --ef RzUrx7 -398.0 --el tkU8 -14 --eu CeyboVm7QjH6 fragment -t xmG -d 5PHR_KirFzum/
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.EDIT -c android.intent.category.LAUNCHER --es z6uvq "vwUc" --ei kzVstk4RWUHi2 9 --eu wp5F3Wnw query --eia e -251,-20,53,-17,374,-357,96,203,-196,141  --efa KKc 398.0,727.0,620.0,155.0  --el cPlTUlUfnvx7BbO 271 --eu ELIzf4CwJ5OvC Wdyn --efa NA5QU 561.0,-15.0,-707.0,-486.0,288.0,230.0,-739.0,-371.0,-637.0,-311.0  --eu EaESu1sHG1ImuwB FNI_kRtip_gu --el CzlK7L -260 --ei LEopldA -14 --ez k7g3aA91eU False --eia n0jNzf -249  --es qOVII5Plx "qrZe?4WOV5_AY" --efa GmDys8T5qJ 280.0,769.0,404.0,739.0,-535.0,971.0,808.0,-613.0,691.0,-728.0,-961.0,543.0,-138.0  -d content://com.google.provider.NotePad/notes
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.EDIT -c android.intent.category.LAUNCHER
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.EDIT -c android.intent.category.LAUNCHER -d SqhAIp5GC
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d nf --ef key2 -407.0 --ela key1 98,-226  --ez key3 False
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -t text/plain --ela key3 302,-26,-3,206,-254,-710  --ei key2 -10 --eu key1 query -d tel:123
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.VIEW -c android.intent.category.LAUNCHER --eia key1 122,-292,372,54,-259  --ez key2 False --eu key3 fragment -t image/*
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.VIEW -c android.intent.category.LAUNCHER --ez IobZwEXNCSaOo True --ef JQrZ9g 667.0 --eia ieA 451,-252,-109,44,-99,88,164,-363,478,82,-433  --eia t1YteQvaEYQX 309,-51,40,315,261,44,225,-91,-444,-349,214,46  --ef fCsOp5Q83Xv6SH 8.639736 --ef bONqS05 -597.0
+adb shell am start -n com.example.android.notepad/.NoteEditor -a android.intent.action.VIEW -c android.intent.category.LAUNCHER -d tel:123
+adb shell am start -n com.example.android.notepad/.TitleEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -c android.intent.category.DEFAULT --efa key2 -232.0,-322.0,-159.0,579.0,-78.0,421.0,-28.0,576.0  --es key3 "hLbvrjB" -t text/plain
+adb shell am start -n com.example.android.notepad/.TitleEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -c android.intent.category.DEFAULT --ei uKn4G9d5FN -13 --el U -13 --efa sGvdKUKqAQrsL 586.0,120.0,-947.0,-997.0,-65.0  --eu 89CCvd /directory/file --es Lc2N5on4 "it is string value1" --el 6pgnDe 507 --ez 5xeSXsYo False --es 0WQIMUHYAVRGEh "it is string value3" --eia NnBueB 188,-379,-398,-481,-491,342,-413,451,286,-251,334,-362,-149,-161,259  -d content://contacts/people/1
+adb shell am start -n com.example.android.notepad/.TitleEditor -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -c android.intent.category.DEFAULT --ez 0P1YXxUBpXMuo False
+adb shell am start -n com.example.android.notepad/.NotesLiveFolder -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -d tel:123
+adb shell am start -n com.example.android.notepad/.NotesLiveFolder -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+adb shell am start -n com.example.android.notepad/.NotesLiveFolder -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -t text/plain
+</pre>
+
+<li> 
+<p>
+Run the ADB commands generated from a saved intent specification file, which is generated from AndroidManfiest.xml in the example.
+
+<pre>
+D:\AndroidAppTester\UIforIntentSpec>  java -cp "bin;lib/*;tool/*" com.example.java.GenIntentSpecFromAPK ..\Example\NotesList\app\src\main\AndroidManifest.xml > notelist.is
+
+D:\AndroidAppTester\UIforIntentSpec>  ..\GenTestsfromIntentSpec\bin\gen.exe AdbCommand 0 3 -f notelist.is > notelist.adbcmds
+
+D:\AndroidAppTester\UIforIntentSpec>  java -cp "bin;lib/*;tool/*" kr_ac_yonsei_mobilesw_UI.RunAdbCommand < notelist.adbcmds
+
+</pre>
+
+
+<li> 
+<p>
+Generating Android JUnit Test class files from a saved intent specification file, which is generated from AndroidManfiest.xml in the example.
+
+
+<pre>
+D:\AndroidAppTester\UIforIntentSpec>  java -cp "bin;lib/*;tool/*" com.example.java.GenIntentSpecFromAPK ..\Example\NotesList\app\src\main\AndroidManifest.xml > notelist.is
+
+D:\AndroidAppTester\UIforIntentSpec>  ..\GenTestsfromIntentSpec\bin\gen.exe AndroidTestCode 0 3 -f notelist.is com.example.android.test > testfiles.dump 
+
+D:\AndroidAppTester\UIforIntentSpec>  type testfiles.dump
+
+
+#com/example/android/test/NotesListTest_1.java
+package com.example.android.test;
+import android.content.Intent;
+import android.content.ComponentName;
+import android.test.ActivityUnitTestCase;
+import android.net.Uri;
+import java.net.URI;
+import com.example.android.notepad.NotesList;
+public class NotesListTest_1 extends ActivityUnitTestCase<NotesList>
+{
+  public NotesListTest_1 ()
+  {
+    super(NotesList.class);
+  }
+  public void testcase1 ()
+  {
+    Intent intent = new Intent();
+    intent.setClassName("com.example.android.notepad", "com.example.android.notepad.NotesList");
+    intent.setAction("android.intent.action.MAIN");
+    intent.addCategory("android.intent.category.LAUNCHER");
+    intent.putExtra("key3", new float[] {
+                                          34.0F,
+                                          39.0F,
+                                          -146.0F,
+                                          -501.0F,
+                                          226.0F,
+                                          -72.0F,
+                                          -787.0F,
+                                          285.0F,
+                                          100.0F,
+                                          -360.0F,
+                                          -854.0F,
+                                        });
+    intent.putExtra("key1", new int[] {
+                                        -336,
+                                        178,
+                                        -233,
+                                        -399,
+                                        -162,
+                                        115,
+                                        -218,
+                                        31,
+                                        103,
+                                        156,
+                                      });
+    intent.putExtra("key2", -247);
+    try
+    {
+      intent.setData(Uri.parse("tel:123"));
+    }
+    catch (Throwable t)
+    {
+    }
+    startActivity(intent, null, null);
+  }
+}
+ 
+#com/example/android/test/NotesListTest_2.java
+package com.example.android.test;
+import android.content.Intent;
+import android.content.ComponentName;
+import android.test.ActivityUnitTestCase;
+import android.net.Uri;
+import java.net.URI;
+import com.example.android.notepad.NotesList;
+public class NotesListTest_2 extends ActivityUnitTestCase<NotesList>
+{
+  public NotesListTest_2 ()
+  {
+    super(NotesList.class);
+  }
+  public void testcase1 ()
+  {
+    Intent intent = new Intent();
+    intent.setClassName("com.example.android.
+
+ ...
+ ...
+ ...
+ ...
+ ...
+
+
+D:\AndroidAppTester\UIforIntentSpec>  java -cp "bin;lib/*;tool/*" kr_ac_yonsei_mobilesw_UI.SaveAndroidTestCode com.example.android.test . < testfiles.dump
+
+
+D:\AndroidAppTester\UIforIntentSpec>  dir/w com\example\android\test\
+
+ Directory of D:\AndroidAppTester\UIforIntentSpec\com\example\android\test
+
+[.]                           [..]
+NoteEditorTest_16.java        NoteEditorTest_17.java
+NoteEditorTest_18.java        NoteEditorTest_19.java
+NoteEditorTest_20.java        NoteEditorTest_21.java
+NoteEditorTest_22.java        NoteEditorTest_23.java
+NoteEditorTest_24.java        NoteEditorTest_25.java
+NoteEditorTest_26.java        NoteEditorTest_27.java
+NoteEditorTest_28.java        NoteEditorTest_29.java
+NoteEditorTest_30.java        NotesListTest_1.java
+NotesListTest_10.java         NotesListTest_11.java
+NotesListTest_12.java         NotesListTest_13.java
+NotesListTest_14.java         NotesListTest_15.java
+NotesListTest_2.java          NotesListTest_3.java
+NotesListTest_4.java          NotesListTest_5.java
+NotesListTest_6.java          NotesListTest_7.java
+NotesListTest_8.java          NotesListTest_9.java
+NotesLiveFolderTest_34.java   NotesLiveFolderTest_35.java
+NotesLiveFolderTest_36.java   TitleEditorTest_31.java
+TitleEditorTest_32.java       TitleEditorTest_33.java
+              36 File(s)             59,513 bytes
+               2 Dir(s)  422,376,030,208 bytes free
+
+
+</pre>
+
+
+</ul>
+
+<p>
+<h3>Batch Mode for Multiple Apps</h3>
+<ul>
+<li>
+<p>
+Download the up-to-date binary package (AndroidAppTester.zip) from <a href="./hwacha.html">the software site</a> into, for example, D:\ on Windows. Then,
+<ul>
+<li> D:\> unzip AndroidAppTester.zip
+<li> D:\> cd AndroidAppTester\UIforIntentSpec
+<li> D:\AndroidAppTester\UIforIntentSpec> mkdir apks
+<li> D:\AndroidAppTester\UIforIntentSpec> copy ..\Example\NotesList\app\build\outputs\apk\app-debug.apk apks\
+<li> D:\AndroidAppTester\UIforIntentSpec> start.bat apks
+<ul>
+<li> We recommed to connect to an Android mobile phone for this batch mode.
+</ul>
+</ul>
+</ul>
+
+
+<hr>
+
+Last Updated June 7th, 2017.
+
+</body>
+</html>
