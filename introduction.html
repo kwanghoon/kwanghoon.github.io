@@ -8,34 +8,81 @@
 <body>
     <h1>For those who are interested in my laboratory</h1>
     <section>
-        <h2>(1) Paper Submitted to SLE 2023</h2>
+        <h2>(1) A ranked text-based syntax completion method using LR parsing (Paper Submitted to SLE 2023)</h2>
         <p><em>Authors:</em> Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano</p>
-        <p><a href="https://kwanghoon.github.io/publication_topic.html#topic_compiler">Link to Series of Studies on Automatic Syntax Completion</a></p>
-        <p>This paper is intended for a conference presentation at SLE 2023. Contributions are welcome!</p>
+        <p>This represents the latest work in a series of studies from our group on automatic syntax completion [1][2][3], or also available in
+             <a href="https://kwanghoon.github.io/publication_topic.html#topic_compiler">Link to Series of Studies on Automatic Syntax Completion</a>.</p>
+        <p>The paper introduces a method for collecting syntax (structure) completion candidates from open-source software, and then suggests these candidates, ranking them based on the frequency with which each candidate appeared in the software being investigated.</p>
+
+<p> This paper is intended for a conference presentation, possibly at SLE 2023 (Software Language Engineering 2023), after which we plan to write an extended journal version. If you identify any areas where you can contribute, you are welcome to join us as a co-author. There is at least one. :)</p>
+
     </section>
 
     <section>
         <h2>(2) IOTA: a calculus for internet of things automation</h2>
         <p><em>Authors:</em> Julie L. Newcomb, Satish Chandra, Jean-Baptiste Jeannin, Cole Schlesinger, Manu Sridharan</p>
         <p><a href="https://doi.org/10.1145/3133850.3133860">DOI link</a></p>
-        <p>See our work on IoT and home automation as well:</p>
+        <p>While this paper was not written by our group, it has greatly inspired us, leading to the publication of a series of software engineering papers focused on IoT and home automation from our research group as [4][5][6][7]</p>
+	<p>I strongly recommend reading this IOTA calculus paper carefully before delving into our research works, as it will provide you with essential background information.</p>
+
+	<p>We have begun the development of a programming language that is based on the IoTa calculus, as in <a href="https://github.com/kwanghoon/iotacalculus">IoTa Calculus Programming Language</a></p>
+	
         <ul>
-            <li><a href="https://github.com/kwanghoon/iotacalculus">IoTa Calculus Programming Language</a></li>
-            <li><em>2-1)</em> Solution: <a href="#">Smartblock</a> for intuitive home automation programming</li>
-            <li><em>2-2)</em> Debugging home automation programs through Smart Provenance System</li>
-            <li><em>2-3)</em> Solutions for the fragmentation problem in home automation programming</li>
+          <li><em>2-1)</em>
+	    <p>Programs for home automation platforms, like SmartThings, are intended to be developed by end-users. Therefore, it is essential to provide a method that enables end-users to write these programs with ease.</p>
+
+<p>One solution for simplifying programming is a visual programming environment called Smartblock [5]. Rather than writing text-based programs, the end-users can compose home automation programs by dragging and dropping visual blocks, making the process more intuitive and user-friendly.</p>
+
+<p>Alternatively, a natural language interface that translates everyday language into programming languages based on the IoTa calculus could be developed. The study of recent advancements like LLM (large language models) could be instrumental in implementing the latter solution.</p>
+
+<p>A single trial translation based on LLM may not be likely to result in satisfactory home automation programs. There must be a method for end-users to intervene and control the translation or the translated programs themselves. The existing Smartblock [5] system could facilitate this by enabling translation from the IoTa calculus based programs into the visual block programs and back. 
+	      </p>
+
+          <li><em>2-2)</em> <p> Debugging home automation programs is notoriously challenging.</p>
+
+	    <p> A smart provenance system [4] was one solution where end-users can explore timed events and actions to investigate their problems, for example, why the light would not be turned on when a person opened the door. </P
+
+<p>One solution to the challenge of debugging home automation programs is a smart provenance system [4], allowing end-users to explore timed events and actions to diagnose problems. An example of this might be investigating why the light did not turn on when a person opened the door at home.</p>
+
+<p>We could integrate this system with SmartBlock, enabling debugging to be conducted directly through the visual block programs, thereby simplifying the process and making it more intuitive.</p>
+
+
+	  </li>
+          <li><em>2-3)</em> <p> Solutions for the fragmentation problem in home automation programming</p>
+	    <p>Samsung SmartThings is a leading home automation system, but it is not the only one available. Other intriguing options include IFTTT, OpenHap, and more. A significant issue is that programming methods used for one home automation system are often incompatible with others, leading to what is known as the fragmentation problem. We believe that a programming language based on the IoTa calculus could provide a solution to this challenge by compiling it into the other home automation programming languages as:
+	    </p>
+
+	    <p>We hope to submit initial results from this topic to the SERP4IoT workshop by January 2024.</p>
+
+	  </li>
         </ul>
         <p>Initial results expected for SERP4IoT workshop by January 2024.</p>
     </section>
 
     <section>
         <h2>(3) Study Recommendations</h2>
-        <p>For solid foundation in programming language and compiler skills:</p>
+        <p>Before deeply delving into these research areas, I recommend acquiring a solid foundation in programming language and compiler skills. A suggestion for learning these skills is to study the book "Essentials of Programming Languages" (3rd Ed.), a renowned text in the field.</p>
         <ul>
-            <li><a href="https://eopl3.com/">Essentials of Programming Languages (3rd Ed.)</a> - <a href="https://faculty.ksu.edu.sa/sites/default/files/essproglan.pdf">PDF Version</a></li>
+          <li><a href="https://eopl3.com/">Essentials of Programming Languages (3rd Ed.)</a> </li>
+	</ul>
+
+	<p>One effective method to study this book is to rewrite the example programs found within, using a programming language of your choice. 
+</p>
+
+	<p>Haskell is my favorite programming language, so I have already worked on some examples from Chapter 3, 4, 5, 7 as:
+</p>
+
+	<ul>
             <li>Haskell programming through <a href="https://haskell.mooc.fi/">Haskell MOOC</a></li>
-            <li>Examples from EOPL: <a href="https://github.com/kwanghoon/Lecture_EOPL_Exercise">public repository</a></li>
+            <li>Examples from EOPL: <a href="https://github.com/kwanghoon/Lecture_EOPL_Exercise">public repository</a> or
+	        <a href="https://github.com/kwanghoon/Lecture_EOPL">private repository</a></li>
         </ul>
+
+	<p> To begin learning Haskell, you can explore the following excellent MOOC (Massive Open Online Course) site:
+          <ul>
+	    <li> <a href="https://haskell.mooc.fi">Haskell Mooc</a> </li>
+	  </ul>
+
     </section>
 
     <section>
