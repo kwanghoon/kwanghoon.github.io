@@ -1,0 +1,45 @@
+
+
+=================================================================
+tree-sitter를 사용한 zig 파서를 빌드하고 실행해보기 (20 August 2023)
+=================================================================
+
+tree-sitter는 GLR 파서와 파싱 에러를 유연하게 처리하는 파서 만들기
+도구이다. 이 도구로 Zig 파서를 만든 것이 tree-sitter-zig이다. Zig
+파서는 zig의 문법 명세를 가져와 작성한 것이다.
+
+깃허브에서 이 소스 코드를 내려받아 빌드하는 것은 간단하다.
+
+  $ git clone https://github.com/maxxnino/tree-sitter-zig
+  $ make
+
+빌드한 tree-sitter-zig를 실행하려면 tree-sitter-cli가 필요하다. 빌드할
+때 이미 JavaScript 모듈로 내려받아 놓았기 때문에 해당 디렉토리를
+PATH에 추가하면 된다.
+
+  $ export PATH=$PATH:/home/khchoi/work/lang/tree-sitter/tree-sitter-zig/./node_modules/tree-sitter-cli
+
+zig 파싱이 잘되는지 테스트해본다.
+
+  $ ./scripts/test-parsing
+
+  $ tree-sitter parse /home/khchoi/work/lang/tree-sitter/tree-sitter-zig/./test/sources/tigerbeetle/build.zig
+
+
+zig 파싱을 웹에서 실행해보기 위해서 wasm으로 파서를 빌드하고
+tree-sitter 플레이그라운드에서 실행한다.
+
+
+  $ sudo tree-sitter build-wasm
+
+  (*) Note that this command requires root privileges. The reason for
+      this is that building a wasm parser from the tree-sitter-zig
+      requires a Docker environment whose configurations depend on the
+      privilege.
+
+  $ tree-sitter palyground
+
+
+
+
+
