@@ -72,14 +72,45 @@
       <p>A design of domain-specific programming language for multi-party computation (MPC) using the polymorphic RPC calculus</p>
       <p> (Keywords: Computer Security, privacy, language design, type systems)
 	<ul>
-	  <li> <a href="https://wiki.mpcalliance.org/">Read this article to understand what is MPC quickly</a>
+	  <li> <a href="https://wiki.mpcalliance.org/">Read this article to understand what is MPC quickly</a> </li>
     <li> <a href="https://www.cs.virginia.edu/~evans/pragmaticmpc/pragmaticmpc.pdf">Choose to read this MPC book if you can take more time</a></li>
-	  <li> <a href="https://kwanghoon.github.io/publication_topic.html#topic_functionalprogramming">Read these articles for the polymorphic RPC calculus</a>, especially, [8] and [9].
+	  <li> <a href="https://kwanghoon.github.io/publication_topic.html#topic_functionalprogramming">Read these articles for the polymorphic RPC calculus</a>, especially, [8] and [9].</li>
         </ul>
+    </section>
+
+    <section>
+        <h2>(4) Choreographic Programming (Deadlock-free Distributed Programming) </h2>
+        <p>The emerging paradigm of choreographic programming</p>
+	
+        <p>Motivation: A distributed system consists of a collection
+        of nodes that operate independently and communicate by message
+        passing. One of the challenges of programming distributed
+        systems is the need to reason about the implicit global
+        behavior of the system while writing the explicit local
+        programs that actually run on each node. While running
+        independently, nodes must exchage messages a carefully
+        executed dance: every message sent from one node must be
+          expected by its recipie or we risk deadlock.</p>
+
+	<p>Recommendations to read</p>
+	<ul>
+	  <li><a href="https://queue.acm.org/detail.cfm?id=3487022">HasChor: Functional Choreographic Programming for All(Functional Pearl)</a></li>
+        </ul>
+
+
+	<p> Research directions </p>
+	<ul>
+	  <li> It would be interesting to explore the relationship between 
+	   <a href="https://kwanghoon.github.io/publication_topic.html#topic_functionalprogramming">the polymorphic RPC calculus</a>, especially, [8] and [9], with the choreographic programming paradigm </li>
+
+	  <li> It would also be interesting to think about how to do choreographic programming with <a href="https://elixir-lang.org/">Elixir</a>, a higher-order functional programming language that runs on the Erlang VM. It is designed for building scalable and maintainable applications.</li>
+        </ul>
+        </p>
+
     </section>
     
     <section>
-      <h2>(4) Software Security</h2>
+      <h2>(5) Software Security</h2>
       <p>Making Software Sandboxing Practical using Language-based Techniques</p>
       <p> (Keywords: Computer Security, information flow control, type systems, WebAssembly)
 	<ul>
@@ -88,7 +119,7 @@
     </section>
 
     <section>
-      <h2>(5) Experiencing new programming languages </h2>
+      <h2>(6) Experiencing new programming languages </h2>
       <p> I encourage students to explore new programming languages that pique your curiosity. If you're unsure where to begin, here's a list to kicstart your journey.
       <ul>
 
@@ -102,7 +133,7 @@
       </section>
 
     <section>
-        <h2>(6) Study Recommendations</h2>
+        <h2>(7) Study Recommendations</h2>
         <p>Before deeply delving into these research areas, I recommend acquiring a solid foundation in programming language and compiler skills. A suggestion for learning these skills is to study the book "Essentials of Programming Languages" (3rd Ed.), a renowned text in the field.</p>
         <ul>
           <li><a href="https://eopl3.com/">Essentials of Programming Languages (3rd Ed.)</a> </li>
