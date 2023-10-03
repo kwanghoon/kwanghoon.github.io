@@ -320,40 +320,6 @@ length of the event flows was 1.43 methods.
 
 <hr>
     
-    <a name="securecodingforiot"><h3> A GQM Approach to Evaluation of the Quality of SmartThings
-	Applications Using Static Analysis</h3>
-    Byeong-Mo Chang, Janine Cassandra Son, Kwanghoon Choi
-      KSII TIIS, 14(6), June 2020.
-      
-      <p>
-SmartThings is one of the most popular open platforms for home
-automation IoT solutions that allows users to create their own
-applications called SmartApps for personal use or for public
-distribution. The nature of openness demands high standards on the
-quality of SmartApps, but there have been few studies that have
-evaluated this thoroughly yet. As part of software quality practice,
-code reviews are responsible for detecting violations of coding
-standards and ensuring that best practices are followed. The purpose
-of this research is to propose systematically designed quality metrics
-under the well-known Goal/Question/Metric methodology and to evaluate
-the quality of SmartApps through automatic code reviews using a static
-analysis. We first organize our static analysis rules by following the
-GQM methodology, and then we apply the rules to real-world SmartApps
-to analyze and evaluate them. A study of 105 officially published and
-74 community-created real-world SmartApps found a high ratio of
-violations in both types of SmartApps, and of all violations, security
-violations were most common. Our static analysis tool can effectively
-inspect reliability, maintainability, and security violations. The
-results of the automatic code review indicate the common violations
-among SmartApps.
-      </p>
-      
-      <h4> Available in:
-	<a href="http://itiis.org/digital-library/23583">PDF</a>
-	</h4>
-    
-      <hr>
-      
       <div id="topic_security"></div>
 
       
@@ -373,6 +339,8 @@ among SmartApps.
 	    <!-- <a href="">PDF</a> -->
 	  </h4>
 
+	  <hr>
+	  
 <a name="websecurityinlinks"> <h3>다계층 프로그래밍언어 Links의 웹 취약점 분석 (A Web vulnerability analysis of multi-tier language Links)</h3></a>
 이규해, 창병모, 최광훈, 한국소프트웨어종합학술대회(KSC2022), 2022년 12월20일-23일.
 
@@ -393,8 +361,8 @@ among SmartApps.
 	  <h4> Available in:
 	    <!-- <a href="">PDF</a> -->
 	  </h4>
-
-<hr>
+    
+      <hr>
 
 	
 	  <a name="smcstaticanalyzer"> <h3>자체수정 코드를 탐지하는 정적 분석 방법의 LLVM 프레임워크 기반 구현 및 실험 (An LLVM-Based Implementation of Static Analysis for Detecting Self-Modifying Code and Its Evaluation)</h3>
@@ -444,10 +412,99 @@ binary code.
 		</h3>
 
 <hr>
-	
-	
 
-    
+    <a name="securecodingforiot"><h3> A GQM Approach to Evaluation of the Quality of SmartThings
+	Applications Using Static Analysis</h3>
+    Byeong-Mo Chang, Janine Cassandra Son, Kwanghoon Choi
+      KSII Transactions on Internet and Information Systems, 14(6), June 2020.
+      
+      <p>
+SmartThings is one of the most popular open platforms for home
+automation IoT solutions that allows users to create their own
+applications called SmartApps for personal use or for public
+distribution. The nature of openness demands high standards on the
+quality of SmartApps, but there have been few studies that have
+evaluated this thoroughly yet. As part of software quality practice,
+code reviews are responsible for detecting violations of coding
+standards and ensuring that best practices are followed. The purpose
+of this research is to propose systematically designed quality metrics
+under the well-known Goal/Question/Metric methodology and to evaluate
+the quality of SmartApps through automatic code reviews using a static
+analysis. We first organize our static analysis rules by following the
+GQM methodology, and then we apply the rules to real-world SmartApps
+to analyze and evaluate them. A study of 105 officially published and
+74 community-created real-world SmartApps found a high ratio of
+violations in both types of SmartApps, and of all violations, security
+violations were most common. Our static analysis tool can effectively
+inspect reliability, maintainability, and security violations. The
+results of the automatic code review indicate the common violations
+among SmartApps.
+      </p>
+      
+      <h4> Available in:
+	<a href="http://itiis.org/digital-library/23583">PDF</a>
+	</h4>
+
+      <hr>
+      
+      <h3>A Practical Intent Fuzzing Tool for Robustness of Inter-Component Communication in Android Apps</h3>
+	Kwanghoon Choi, Myungpil Ko, Byeong-Mo Chang, KSII Transactions on Internet and Information Systems, Vol.12, Issue 9, pp.4248-4270, September 30, 2018.
+  <p>This research aims at a new practical Intent fuzzing tool for detecting Intent vulnerabilities
+of Android apps causing the robustness problem. We proposed two new ideas. First, we
+designed an Intent specification language to describe the structure of Intent, which makes our
+Intent fuzz testing tool flexible. Second, we proposed an automatic tally method classifying
+unique failures. With the two ideas, we implemented an Intent fuzz testing tool called Hwacha,
+and evaluated it with 50 commercial Android apps. Our tool offers an arbitrary combination of
+automatic and manual Intent generators with executors such as ADB and JUnit due to the use
+of the Intent specification language. The automatic tally method excluded almost 80% of
+duplicate failures in our experiment, reducing efforts of testers very much in review of failures.
+The tool uncovered more than 400 unique failures including what is unknown so far. We also
+measured execution time for Intent fuzz testing, which has been rarely reported before. Our
+tool is practical because the whole procedure of fuzz testing is fully automatic and the tool is
+applicable to the large number of Android apps with no human intervention.
+    </p>
+
+  <h4> Available in:
+    <a href="https://www.itiis.org/journals/tiis/digital-library/manuscript/file/21866/TIISVol12No9-8.pdf">PDF</a>
+	</h4>
+  <hr>
+
+  <h3>웨어러블 어플리케이션 개발을 위한 안드로이드 BLE 에뮬레이터
+  </h3>
+
+  문현아,박수용,최광훈, 정보과학회 컴퓨팅의 실제 논문지(KTCP), 2018년2월. 
+
+
+      <p>사물 인터넷 환경에서 모바일 어플리케이션과 웨어러블 기기를
+연동하기 위해 BLE (Bluetooth Low Energy) 기반 통신을 많이 활용하고
+있다. 특히 BLE 연동 안드로이드 어플리케이션을 개발할 때 개발 환경에서
+BLE 에뮬레이션을 지원하지 않아 반드시 웨어러블 기기가 필요한 제약이 있
+다. 본 연구에서는 처음으로 안드로이드 BLE 에뮬레이터를 설계 및
+구현하였다. 이를 활용하여 웨어러블 기기가 없어도 BLE 연동
+어플리케이션을 개발할 수 있음을 확인하였다. 그리고 그래프 모델 기반의
+안 드로이드 BLE 시나리오 자동 생성 방법을 제안하고 자동 생성한
+시나리오들을 제안한 안드로이드 BLE 에뮬레이터 상에서 실행하여
+어플리케이션의 BLE 응용 프로토콜을 체계적으로 테스트하는데 유용함을
+보였다.
+      </p>
+      <p>
+BLE (Bluetooth Low Energy) has been extensively used for communication
+between mobile applications and wearable devices in IoT (Internet of
+Things). In developing Android applications, wearable devices, on
+which the applications can run, should be available because the
+existing Android SDK does not support any BLE emulation facility. In
+this study, we have designed and implemented the first Android BLE
+emulator. Using this, we are able to develop and test BLE-based
+Android applications even when without wearable devices. We have also
+proposed an automatic generation method of Android BLE scenarios based
+on graph model. We have shown that the method is useful for
+systematically testing BLE application protocols by running the
+generated scenarios on the Android BLE emulator.
+	</p>
+
+      <h4>Available in:
+	<a href="/paper/KIISE2017_BLE_1217_final.pdf">PDF</a></h4>
+  <hr>
  
 </html> 
 
