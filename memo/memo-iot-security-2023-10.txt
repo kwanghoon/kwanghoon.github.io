@@ -1,0 +1,52 @@
+
+
+[IoT 보안 연구 방향]
+
+W. Zhou, Y. Jia, A. Peng, Y. Zhang and P. Liu, "The Effect of IoT New Features on Security and Privacy: New Threats, Existing Solutions, and Challenges Yet to Be Solved," in IEEE Internet of Things Journal, vol. 6, no. 2, pp. 1606-1616, April 2019, doi: 10.1109/JIOT.2018.2847733.
+
+Z. Berkay Celik, Earlence Fernandes, Eric Pauley, Gang Tan, and Patrick McDaniel. 2019. Program Analysis of Commodity IoT Applications for Security and Privacy: Challenges and Opportunities. ACM Comput. Surv. 52, 4, Article 74 (July 2020), 30 pages. https://doi.org/10.1145/3333501
+
+Liu, Hui & Li, Juanru & Gu, Dawu. (2020). Understanding the Security of App-in-the-Middle IoT. Computers & Security. 97. 102000. 10.1016/j.cose.2020.102000. 
+- Iot architecture: app-in-the-middle vs. cloud-in-the-middle vs. trigger-action
+
+[Man-in-the-middle-attack]
+
+TJ OConnor, Dylan Jessee, and Daniel Campos. 2021. Through the Spyglass: Towards IoT Companion App Man-in-the-Middle Attacks. In Proceedings of the 14th Cyber Security Experimentation and Test Workshop (CSET '21). Association for Computing Machinery, New York, NY, USA, 58–62. https://doi.org/10.1145/3474718.3474729
+
+
+[정적 분석]
+
+E. Fernandes, J. Jung and A. Prakash, "Security Analysis of Emerging Smart Home Applications," 2016 IEEE Symposium on Security and Privacy (SP), San Jose, CA, USA, 2016, pp. 636-654, doi: 10.1109/SP.2016.44.
+
+Z. Berkay Celik, Leonardo Babun, Amit K. Sikder, Hidayet Aksu, Gang Tan, Patrick McDaniel, and A. Selcuk Uluagac. 2018. Sensitive information tracking in commodity IoT. In Proceedings of the 27th USENIX Conference on Security Symposium (SEC'18). USENIX Association, USA, 1687–1704.
+
+Z. Berkay Celik, Patrick McDaniel, and Gang Tan. 2018. SOTERIA: automated IoT safety and security analysis. In Proceedings of the 2018 USENIX Conference on Usenix Annual Technical Conference (USENIX ATC '18). USENIX Association, USA, 147–158.
+
+F. Schmeidl, B. Nazzal and M. H. Alalfi, "Security Analysis for SmartThings IoT Applications," 2019 IEEE/ACM 6th International Conference on Mobile Software Engineering and Systems (MOBILESoft), Montreal, QC, Canada, 2019, pp. 25-29, doi: 10.1109/MOBILESoft.2019.00013.
+
+  
+[동적 분석/런타임 모니터링/테스팅]
+
+L. K. Shar et al., "SmartFuzz: An Automated Smart Fuzzing Approach for Testing SmartThings Apps," 2020 27th Asia-Pacific Software Engineering Conference (APSEC), Singapore, Singapore, 2020, pp. 365-374, doi: 10.1109/APSEC51365.2020.00045.
+
+Earlence Fernandes, Justin Paupore, Amir Rahmati, Daniel Simionato, Mauro Conti, and Atul Prakash. 2016. FlowFence: practical data protection for emerging IoT application frameworks. In Proceedings of the 25th USENIX Conference on Security Symposium (SEC'16). USENIX Association, USA, 531–548.
+
+Celik, Z. Berkay & Tan, Gang & McDaniel, Patrick. (2019). IoTGuard: Dynamic Enforcement of Security and Safety Policy in Commodity IoT. 10.14722/ndss.2019.23326. 
+
+Jia, Yunhan & Chen, Qi Alfred & Wang, Shiqi & Rahmati, Amir & Fernandes, Earlence & Mao, Zhuoqing & Prakash, Atul. (2017). ContexIoT: Towards Providing Contextual Integrity to Appified IoT Platforms. 10.14722/ndss.2017.23051. 
+
+Wang, Qi & Hassan, Wajih & Bates, Adam & Gunter, Carl. (2018). Fear and Logging in the Internet of Things. 10.14722/ndss.2018.23291. 
+
+[IoT 보안 논문 목록]
+
+- https://github.com/nsslabcuus/Recent-IoT-Security-Paper/blob/master/README.md
+
+
+[벤치마크]
+
+SmartThingsCommunity, June 2020, [online] Available: https://github.com/SmartThingsCommunity/SmartThingsPublic.
+
+A micro-benchmark suite to assess the effectiveness of tools designed for IoT apps, April 2020, [online] Available: https://github.com/IoTBench/IoTBench-test-suite.
+
+L. K. Shar, Fuzzing SmartThings Apps, 2020, [online] Available: https://github.com/Jesper20/smartfuzz.
+
