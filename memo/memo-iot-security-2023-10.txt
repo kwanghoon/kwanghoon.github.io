@@ -9,6 +9,14 @@ Z. Berkay Celik, Earlence Fernandes, Eric Pauley, Gang Tan, and Patrick McDaniel
 Liu, Hui & Li, Juanru & Gu, Dawu. (2020). Understanding the Security of App-in-the-Middle IoT. Computers & Security. 97. 102000. 10.1016/j.cose.2020.102000. 
 - Iot architecture: app-in-the-middle vs. cloud-in-the-middle vs. trigger-action
 
+[Empirical analysis]
+
+Deepak Kumar, Kelly Shen, Benton Case, Deepali Garg, Galina Alperovich, Dmitry Kuznetsov, Dmitry Kuznetsov, Rajarshi Gupta, and Zakir Durumeric. 2019. All things considered: an analysis of IoT devices on home networks. In Proceedings of the 28th USENIX Conference on Security Symposium (SEC'19). USENIX Association, USA, 1169–1185.
+
+Apthorpe, Noah & Huang, Danny & Reisman, Dillon & Narayanan, Arvind & Feamster, Nick. (2019). Keeping the Smart Home Private with Smart(er) IoT Traffic Shaping. Proceedings on Privacy Enhancing Technologies. 2019. 128-148. 10.2478/popets-2019-0040. 
+
+Alrawi, Omar & Lever, Chaz & Antonakakis, Manos & Monrose, Fabian. (2019). SoK: Security Evaluation of Home-Based IoT Deployments. 1362-1380. 10.1109/SP.2019.00013. 
+
 [Man-in-the-middle-attack]
 
 TJ OConnor, Dylan Jessee, and Daniel Campos. 2021. Through the Spyglass: Towards IoT Companion App Man-in-the-Middle Attacks. In Proceedings of the 14th Cyber Security Experimentation and Test Workshop (CSET '21). Association for Computing Machinery, New York, NY, USA, 58–62. https://doi.org/10.1145/3474718.3474729
@@ -37,8 +45,36 @@ Jia, Yunhan & Chen, Qi Alfred & Wang, Shiqi & Rahmati, Amir & Fernandes, Earlenc
 
 Wang, Qi & Hassan, Wajih & Bates, Adam & Gunter, Carl. (2018). Fear and Logging in the Internet of Things. 10.14722/ndss.2018.23291. 
 
+
+[AI/ML for IoT]
+
+Danny Yuxing Huang, Noah Apthorpe, Frank Li, Gunes Acar, and Nick Feamster. 2020. IoT Inspector: Crowdsourcing Labeled Network Traffic from Smart Home Devices at Scale. Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 4, 2, Article 46 (June 2020), 21 pages. https://doi.org/10.1145/3397333
+
+M. Miettinen, S. Marchal, I. Hafeez, N. Asokan, A. -R. Sadeghi and S. Tarkoma, "IoT SENTINEL: Automated Device-Type Identification for Security Enforcement in IoT," 2017 IEEE 37th International Conference on Distributed Computing Systems (ICDCS), Atlanta, GA, USA, 2017, pp. 2177-2184, doi: 10.1109/ICDCS.2017.283.
+
+Said Jawad Saidi, Anna Maria Mandalari, Roman Kolcun, Hamed Haddadi, Daniel J. Dubois, David Chones, Georgios
+Smaragdakis, Anja Feldmann. 2020. A Haystack Full of Needles: Scalable Detection of IoT Devices in the Wild. In Internet Measurement Conference (IMC ’20), October 27–29,
+2020, Virtual Event, USA. ACM, New York, NY, USA, 14 pages. hps://doi.org/10.1145/3419394.3423650
+
+T. Yu, et al., "Learning Context-Aware Policies from Multiple Smart Homes via Federated Multi-Task Learning," in 2020 IEEE/ACM Fifth International Conference on Internet-of-Things Design and Implementation (IoTDI), Sydney, Australia, 2020 pp. 104-115.
+doi: 10.1109/IoTDI49375.2020.00017
+
+[Formalism]
+
+Dang Tu Nguyen, Chengyu Song, Zhiyun Qian, Srikanth V. Krishnamurthy, Edward J. M. Colbert, and Patrick McDaniel. 2018. IotSan: fortifying the safety of IoT systems. In Proceedings of the 14th International Conference on emerging Networking EXperiments and Technologies (CoNEXT '18). Association for Computing Machinery, New York, NY, USA, 191–203. https://doi.org/10.1145/3281411.3281440
+
+Julie L. Newcomb, Satish Chandra, Jean-Baptiste Jeannin, Cole Schlesinger, and Manu Sridharan. 2017. IOTA: a calculus for internet of things automation. In Proceedings of the 2017 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! 2017). Association for Computing Machinery, New York, NY, USA, 119–133. https://doi.org/10.1145/3133850.3133860
+
+Qi Wang, Pubali Datta, Wei Yang, Si Liu, Adam Bates, and Carl A. Gunter. 2019. Charting the Attack Surface of Trigger-Action IoT Platforms. In Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (CCS '19). Association for Computing Machinery, New York, NY, USA, 1439–1453. https://doi.org/10.1145/3319535.3345662
+
+[기타]
+
+Ponte, Francisco & Gomes, Rafael & Jr, Joaquim & Madeira, Edmundo & Patel, Ahmed. (2018). IoT Device Programmable Language Customization for Home Automation. 168-173. 10.1109/ISCC.2018.8538503. 
+
+
 [IoT 보안 논문 목록]
 
+- https://users.ece.cmu.edu/~vsekar/Teaching/Fall21/18739//lectures/
 - https://github.com/nsslabcuus/Recent-IoT-Security-Paper/blob/master/README.md
 
 
