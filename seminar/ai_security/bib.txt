@@ -1,0 +1,123 @@
+
+==========================
+AI 모델에 대한 적대적 공격
+==========================
+
+1) 회피 공격: 적대적 예제를 활용하여 AI 모델이 잘못 판단하도록 조작하는 공격
+
+2) 모델 추출 공격: 원본 AI 모델로부터 유사한 모델을 추출 복제하는 공격
+
+ - Stealing Machine Learning Model via Prediction APIs (Usenix, 2016)
+
+3) 데이터 오염 공겨: 악의적으로 조작된 데이터를 학습함으로써, AI 시스템의 장애, 기능 불능 야기
+
+ - Protecting AI models from Data Poisoning (IEEE Spectrum 2023년 3월)
+ - Tramer et al., Truth Serum: Poisoning Machine Learning Models to Reveal Their Secrets (ACM CCS 2022)
+ 
+4) 모델 역전 공격: 모델의 정보를 기반으로 학습데이터를 복구하는 공격
+
+ - Fredrikson et al., Model Inversion Attacks that Exploit Confidence Information and Basis Countermeasures (2015)
+ - Carlini et al., Extracting Training Data from Large Language Models (2020)
+
+==========================
+적대적 예제(회피 공격) 기법
+==========================
+
+1) White box vs. Black box
+
+ 1-1) White box: 모델 유형 및 구조, 파라미터 및 가중치 정보 등 보유
+   (이미지 기반 적대적 예제)
+
+  - FGSM (Fast Gradient Sign Method)
+    Goodfellow et al., Explaining and Harnessing Adversarial Examples (ICLR-poster 2015)
+
+  - Madry, PGD (Projected Gradient Descent) (2017)
+
+    * Basic iterative method attack (PGD)
+     - Kurakin et al., Adversarial Examples in the Physical World (ICLR 2017)
+
+    * Projected gradient descent attack (PGD)
+     - Madry et al., Towards Deep Learning Models Resistant to Adversarial Attacks (ICLR 2018)
+
+  - Kurakin, BIM (Basic Iterative Method) (2017)
+
+  - Gowal at DeepMind, Multi-targetd Atatach (2019)
+
+  - DeepFool attack 
+
+    * Moosavi-Dezfooli et al, DeepFool: A Simple and Accurate Method to Fool Deep Neural Networks (IEEE CVPR 2016)
+
+  - C & W attack, targetted attack
+  
+    * Carlini and Wagner, Towards Evaluating the Robustness of Neural Networks (CVPR 2017)
+
+  - JSMA (Jacobian-based Saliency map) attack
+  
+    오분류될 때까지 각 픽셀을 수정, 타겟이 될 확률이 높이기 위해 어떤
+    픽셀을 수정할 지 Saliency Map으로 표현
+
+    * Papernot et al., The limitations of deep learning in adversarial settings (IEEE Euro S&P 2016)
+
+  - EAD (Elastic net) attack 
+
+     C&W attack의 변이
+     
+    * Chen et al., Elastic-net attacks to deep neural networks via adversarial exam (AAAI 2018)
+
+
+  - One-pixel attack
+
+    변화하는 픽셀 수를 제한 (CIFAR-10 데이터 셋으로 1픽셀만 변경하여 공격)
+
+    * Su et al., One pixel attack for fooling deep neural networks (IEEE CVPR 2019)
+
+  - Universal attack
+
+    테스트 이미지에 모두 적용할 수 있는 하나의 노이즈 이미지를 찾음
+
+    * Moosavi-Dezfooli et al., Universal adversarial perturbations (IEEE CVPR 2017)
+
+
+   (텍스트 기반 적대적 예제)
+
+  - Word embedding attack 
+
+   * Miyato et al., Adversarial training methods for semi-supervised text classification (ICLR 2017)
+
+  - Hotflip attack
+
+   * Ebrahimi et al., Hotflip: White-box adversarial examples for text classification (ACL 2018)
+
+  - TextFooler 
+
+   * Jin et al., Is Bert really robust? A strong baseline for natural
+     language attack on text classification and entailment (AAAI 2020)
+
+  - Against LLMs
+
+   * Branch et al., Evaluating the susceptibility of pre-trained
+     language models via handcrafted adversarial examples, (2022)
+
+
+ 1-2) Black box: 모델 관련 정보 없음 (쿼리 가능 여부에 따라 재분류)
+
+
+2) Targetted vs Non-targetted
+
+ Targetted: 특정 라벨로 오분류 유도
+ Non-targetted: 임의 라벨로 오분류 유도 (기존 분류만 아니도록)
+
+
+3) Digital vs. Physical
+
+ Digital: 입력 값 디지털 데이터로 부여
+ Physical: 입력 값 물리적 환경에서 부여
+
+  - K. Eykholt et al., "Robust Physical-World Attacks on Deep Learning Visual Classification", (IEEE CVPR 2018)
+
+
+
+
+cf.
+
+ - Sharif et al., A General Framework for adversarial example swith objectives (ACM Tr. on P&S, 2019)
