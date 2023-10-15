@@ -37,6 +37,8 @@ F. Schmeidl, B. Nazzal and M. H. Alalfi, "Security Analysis for SmartThings IoT 
 
 L. K. Shar et al., "SmartFuzz: An Automated Smart Fuzzing Approach for Testing SmartThings Apps," 2020 27th Asia-Pacific Software Engineering Conference (APSEC), Singapore, Singapore, 2020, pp. 365-374, doi: 10.1109/APSEC51365.2020.00045.
 
+ - 최대한 많은 action들에 도달하기 위한 trigger testcases를 자동으로 생성하는 연구
+
 Earlence Fernandes, Justin Paupore, Amir Rahmati, Daniel Simionato, Mauro Conti, and Atul Prakash. 2016. FlowFence: practical data protection for emerging IoT application frameworks. In Proceedings of the 25th USENIX Conference on Security Symposium (SEC'16). USENIX Association, USA, 531–548.
 
 Celik, Z. Berkay & Tan, Gang & McDaniel, Patrick. (2019). IoTGuard: Dynamic Enforcement of Security and Safety Policy in Commodity IoT. 10.14722/ndss.2019.23326. 
