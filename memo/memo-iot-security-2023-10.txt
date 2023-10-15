@@ -66,6 +66,9 @@ Dang Tu Nguyen, Chengyu Song, Zhiyun Qian, Srikanth V. Krishnamurthy, Edward J. 
 Julie L. Newcomb, Satish Chandra, Jean-Baptiste Jeannin, Cole Schlesinger, and Manu Sridharan. 2017. IOTA: a calculus for internet of things automation. In Proceedings of the 2017 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! 2017). Association for Computing Machinery, New York, NY, USA, 119–133. https://doi.org/10.1145/3133850.3133860
 
 Qi Wang, Pubali Datta, Wei Yang, Si Liu, Adam Bates, and Carl A. Gunter. 2019. Charting the Attack Surface of Trigger-Action IoT Platforms. In Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (CCS '19). Association for Computing Machinery, New York, NY, USA, 1439–1453. https://doi.org/10.1145/3319535.3345662
+ - Formal definitions of 8 inter-rule vulnerabilities
+ - rewriting modulo SMT (Maude tool)
+ - Using NLP to extract the information flow from an action to a trigger
 
 [기타]
 
