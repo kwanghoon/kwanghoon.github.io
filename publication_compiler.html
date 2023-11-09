@@ -1,0 +1,161 @@
+
+<html> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<head> 
+<TITLE>Publication</TITLE> 
+<base href="https://kwanghoon.github.io"> 
+</head> 
+ 
+<body > 
+
+
+<hr>
+    
+
+<div id="topic_compiler"></div>
+
+<h1> Compiler - A programmable LALR parser builder in Haskell </h1>
+
+<hr>
+
+    <h3> A text-based syntax completion method using LR parsing and Its Evaluation</h3></a>
+Isao Sasano, Kwanghoon Choi, Science of Computer Programming, Volume 228, June 2023.
+
+<p>
+  This paper presents a text-based syntax completion method that uses
+  an LR parser. We propose formal definitions of candidate text to be
+  completed based on the sentential forms. Moreover, we design basic
+  algorithms for computing candidate texts through reductions in the
+  LR parsing. This is unlike most existing methods, wherein the definition
+  of candidates that are intended to be generated are given
+  informally. In addition, this is unlike grammar transformation
+  approaches that use LR parsers and is a currently burdensome
+  task. The proposed method allows LR parsers to be adopted without
+  modification and a syntax completion system to be built without
+  incurring efforts. For practical purposes, we extended the basic
+  algorithms using a new definition of refined candidates and a new
+  strategy. The extended algorithms can compute more useful candidates
+  for realistic programming language grammars than those of existing
+  ones; Further, we implemented the algorithms on an Emacs server to
+  demonstrate the feasibility of their application. We evaluated the
+  extended algorithm with three real-world programming languages,
+  Small Basic, C, and Haskell. The extended algorithm computes
+  half of all candidates in less than or equal to 0.2 seconds and
+  89.2\% in approximately one second in the evaluation
+  while computing the remaining candidates took a long time. We
+  discuss its evaluation in detail.
+</P>
+
+<h4> Available in: <a href="https://www.sciencedirect.com/science/article/pii/S0167642323000394">PDF</a>, <a href="https://doi.org/10.1016/j.scico.2023.102957">DOI</a></h4>
+
+
+<hr>
+
+   <a name="syntaxcompletion">
+    <h3> A text-based syntax completion method using LR parsing</h3></a>
+Isao Sasano, Kwanghoon Choi, PEPM 2021, January 2021.
+
+<p>
+  This paper presents a text-based syntax completion method using an
+  LR parser. We propose formal definitions of candidate text to be
+  completed based on the sentential forms, and we design algorithms
+  for computing candidates through reductions in the LR parsing. This
+  is in contrast to the existing methods that have not clearly stated
+  what candidates they intend to produce. This is also different from
+  a transformation approach using an LR parser, which transforms the
+  grammar of the programming language, a burdensome task at this
+  moment. The advantage of our method is that LR parsers can be
+  adopted without modification, and a syntax completion system can be
+  built using them, without incurring efforts. We implemented the
+  algorithms as an Emacs server to demonstrate the feasibility of
+  their application.
+</P>
+
+<h4> Available in:
+    <a href="https://doi.org/10.1145/3441296.3441395">DOI</a>,
+    <a href="/paper/pepm2021final.pdf">PDF</a>,
+    <a href="https://www.youtube.com/watch?v=fvWxWyV05v4&t=1944s">YouTube</a> </h4>
+
+
+<hr>
+    
+<a name="yapb"> <h3> LR 오토마타 생성 모듈을 공유하고 범용 프로그래밍언어로 명세를 작성하는 파서 생성 도구 (Parser Generators Sharing LR Automaton Generators and
+Accepting General Purpose Programming
+Language-based Specifications) </h3> </a>
+
+임진택, 김가영, 신승현, 김익순, 최광훈, 정보과학회논문지(소프트웨어및응용), Vol.47, No.1, pp52-60, 2020년 1월.
+
+<p> 
+본 논문은 LR 파서를 쉽게 개발하기 위하여 두 가지 아이디어를 제안한다. 첫째, 오토마타 생
+성을 모듈화하여 새로운 프로그래밍 언어를 위한 파서 생성 도구를 쉽게 개발 할 수 있다. 둘째, 파서 명
+세를 일반 프로그래밍언어로 작성하도록 구성하여 이 언어 개발 환경에서 제공하는 구문 오류, 자동 완성,
+타입 오류 검사 기능들을 이용하여 파서 명세의 오류를 바로잡을 수 있다. 이 연구에서 제안한 아이디어
+로 Python, Java, C++, Haskell로 파서를 작성할 수 있는 도구를 개발하였고, 실험을 통하여 위 두 가지
+장점을 보였다. 
+</p>
+
+<p>
+This paper proposes two ways to develop LR parsers easily. First, one can write a
+parser specification in a general programming language and derive the benefits of syntax error
+checking, code completion, and type-error checking over the specification from the language’s
+development environment. Second, to make it easy to develop a parser tool for a new programming
+language, the automata generation for the parser specifications is in a modular form. With the idea
+proposed in this study, we developed a tool for writing parsers in Python, Java, C++, and Haskell. We
+also demonstrated the two aforementioned advantages in an experiment.  
+  </p>
+
+  <h4> Available in: <a href="/paper/kiise202001.pdf">PDF</a>
+    </h4>
+    
+<hr>
+
+	  <a name="smcstaticanalyzer"> <h3>자체수정 코드를 탐지하는 정적 분석 방법의 LLVM 프레임워크 기반 구현 및 실험 (An LLVM-Based Implementation of Static Analysis for Detecting Self-Modifying Code and Its Evaluation)</h3>
+	    유재일, 최광훈,
+	    한국정보보호학회 논문지, 32권, 2호, Pages 171-179, 2022년 4월.
+
+	    <p>
+자체 수정 코드(Self-Modifying-Code)란 실행 시간 동안 스스로 실행
+코드를 변경하는 코드를 말한다. 이런 기법은 특히 악성코드가 정적 분석을
+우회하는 데 악용된다. 따라서 이러한 악성코드를 효과적으로 검출하려면
+자체 수정 코드를 파악하는 것이 중요하다. 그동안 동적 분석 방법으로
+자체 수정 코드를 분석해왔으나 이는 시간과 비용이 많이 든다. 만약 정적
+분석으로 자체 수정 코드를 검출할 수 있다면 악성코드 분석에 큰 도움이
+될 것이다.  본 논문에서는 LLVM IR로 변환한 바이너리 실행 프로그램을
+대상으로 자체 수정 코드를 탐지하는 정적 분석방법을 제안하고, 자체 수정
+코드 벤치마크를 만들어 이 방법을 적용했다. 본 논문의 실험 결과
+벤치마크 프로그램을 컴파일로 변환한 최적화된 형태의 LLVM IR 프로그램에
+대해서는 설계한 정적 분석 방법이 효과적이었다. 하지만 바이너리를
+리프팅 변환한 비정형화된 LLVM IR 프로그램에 대해서는 자체 수정 코드를
+검출하기 어려운 한계가 있었다. 이를 극복하기 위해 바이너리를 리프팅
+하는 효과적인 방법이 필요하다.
+	    </P>
+
+	    <p>
+Self-Modifying-Code is a code that changes the code by itself during
+execution time. This technique is particularly abused by malicious
+code to bypass static analysis. Therefor, in order to effectively
+detect such malicious codes, it is important to identify
+self-modifying-codes. In the meantime, Self-modify-codes have been
+analyzed using dynamic analysis methods, but this is time-consuming
+and costly. If static analysis can detect self-modifying-code it will
+be of great help to malicious code analysis.  In this paper, we
+propose a static analysis method to detect self-modified code for
+binary executable programs converted to LLVM IR and apply this method
+by making a self-modifying-code benchmark. As a result of the
+experiment in this paper, the designed static analysis method was
+effective for the standardized LLVM IR program that was compiled and
+converted to the benchmark program. However, there was a limitation in
+that it was difficult to detect the self-modifying-code for the
+unstructured LLVM IR program in which the binary was lifted and
+transformed. To overcome this, we need an effective way to lift the
+binary code.
+	      </P>
+
+	    <h4> Available in:
+		<a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11056765">LINK</a>
+		</h3>
+
+<hr>
+  
+</html> 
+
