@@ -7,8 +7,32 @@
 </head>
 <body>
     <h1>Topics for research and also for fun</h1>
+
     <section>
-        <h2>(1) Code completion </h2>
+      <h2>Software Security</h2>
+      <p>Making Software Sandboxing Practical using Language-based Techniques</p>
+      <p> (Keywords: Computer Security, information flow control, type systems, WebAssembly)</p>
+	      <ul>
+	        <li> <a href="https://blog.sigplan.org/2021/07/27/making-software-sandboxing-practical-using-language-based-techniques/">Read this article</a>
+        </ul>
+      <p>Recommendations to read</p>
+    	<ul>
+        <li><a href="Language-Based Information-Flow Security">Language-based information-flow security</a>(IEEE JOURNAL ON SELECTED AREAS IN COMMUNICATIONS, 2003)</li>
+        <li><a href="https://github.com/PLSysSec/rlbox">RLbox sandboxing framework</a>,
+            <a href="https://rlbox.dev/">rlbox.dev</a></li>
+
+        <li><a href="https://www.usenix.org/conference/usenixsecurity20/presentation/narayan">
+          Retrofitting Fine Grain Isolation in the Firefox Renderer
+        </a>(USENIX 2020)</li>
+
+	      <li><a href="https://github.com/w3c/trusted-types#polyfill">Trusted types </a>: A browser API to prevent DOM-Based Cross Site Scripting 
+          in modern web applications.</li>
+      </ul>
+
+    </section>
+
+    <section>
+        <h2>Code completion </h2>
         <p>Recent work in progress: A ranked text-based syntax completion method using LR parsing</p>
         <p><em>Authors:</em> Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano</p>
         <p>This represents the latest work in a series of studies from our group on automatic syntax completion [1][2][3], or also available in
@@ -26,7 +50,7 @@
     </section>
 
     <section>
-        <h2>(2) End-user programming/debugging/explaining in Home Automation Platforms such as SmartThings and Home Assistant </h2>
+        <h2>End-user programming/debugging/explaining in Home Automation Platforms such as SmartThings and Home Assistant </h2>
         <p> IOTA: a calculus for internet of things automation</p>
         <p><em>Authors:</em> Julie L. Newcomb, Satish Chandra, Jean-Baptiste Jeannin, Cole Schlesinger, Manu Sridharan</p>
         <p><a href="https://doi.org/10.1145/3133850.3133860">DOI link</a></p>
@@ -36,7 +60,7 @@
 	<p>We have begun the development of a programming language that is based on the IoTa calculus, as in <a href="https://github.com/kwanghoon/iotacalculus">IoTa Calculus Programming Language</a></p>
 	
         <ul>
-          <li><em>2-1)</em>
+          <li><em>1)</em>
 	    <p>Programs for home automation platforms, like SmartThings, are intended to be developed by end-users. Therefore, it is essential to provide a method that enables end-users to write these programs with ease.</p>
 
 <p>One solution for simplifying programming is a visual programming environment called Smartblock [5]. Rather than writing text-based programs, the end-users can compose home automation programs by dragging and dropping visual blocks, making the process more intuitive and user-friendly.</p>
@@ -46,7 +70,7 @@
 <p>A single trial translation based on LLM may not be likely to result in satisfactory home automation programs. There must be a method for end-users to intervene and control the translation or the translated programs themselves. The existing Smartblock [5] system could facilitate this by enabling translation from the IoTa calculus based programs into the visual block programs and back. 
 	      </p>
 
-          <li><em>2-2)</em> <p> Debugging home automation programs is notoriously challenging.</p>
+          <li><em>2)</em> <p> Debugging home automation programs is notoriously challenging.</p>
 
 	    <p> A smart provenance system [4] was one solution where end-users can explore timed events and actions to investigate their problems, for example, why the light would not be turned on when a person opened the door. </P
 
@@ -56,7 +80,7 @@
 
 
 	  </li>
-          <li><em>2-3)</em> <p> Solutions for the fragmentation problem in home automation programming</p>
+          <li><em>3)</em> <p> Solutions for the fragmentation problem in home automation programming</p>
 	    <p>Samsung SmartThings is a leading home automation system, but it is not the only one available. Other intriguing options include IFTTT, OpenHap, and more. A significant issue is that programming methods used for one home automation system are often incompatible with others, leading to what is known as the fragmentation problem. We believe that a programming language based on the IoTa calculus could provide a solution to this challenge by compiling it into the other home automation programming languages as:
 	    </p>
 
@@ -100,7 +124,7 @@
 
 	<p> Research directions </p>
 	<ul>
-	  <li> It would be interesting to explore the relationship between 
+	  <li> It would be interesting to explore the relationship between
 	   <a href="https://kwanghoon.github.io/publication_topic.html#topic_functionalprogramming">the polymorphic RPC calculus</a>, especially, [8] and [9], with the choreographic programming paradigm </li>
 
 	  <li> It would also be interesting to think about how to do choreographic programming with <a href="https://elixir-lang.org/">Elixir</a>, a higher-order functional programming language that runs on the Erlang VM. It is designed for building scalable and maintainable applications.</li>
@@ -110,16 +134,7 @@
     </section>
     
     <section>
-      <h2>(5) Software Security</h2>
-      <p>Making Software Sandboxing Practical using Language-based Techniques</p>
-      <p> (Keywords: Computer Security, information flow control, type systems, WebAssembly)
-	<ul>
-	  <li> <a href="https://blog.sigplan.org/2021/07/27/making-software-sandboxing-practical-using-language-based-techniques/">Read this article</a>
-        </ul>
-    </section>
-
-    <section>
-      <h2>(6) Experiencing new programming languages </h2>
+      <h2>Experiencing new programming languages </h2>
       <p> I encourage students to explore new programming languages that pique your curiosity. If you're unsure where to begin, here's a list to kicstart your journey.
       <ul>
 
@@ -133,7 +148,7 @@
       </section>
 
     <section>
-        <h2>(7) Study Recommendations</h2>
+        <h2>Study Recommendations</h2>
         <p>Before deeply delving into these research areas, I recommend acquiring a solid foundation in programming language and compiler skills. A suggestion for learning these skills is to study the book "Essentials of Programming Languages" (3rd Ed.), a renowned text in the field.</p>
         <ul>
           <li><a href="https://eopl3.com/">Essentials of Programming Languages (3rd Ed.)</a> </li>
