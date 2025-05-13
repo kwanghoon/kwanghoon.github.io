@@ -14,6 +14,56 @@
       
 <h1> Software Security </h1>
 
+<a name="webvulnerabilitytool"> <h3>Jaekwon Kim, Hyosang Lim, Kwanghoon Choi, 
+Certified Robustness of Antenna Selecting Neural Networks for Massive MIMO Wireless Communications, 
+IEEE Access 2025 (Accepted for publication).</h3></a>
+      <p> 미래의 무선 통신 시스템은 대규모 안테나를 활용해 고속 데이터 전송을 지원해야 하지만, 
+        동시에 RF 체인의 비용도 고려해야 합니다. 이를 해결하기 위한 방법으로는 일부 안테나만 활성화하는 
+        안테나 선택 기법이 있으며, 최근에는 전통적인 기호 기반 방식보다 신경망 기반 접근법이 고정된 추론 복잡도와 
+        하드웨어 적합성 측면에서 더 유망하다는 평가를 받고 있습니다.
+
+        그러나 자율주행이나 드론과 같은 6G 안전 필수 응용 분야에서는, 신경망의 불투명한 결정 과정이 신뢰성 확보에 걸림돌이 됩니다. 
+        특히, 어떤 안테나를 선택했는지에 대한 명확한 해석이 어렵기 때문입니다.
+
+        이 논문은 이러한 상황에서 신경망 기반 안테나 선택의 강건성(robustness)을 분석합니다. 
+        일반적인 응용에서는 임의 입력에 대한 경험적 강건성만으로 충분할 수 있지만, **모든 가능한 입력 교란에 대해 
+        일관된 결과를 보장하는 수학적 인증 강건성(certified robustness)은 안전이 중요한 시스템에서는 필수적입니다. 
+        비전이나 자연어 분야에서는 인증 강건성 연구가 활발하지만, 통신 분야에서의 적용은 본 논문이 최초입니다.
+
+        우리는 안테나 선택 신경망에 대한 강건성을 수학적으로 정의하고, 
+        선형 완화 기반 교란 분석(linear relaxation–based perturbation analysis) 기법을 적용합니다. 
+        그 결과, 뉴럴 네트워크 가지치기(pruning)가 효율성을 높일 뿐 아니라 인증 강건성도 개선하는 것으로 나타났습니다. 
+        또한 인증 강건성과 경험적 강건성 사이에 큰 차이가 존재함을 확인하여, 향후 더 나은 인증 기법의 필요성을 제시합니다.
+      </p>
+      <p>
+        Future wireless systems with massive antennas must balance data rates and RF chain costs. 
+Antenna selection activating only a subset of antennas addresses this challenge. 
+Recently, neural network–based approaches have shown promise over 
+traditional symbolic methods, offering fixed inference complexity and hardware suitability. 
+However, their black-box nature raises concerns for safety-critical 6G applications like 
+autonomous driving and drones, where reliable communication is vital. 
+Specifically, it is often unclear how the neural network determines which antennas to select, 
+making it difficult to interpret or trust the decision-making process.
+This paper investigates the robustness of neural networks for antenna selection in such contexts. 
+While empirical robustness against finite random inputs sampled from a uniform distribution
+may suffice for general applications, certified robustness ensuring consistent inference under 
+all possible perturbations is essential for safety-critical systems. Although certified robustness 
+is well studied in vision and language tasks, we are the first, to our knowledge, to explore 
+its application in telecommunications.
+We mathematically define robustness for antenna-selection networks and apply state-of-the-art 
+linear relaxation–based perturbation analysis. Our findings show that pruned networks, 
+beyond being more efficient, also exhibit superior certified robustness compared to their 
+unpruned counterparts. We further compare certified and empirical robustness, identifying 
+a significant gap that suggests the need for improved certification methods.
+Additionally, in our antenna selection setting, we observe that removing monotonic activations 
+in the final layer improves certified robustness.
+      </p>
+	  <h4> Available in:
+	    <!-- <a href="">PDF</a> -->
+	  </h4>
+
+	  <hr>
+
 <a name="webvulnerabilitytool"> <h3>전세옥, 장현지, 정민수, 이서준, 오다영, 최광훈, 김석휘, 조성우, 김정미, 
 전기차 충전 인프라 오픈소스 소프트웨어에서의 취약한 코드 복제 탐지: VUDDY 를 활용한 사례 연구, 한국정보처리학회 ACK 2024, 전남대학교, 10월31일-11월2일.</h3></a>
       <p> 오픈소스 코드 재사용은 비용 절감과 생산성을 높이지만, 관리의 복잡성으로 인해 취약점이 발
@@ -23,7 +73,7 @@
 있었다. 연구는 코드 복제 취약점 탐지를 통한 전기차 충전 인프라 보안 강화 가능성을 보여주었다.
       </p>
 	  <h4> Available in:
-	    <!-- <a href="">PDF</a> -->
+	    <a href="https://www.manuscriptlink.com/society/kips/conference/ack2024/file/downloadSoConfManuscript/abs/KIPS_C2024B0397">PDF</a>
 	  </h4>
 
 	  <hr>
