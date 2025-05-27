@@ -11,11 +11,36 @@
 
     
 <div id="topic_softwareengineering"></div>
-<h1> Software engineering </h1>
+<h1> Software engineering/AI </h1>
 
 <hr>
 
-    <h3> A text-based syntax completion method using LR parsing and Its Evaluation</h3></a>
+    <a name="syntaxcompletion_llm"> <h3> Improving LLM-based Code Completion Using LR Parsing-Based Candidates (Work-in-progress)</h3></a>
+Md Monir Ahammod Bin Atique, Kwanghoon Choi, Isao Sasano and Hyeon-Ah Moon, Improving LLM-based Code Completion Using LR Parsing-Based Candidates (Work-in-progress), Symbolic Computation in Software Science (SCSS), Tokyo, Japan, August 28-30, 2024.
+
+<p>
+  Programmers often use syntax completion and code suggestion features. Our methodology enhances code completion by combining structural candidate information from LR parsing with LLMs. These structural candidates
+are utilized to compose prompts so that ChatGPT can predict actual code under the specified structure. Tested
+on Small Basic and C benchmarks, this approach offers textual suggestions rather than just structural ones,
+showing nearly 50% prediction accuracy for Small Basic programs. While effective for Small Basic, we report that
+challenges remain with C11 programs.
+</P>
+
+<h4> Available in: <a href="https://ceur-ws.org/Vol-3754/paper01.pdf">PDF</a></h4>
+
+<hr>
+
+    <a name="syntaxcompletion_scp"> <h3> Ranked Syntax Completion Using LR Parsing</h3></a>
+Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano,  ACM/SIGAPP Symposium on Applied Computing, pp.1242-1251, Avila, Spain, April 8-12, 2024
+
+<p>
+  This paper introduces a novel text-based syntax completion method that generates a sorted list of syntactic structure candidates for program writing. To date, no existing methods for syntax structure completion have offered candidates with accompanying rank information. We developed two key algorithms using LR parsing: one for collecting and ranking candidates, and another for querying them. With these algorithms, we gathered ranked candidates from SmallBasic programs in its community and from C11 programs in open-source software. We then assessed their effectiveness in code completion using Microsoft SmallBasic tutorial programs and the exercises from Kernighan and Ritchie's C programming language book. Our findings revealed that the top ranked candidate is frequently the correct choice. Furthermore, in over 96% of the cases, the correct completion is within the top 10 ranked candidates. This indicates the value of the collected rank information, assisting users in candidate selection during introductory programming tasks. Moreover, our method exhibits language-parametric characteristics; it can be applied to any programming language with syntax defined by an LR grammar.
+</P>
+
+<h4> Available in: <a href="http://kwanghoon.github.io/paper/acmsac2024.pdf">PDF</a>, <a href="https://doi.org/10.1145/3605098.3635944">DOI</a>, <a href="https://docs.google.com/presentation/d/1iUlfdfWwaVg1M34NydE4C5YFTftDyxKZ/edit?usp=sharing&ouid=111617985917741289533&rtpof=true&sd=true">SLIDE</a></h4>
+<hr>
+
+    <a name="syntaxcompletion_scp"> <h3> A text-based syntax completion method using LR parsing and Its Evaluation</h3></a>
 Isao Sasano, Kwanghoon Choi, Science of Computer Programming, Volume 228, June 2023.
 
 <p>

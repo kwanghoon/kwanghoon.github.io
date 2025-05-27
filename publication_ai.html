@@ -1,0 +1,56 @@
+
+<html> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<head> 
+<TITLE>Publication</TITLE> 
+<base href="https://kwanghoon.github.io"> 
+</head> 
+ 
+<body > 
+
+
+    
+<div id="topic_ai"></div>
+<h1> AI/LLM </h1>
+
+<hr>
+
+    <a name="neuralnetworkverification"> <h3> Certified Robustness of Antenna Selecting Neural Networks for Massive MIMO Wireless Communications</h3></a>
+J. Kim, H. -S. Lim and K. Choi, IEEE Access, vol. 13, pp. 88609-88622, 2025, doi: 10.1109/ACCESS.2025.3570973.
+
+<p>
+ Future wireless systems with massive antennas must balance data rates and RF chain costs. Antenna selection activating only a subset of antennas addresses this challenge. Recently, neural network-based approaches have shown promise over traditional symbolic methods, offering fixed complexity in inference and suitability for hardware implementation. However, their closed-box nature raises concerns for safety-critical 6G applications like autonomous driving and drones, where reliable communication is vital. Specifically, it is often unclear how the neural network determines which antennas to select, making it difficult to interpret or trust the decision-making process. This paper investigates the robustness of neural networks for antenna selection in such contexts. While empirical robustness against finite random inputs sampled from a uniform distribution may suffice for general applications, certified robustness ensuring consistent inference under all possible perturbations is essential for safety-critical systems. Although certified robustness is well studied in vision and language tasks, we are the first, to our knowledge, to explore its application in telecommunications. We mathematically define robustness for antenna-selection networks and apply state-of-the-art linear relaxation-based perturbation analysis. Our findings show that pruned networks, beyond being more efficient, also exhibit superior certified robustness compared to their unpruned counterparts. We further compare certified and empirical robustness, identifying a significant gap that suggests the need for improved certification methods. Additionally, in our antenna selection setting, we observe that removing monotonic activations in the final layer improves certified robustness.
+</P>
+
+<h4> Available in: <a href="https://ieeexplore.ieee.org/document/11006645">PDF</a></h4>
+
+<hr>
+
+    <a name="syntaxcompletion_llm"> <h3> Improving LLM-based Code Completion Using LR Parsing-Based Candidates (Work-in-progress)</h3></a>
+Md Monir Ahammod Bin Atique, Kwanghoon Choi, Isao Sasano and Hyeon-Ah Moon, Improving LLM-based Code Completion Using LR Parsing-Based Candidates (Work-in-progress), Symbolic Computation in Software Science (SCSS), Tokyo, Japan, August 28-30, 2024.
+
+<p>
+  Programmers often use syntax completion and code suggestion features. Our methodology enhances code completion by combining structural candidate information from LR parsing with LLMs. These structural candidates
+are utilized to compose prompts so that ChatGPT can predict actual code under the specified structure. Tested
+on Small Basic and C benchmarks, this approach offers textual suggestions rather than just structural ones,
+showing nearly 50% prediction accuracy for Small Basic programs. While effective for Small Basic, we report that
+challenges remain with C11 programs.
+</P>
+
+<h4> Available in: <a href="https://ceur-ws.org/Vol-3754/paper01.pdf">PDF</a></h4>
+
+<hr>
+
+<a name="syntaxcompletion_scp"> <h3> Ranked Syntax Completion Using LR Parsing</h3></a>
+Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano,  ACM/SIGAPP Symposium on Applied Computing, pp.1242-1251, Avila, Spain, April 8-12, 2024
+
+<p>
+  This paper introduces a novel text-based syntax completion method that generates a sorted list of syntactic structure candidates for program writing. To date, no existing methods for syntax structure completion have offered candidates with accompanying rank information. We developed two key algorithms using LR parsing: one for collecting and ranking candidates, and another for querying them. With these algorithms, we gathered ranked candidates from SmallBasic programs in its community and from C11 programs in open-source software. We then assessed their effectiveness in code completion using Microsoft SmallBasic tutorial programs and the exercises from Kernighan and Ritchie's C programming language book. Our findings revealed that the top ranked candidate is frequently the correct choice. Furthermore, in over 96% of the cases, the correct completion is within the top 10 ranked candidates. This indicates the value of the collected rank information, assisting users in candidate selection during introductory programming tasks. Moreover, our method exhibits language-parametric characteristics; it can be applied to any programming language with syntax defined by an LR grammar.
+</P>
+
+<h4> Available in: <a href="http://kwanghoon.github.io/paper/acmsac2024.pdf">PDF</a>, <a href="https://doi.org/10.1145/3605098.3635944">DOI</a>, <a href="https://docs.google.com/presentation/d/1iUlfdfWwaVg1M34NydE4C5YFTftDyxKZ/edit?usp=sharing&ouid=111617985917741289533&rtpof=true&sd=true">SLIDE</a></h4>
+
+      
+  
+</html> 
+
