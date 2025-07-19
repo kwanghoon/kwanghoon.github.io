@@ -22,6 +22,12 @@
 Isao Sasano, Kwanghoon Choi, Science of Computer Programming, Volume 228, June 2023.
 
 <p>
+  이 논문은 LR 파서를 활용한 텍스트 기반 문법 완성(syntax completion) 기법을 제안한다. 우리는 문장의 형태(sentential forms)에 기반하여 자동완성할 텍스트 후보의 형식을 형식적으로 정의하고, LR 파싱 과정에서의 축소(reduction)를 이용해 이러한 후보를 계산하는 기본 알고리즘을 설계하였다. 이는 대부분의 기존 기법들이 후보의 정의를 비형식적으로 제공하는 것과 다르며, LR 파서를 사용하는 기존 문법 변환 기반 방식들과 달리 복잡한 변환 작업 없이도 사용이 가능하다는 점에서 차별된다. 제안된 방식은 LR 파서를 수정하지 않고 그대로 사용할 수 있으며, 추가적인 부담 없이 문법 완성 시스템을 구축할 수 있도록 한다.
+
+실용적 적용을 위해, 우리는 정제된 후보 정의와 새로운 전략을 도입하여 기본 알고리즘을 확장하였다. 이 확장된 알고리즘은 기존 기법보다 현실적인 프로그래밍 언어 문법에 더 적합한 후보들을 계산할 수 있다. 구현은 Emacs 서버 상에서 이루어졌으며, Small Basic, C, Haskell 세 가지 실제 프로그래밍 언어로 평가하였다. 평가 결과, 전체 후보의 절반은 0.2초 이내에 계산되었고, 약 89.2%는 1초 이내에 계산되었으며, 나머지는 시간이 오래 걸렸다. 우리는 이러한 평가 결과를 논문에서 자세히 논의한다.
+</p>
+
+<p>
   This paper presents a text-based syntax completion method that uses
   an LR parser. We propose formal definitions of candidate text to be
   completed based on the sentential forms. Moreover, we design basic
@@ -56,19 +62,7 @@ Isao Sasano, Kwanghoon Choi, Science of Computer Programming, Volume 228, June 2
 Isao Sasano, Kwanghoon Choi, PEPM 2021, January 2021.
 
 <p>
-  This paper presents a text-based syntax completion method using an
-  LR parser. We propose formal definitions of candidate text to be
-  completed based on the sentential forms, and we design algorithms
-  for computing candidates through reductions in the LR parsing. This
-  is in contrast to the existing methods that have not clearly stated
-  what candidates they intend to produce. This is also different from
-  a transformation approach using an LR parser, which transforms the
-  grammar of the programming language, a burdensome task at this
-  moment. The advantage of our method is that LR parsers can be
-  adopted without modification, and a syntax completion system can be
-  built using them, without incurring efforts. We implemented the
-  algorithms as an Emacs server to demonstrate the feasibility of
-  their application.
+  (See <a href="publication_compiler.html#syntaxcompletion_scp">Ranked Syntax Completion Using LR Parsing</a> for the full paper.)
 </P>
 
 <h4> Available in:

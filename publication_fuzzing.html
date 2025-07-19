@@ -58,6 +58,20 @@ BLE application protocols by running the generated scenarios on the Android BLE 
   <hr>
       <h3>A Practical Intent Fuzzing Tool for Robustness of Inter-Component Communication in Android Apps</h3>
 	Kwanghoon Choi, Myungpil Ko, Byeong-Mo Chang, KSII Transactions on Internet and Information Systems, Vol.12, Issue 9, pp.4248-4270, September 30, 2018.
+      <p>
+      본 연구는 안드로이드 앱의 견고성 문제를 유발하는 Intent 취약점을 탐지하기 위한 실용적인 Intent 퍼징(Fuzzing) 도구를 개발하는 것을 목표로 한다. 우리는 두 가지 새로운 아이디어를 제안하였다.
+
+      첫째, Intent의 구조를 기술할 수 있는 **Intent 명세 언어(Intent specification language)**를 설계하여 퍼징 도구의 유연성을 확보하였다.
+
+      둘째, 고유한 실패를 자동으로 분류할 수 있는 자동 분류(tally) 방법을 제안하였다.
+
+      이 두 가지 아이디어를 바탕으로 Hwacha라는 Intent 퍼징 도구를 구현하였고, 50개의 상용 안드로이드 앱을 대상으로 평가를 수행하였다. Intent 명세 언어를 활용함으로써 이 도구는 자동 및 수동 Intent 생성기와 ADB, JUnit과 같은 실행기를 자유롭게 조합할 수 있다.
+
+      실험 결과, 자동 분류 방법은 전체 실패 중 약 80%에 해당하는 중복 실패를 제거하여, 테스터가 실패를 검토하는 데 드는 노력을 크게 줄였다. 이 도구는 지금까지 알려지지 않은 사례를 포함하여 400개 이상의 고유한 실패를 발견하였다.
+
+      또한, 기존 연구에서는 거의 보고되지 않았던 Intent 퍼징 테스트의 실행 시간도 측정하였다. 전체 퍼징 테스트 과정이 완전 자동화되어 있으며, 사람의 개입 없이 다수의 안드로이드 앱에 적용 가능하다는 점에서 이 도구는 매우 실용적이다.
+    </p>
+
   <p>This research aims at a new practical Intent fuzzing tool for detecting Intent vulnerabilities
 of Android apps causing the robustness problem. We proposed two new ideas. First, we
 designed an Intent specification language to describe the structure of Intent, which makes our
@@ -83,7 +97,9 @@ applicable to the large number of Android apps with no human intervention.
       최광훈, SMS 부호화 복호화 모듈 검증 방법에 대한 연구, 한국컴퓨터정보학회 논문지, 15권, 6호, pp.1~9, 2010년 6월.
       
   <p>본 논문에서는 3GPP(3rd Generation Partnership Project)에서 정의한 SMS PDU (Protocol Data Unit) 포맷을 주어진 SMS 부호화 복호화 모듈에서 정확하게 구현했는지 검증하는 방법을 제안한다. 기존 SMS 관련 도구들은 SMS 게이트웨이를 통해 송수신하거나 또는 SMS PDU 해석을 목적으로 개발되어 3GPP에서 정의한 세부 SMS PDU 규격에 따라 정확히 구현했는지 테스트하는 용도로는 적합하지 않다. 본 논문에서 제안한 방법은 함수형 언어 Haskell로 작성된 QuickCheck 라이브러리를 활용해 3GPP에서 정의한 구조에 맞는 SMS PDU 테스트 데이터를 자동 생성하여 SMS 부호화 복호화 모듈을 테스트한다. C언어로 작성된 리눅스 모바일 플랫폼 SMS 모듈에 적용하여 이 모듈의 부호화 복호화 기능을 테스트한 결과 BCD 포맷 시간 정보를 잘못 해석하는 사례 등 중요한 오류들을 발견할 수 있었다. 제안한 방법은 3GPP에서 정의한 규격에 맞추어 SMS PDU를 생성하기 때문에 일반적인 SMS 모듈들에 모두 적용 가능한 장점을 지닌다. 본 논문에서 사용한 방법과 같이 QuickCheck 라이브러리를 통해 다른 네트워크 프로토콜 데이터 규격에 대한 부호화 복호화 검증에도 응용할 수 있을 것이다.
+</p>
 
+  <p>
 
 This paper proposes a test method for compliance of SMS encoder and decoder modules with 3GPP (3rd Generation Partnership Project) specification on SMS PDU (Protocol Data Unit). The existing tools have focused on providing an SMS gateway and on helping to view and edit a single SMS PDU, which rarely help to resolve the compliance test problem. The proposed compliance test method is based on an automatic generation of SMS PDUs fully compliant with the 3GPP specification by using QuickCheck library written in Haskell. By applying the proposed method to a C-based SMS encoder and decoder in Linux Mobile platform, we have found out several critical bugs such as wrong interpretation of time stamps in BCD format. The automatic SMS PDU generator is reusable in that it only depends on the 3GPP SMS specification. The QuickCheck library is also applicable for testing other network protocol data encoders and decoders, as used in this paper.
     </p>

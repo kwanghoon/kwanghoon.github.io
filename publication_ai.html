@@ -77,11 +77,7 @@ Jaekwon Kim, Hyo Sang Lim and Kwanghoon Choi, IEEE Access, vol. 13, pp. 88609-88
 Md Monir Ahammod Bin Atique, Kwanghoon Choi, Isao Sasano and Hyeon-Ah Moon, Improving LLM-based Code Completion Using LR Parsing-Based Candidates (Work-in-progress), Symbolic Computation in Software Science (SCSS), Tokyo, Japan, August 28-30, 2024.
 
 <p>
-  Programmers often use syntax completion and code suggestion features. Our methodology enhances code completion by combining structural candidate information from LR parsing with LLMs. These structural candidates
-are utilized to compose prompts so that ChatGPT can predict actual code under the specified structure. Tested
-on Small Basic and C benchmarks, this approach offers textual suggestions rather than just structural ones,
-showing nearly 50% prediction accuracy for Small Basic programs. While effective for Small Basic, we report that
-challenges remain with C11 programs.
+  (See <a href="publication_ai.html#syntaxcompletion_llm_cola">Improving LLM-based Code Completion Using LR Parsing</a> for the full paper.)
 </P>
 
 <h4> Available in: <a href="https://ceur-ws.org/Vol-3754/paper01.pdf">PDF</a></h4>
@@ -90,6 +86,10 @@ challenges remain with C11 programs.
 
 <a name="syntaxcompletion_scp"> <h3> Ranked Syntax Completion Using LR Parsing</h3></a>
 Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano,  ACM/SIGAPP Symposium on Applied Computing, pp.1242-1251, Avila, Spain, April 8-12, 2024
+
+<p>
+이 논문은 프로그램 작성을 위한 문법 기반 텍스트 완성 기법을 새롭게 제안한다. 이 기법은 문법 구조 후보 목록을 생성하며, 각 후보에는 정렬된 순위 정보가 함께 제공된다. 현재까지 문법 구조 완성을 위한 기존 기법들 중 후보에 순위 정보를 포함한 방식은 없었다. 우리는 LR 파싱을 기반으로 두 가지 주요 알고리즘을 개발하였다. 하나는 후보를 수집하고 순위를 매기는 알고리즘이며, 다른 하나는 이를 질의하는 알고리즘이다. 이러한 알고리즘을 이용하여 SmallBasic 커뮤니티의 프로그램들과 오픈소스 C11 프로그램들로부터 순위가 매겨진 후보들을 수집하였다. 이후 Microsoft SmallBasic 튜토리얼 프로그램들과 Kernighan and Ritchie의 C 언어 교재 예제를 활용해 코드 자동완성에서 이 기법의 효과를 평가하였다. 실험 결과, 최상위 후보가 정답인 경우가 많았으며, 전체의 96% 이상에서 정답이 상위 10개 후보 안에 포함되었다. 이는 수집된 순위 정보가 초급 프로그래밍 작업에서 사용자에게 유용한 선택 기준이 될 수 있음을 보여준다. 또한 이 기법은 문법이 LR로 정의된 언어라면 어떤 프로그래밍 언어에도 적용 가능한 ‘언어-파라메트릭’ 특성을 가진다.
+</p>
 
 <p>
   This paper introduces a novel text-based syntax completion method that generates a sorted list of syntactic structure candidates for program writing. To date, no existing methods for syntax structure completion have offered candidates with accompanying rank information. We developed two key algorithms using LR parsing: one for collecting and ranking candidates, and another for querying them. With these algorithms, we gathered ranked candidates from SmallBasic programs in its community and from C11 programs in open-source software. We then assessed their effectiveness in code completion using Microsoft SmallBasic tutorial programs and the exercises from Kernighan and Ritchie's C programming language book. Our findings revealed that the top ranked candidate is frequently the correct choice. Furthermore, in over 96% of the cases, the correct completion is within the top 10 ranked candidates. This indicates the value of the collected rank information, assisting users in candidate selection during introductory programming tasks. Moreover, our method exhibits language-parametric characteristics; it can be applied to any programming language with syntax defined by an LR grammar.

@@ -17,6 +17,10 @@
     <a name="rechtml"> <h3>RecHTML: A Typed Declarative HTML</h3></a>
     Bob Reynder, Kwanghoon Choi, ProWeb21, March 2021.
     
+    <p>
+      웹에서의 인터랙티브 사용자 경험은 점점 일반화되고 있습니다. 클라이언트 측 프로그램은 점점 더 복잡해지고 있으며, 이벤트 처리, HTML 문서 상태 읽기, 인터페이스 업데이트 등을 다뤄야 합니다. 이 논문에서는 이러한 세 가지 측면을 선언적으로 지원하는 선언적 언어를 제안하며, 복잡한 인터페이스를 레코드, 함수, 재귀와 같은 단순한 프로그래밍 기법을 사용하여 작성할 수 있는 프로그래밍 모델을 제공합니다.
+    </p>
+
       <p>
         Interactive user experiences on the web are becoming the
         norm. Client-side programs are becoming more complicated and
@@ -38,6 +42,16 @@
     <h3>A typed slicing compilation of the polymorphic RPC calculus</h3> </a>
       Kwanghoon Choi, James Cheney, Sam Lindley, Bob Reynders, 
       PPDP, 6 September 2021.
+
+      <p>
+      다형적 RPC 계산법(polymorphic RPC calculus)은 프로그래머가 다형적 위치(polymorphic location) 구성 요소를 이용해 간결한 다중 계층(multitier) 프로그램을 작성할 수 있도록 해준다. 하지만 지금까지는 이를 실제로 구현한 사례가 없었다.
+
+      본 논문에서는 다형적 RPC 계산법에 기반한 실험적 프로그래밍 언어를 개발한다. 우리는 클라이언트(client)와 서버(server) 부분이 분리된 다형적 클라이언트-서버(CS) 계산법을 제안한다. 기존의 비타입(untyped) CS 계산법과 달리, 우리가 제안하는 계산법은 다형적 위치를 정적으로뿐만 아니라 동적으로도 해석할 수 있다.
+
+      또한, 우리는 다형적 RPC 계산법을 이 CS 계산법으로 타입 기반 분할 컴파일(type-based slicing compilation)하는 방식을 설계하고, 타입 및 의미론적 정당성(type and semantic correctness)을 증명하였다.
+
+      아울러, 실행에 불필요한 타입 정보를 제거하고, 실행 시 위치(location)는 유지하는 기법을 제안하며, 이를 통해 다형적 CS 계산법을 비타입 CS 계산법으로 변환하고, 그에 대한 의미론적 정당성도 입증하였다.
+    </p>
 
     <p>
         The polymorphic RPC calculus allows programmers to write
@@ -67,6 +81,15 @@
 
    Kwanghoon Choi, James Cheney, Simon Fowler, and Sam Lindley,
 Science of Computer Programming, Vol.197(102499), October 2020.
+<p>
+  RPC 계산법(RPC calculus)은 클라이언트-서버 모델을 위한 위치 함수(located function)를 작성할 수 있는 다중 계층(multi-tier) 프로그래밍 언어(예: Links)의 간단한 의미론적 기반이다. 이후, 타입이 부여된 RPC 계산법(typed RPC calculus)이 설계되어, 함수의 위치 정보를 타입으로 표현하고, 이를 기반으로 한 위치 타입 기반 분할 컴파일(location type-directed slicing compilation)을 수행할 수 있게 되었다.
+
+그러나 현재까지의 위치 사용은 단일형(monomorphic) 위치에 한정되어 있어, RPC 계산법 이론을 클라이언트-서버 모델에 실제로 적용하기 위해서는 이 한계를 극복해야 한다.
+
+본 논문에서는 프로그래머가 다형적 위치(polymorphic location) 구문을 사용하여 간결한 다중 계층 프로그램을 작성할 수 있도록 하는 다형적 RPC 계산법(polymorphic RPC calculus)을 제안한다. 이러한 다형적 다중 계층 프로그램은 기존의 분할 컴파일 기법에 적합한 위치 상수만 포함된 프로그램으로 자동 변환될 수 있다.
+
+우리는 다형적 RPC 계산법을 위한 타입 시스템을 정식화하고, 그 타입 안전성(type soundness)을 증명하였다. 또한, 모노모픽 변환(monomorphization translation)을 설계하고, 해당 변환에 대한 타입 및 의미론적 정당성도 함께 증명하였다.
+</p>
 <p>
   The RPC calculus is a simple semantic foundation for multi-tier
   programming languages such as Links in which located functions can
@@ -98,6 +121,18 @@ Kwanghoon Choi, Byeong-Mo Chang,
 Journal of Functional Programming (JFP), Vol.29, pp.1-39, Cambridge University Press, March 2019.
 
 <p>
+  다중 계층 프로그래밍 언어(multi-tier programming languages)를 사용하면, 프로그래머는 코드가 실행될 위치(location)를 명시할 수 있어, 클라이언트와 서버 프로그램을 별도로 작성하고 이를 함께 테스트해야 하는 웹 기반 클라이언트-서버 모델에서의 개발 부담을 줄일 수 있다.
+
+Cooper와 Wadler가 제안한 RPC 계산법(RPC calculus)은 이러한 언어들의 이론적 기반 중 하나로, 대칭적 통신(symmetric communication)을 지원하며, 프로그래머가 임의로 깊게 중첩된 클라이언트-서버 상호작용을 작성할 수 있는 특징을 가진다.
+
+그러나 기존 연구들은 동적으로 타입이 부여된 위치(dynamically typed locations)만을 다루고 있다.
+
+이에 우리는 위치를 타입 수준에서 추적할 수 있는(typed) 타입이 부여된 RPC 계산법(typed RPC calculus)을 제안한다. 새롭게 설계된 위치 기반 타입 시스템(located type system)은 클라이언트-서버 모델을 위한 RPC 계산법의 이론적 토대를 마련한다.
+<br>
+(다음에 소개할 SCP2020 및 PPDP2021에 발표된 논문들에서는, 타입이 부여된 RPC 계산법이 다형적 위치(polymorphic locations)와 타입 기반 분할 컴파일(type-based slicing compilation)을 통해 확장될 것입니다.)
+</p>
+
+<p>
   With multi-tier programming languages, programmers can specify the locations of code to run in order to reduce development efforts for the web-based client-server model where programmers write client and server programs separately and test the multiple programs together. The RPC calculus, one of the foundations of those languages by Cooper and Wadler, has the feature of symmetric communication in programmer's writing arbitrarily deep nested client-server interactions. However, the existing research only considers dynamically typed locations. We propose a typed RPC calculus where locations are tracked in type-level. A new located type system paves the way for a theory of RPC calculi for the client-server model.
   <br>
 (In the following papers published in SCP2020 and PPDP2021, the typed RPC calculus will be enhanced with polymorphic locations and a type-based slicing compilation.)  
@@ -115,6 +150,16 @@ Journal of Functional Programming (JFP), Vol.29, pp.1-39, Cambridge University P
 	Environment for IoT</h3></a>
     Na-Yeon Bak and Byeong-Mo Chang, Kwanghoon Choi,
     Journal of Computer Languages, 60(100999) October 2020.
+
+    <p>
+  비주얼 블록 프로그래밍 언어는 사용자가 프로그램을 직접 작성하지 않고, 그래픽 블록을 드래그 앤 드롭하여 프로그램을 만들 수 있게 해준다. 이를 통해 프로그래밍에 익숙하지 않은 사용자도 쉽게 프로그램을 만들 수 있다. 기존 연구에서도 이러한 방식이 사물인터넷(IoT) 애플리케이션 개발에 적용되어 왔지만, 기존 도구들은 표현력, 확장성, 오류 방지 측면에서 한계를 가지고 있다.
+
+이 논문에서는 Smart Block이라는 비주얼 블록 언어와 프로그래밍 환경을 제안한다. 이는 SmartThings 홈 자동화를 위한 도구로, 표현력, 확장성, 오류 방지를 모두 지원하도록 설계되었다. 우리는 이 언어를 IoTa 계산법에 기반하여 설계했으며, 이 계산법은 이벤트-조건-행동(ECA) 규칙을 일반화한 IoT 자동화를 위한 핵심 계산 모델이다. 각 ECA 규칙은 "어떤 이벤트가 발생하고 조건이 만족되면, 특정 행동을 수행한다"는 구조를 가진다.
+
+Smart Block은 이러한 ECA 스타일의 IoT 애플리케이션 작성을 지원하며, Google Blockly(클라이언트 사이드 자바스크립트 라이브러리)를 활용해 구현되었다. 이 시스템은 SmartApp을 생성하기 전에 중복, 불일치, 순환 등의 오류를 사전에 점검해 신뢰성 있는 앱 개발을 도와준다.
+
+Smart Block은 SmartThings 공식 IDE에서 제공하는 SmartApp 중 56개 중 54개(96.4%)를 성공적으로 작성할 수 있음을 보여주었다. 또한, 33명을 대상으로 한 사용자 연구에서 이 접근 방식이 사용자에게 이해 가능하다는 것을 입증하였다.
+</p>
 
 <p>
 A visual block programming language allows users to make their own
@@ -153,6 +198,17 @@ understandable for users.
       <h3>A Lightweight Approach to Component-Level Exception Mechanism for Robust Android Apps</h3>
       Kwanghoon Choi, Byeong-Mo Chang, Computer Languages, Systems, and Structures, Vol.44, Part C, P.283-298, December 2015.
       
+      <p>
+      최근 연구들에 따르면, 안드로이드 프로그램은 **예상치 못한 예외(unexpected exceptions)**에 취약하다는 보고가 있다. 그 원인 중 하나는, 현재 안드로이드 플랫폼의 설계가 Java의 예외 처리 메커니즘에만 의존하고 있으며, 이는 안드로이드 프로그램의 컴포넌트 기반 구조를 인식하지 못한다는 점이다.
+
+      이 논문에서는 프로그래머가 보다 견고한 안드로이드 프로그램을 구축할 수 있도록 하기 위해 **컴포넌트 수준의 예외 처리 메커니즘(component-level exception mechanism)**을 제안한다. 이 메커니즘을 통해 각 컴포넌트 내에서 발생한 예외에 대해 **컴포넌트 내부 핸들러(intra-component handler)**를 정의해 복구할 수 있으며, 처리되지 않은 예외는 컴포넌트 활성화 흐름의 역방향을 따라 호출한 컴포넌트로 전파할 수 있다.
+
+      이론적으로는, 예외를 포함한 안드로이드 의미론(Android semantics)을 형식화하여 이 메커니즘의 견고성(robustness) 특성을 증명하였다. 실용적으로는, 기존 안드로이드 컴포넌트를 확장하는 도메인 특화 라이브러리(domain-specific library) 형태로 메커니즘을 구현하였다. 이 경량 접근 방식은 안드로이드 플랫폼 자체를 변경할 필요가 없다.
+
+      안드로이드 벤치마크 프로그램을 활용한 실험에서는, 해당 라이브러리가 기존이라면 비정상 종료되었을 여러 런타임 예외를 포착할 수 있음을 확인하였다. 또한 라이브러리 사용에 따른 성능 오버헤드도 매우 작다는 점을 측정하였다.
+
+      결론적으로, 본 연구는 안드로이드 프로그램을 예상치 못한 예외로부터 방어할 수 있는 새로운 메커니즘을 제안한다.  
+      </p>       
       <p>
 	Recent researches have reported that Android programs are vulnerable to unexpected exceptions. One reason is that the current design of Android platform solely depends on Java exception mechanism, which is unaware of the component-based structure of Android programs. This paper proposes a component-level exception mechanism for programmers to build robust Android programs with. With the mechanism, they can define an intra-component handler for each component to recover from exceptions, and they can propagate uncaught exceptions to caller component along the reverse of component activation flow. Theoretically, we have formalized an Android semantics with exceptions to prove the robustness property of the mechanism. In practice, we have implemented the mechanism with a domain-specific library that extends existing Android components. This lightweight approach does not demand the change of the Android platform. In our experiment with Android benchmark programs, the library is found to catch a number of runtime exceptions that would otherwise get the programs terminated abnormally. We also measure the overhead of using the library to show that it is very small. Our proposal is a new mechanism for defending Android programs from unexpected exceptions.
     </p>
