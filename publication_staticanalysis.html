@@ -21,6 +21,15 @@
       PPDP, 6 September 2021.
 
     <p>
+      다형적 RPC 계산법(polymorphic RPC calculus)은 프로그래머가 다형적 위치(polymorphic location) 구성 요소를 이용해 간결한 다중 계층(multitier) 프로그램을 작성할 수 있도록 해준다. 하지만 지금까지는 이를 실제로 구현한 사례가 없었다.
+
+      본 논문에서는 다형적 RPC 계산법에 기반한 실험적 프로그래밍 언어를 개발한다. 우리는 클라이언트(client)와 서버(server) 부분이 분리된 다형적 클라이언트-서버(CS) 계산법을 제안한다. 기존의 비타입(untyped) CS 계산법과 달리, 우리가 제안하는 계산법은 다형적 위치를 정적으로뿐만 아니라 동적으로도 해석할 수 있다.
+
+      또한, 우리는 다형적 RPC 계산법을 이 CS 계산법으로 타입 기반 분할 컴파일(type-based slicing compilation)하는 방식을 설계하고, 타입 및 의미론적 정당성(type and semantic correctness)을 증명하였다.
+
+      아울러, 실행에 불필요한 타입 정보를 제거하고, 실행 시 위치(location)는 유지하는 기법을 제안하며, 이를 통해 다형적 CS 계산법을 비타입 CS 계산법으로 변환하고, 그에 대한 의미론적 정당성도 입증하였다.
+    </p>
+    <p>
         The polymorphic RPC calculus allows programmers to write
         succinct multitier programs using polymorphic location
         constructs. However, until now it lacked an implementation. We
@@ -48,6 +57,16 @@
 
    Kwanghoon Choi, James Cheney, Simon Fowler, and Sam Lindley,
 Science of Computer Programming, Vol.197(102499), October 2020.
+
+<p>
+  RPC 계산법(RPC calculus)은 클라이언트-서버 모델을 위한 위치 함수(located function)를 작성할 수 있는 다중 계층(multi-tier) 프로그래밍 언어(예: Links)의 간단한 의미론적 기반이다. 이후, 타입이 부여된 RPC 계산법(typed RPC calculus)이 설계되어, 함수의 위치 정보를 타입으로 표현하고, 이를 기반으로 한 위치 타입 기반 분할 컴파일(location type-directed slicing compilation)을 수행할 수 있게 되었다.
+
+그러나 현재까지의 위치 사용은 단일형(monomorphic) 위치에 한정되어 있어, RPC 계산법 이론을 클라이언트-서버 모델에 실제로 적용하기 위해서는 이 한계를 극복해야 한다.
+
+본 논문에서는 프로그래머가 다형적 위치(polymorphic location) 구문을 사용하여 간결한 다중 계층 프로그램을 작성할 수 있도록 하는 다형적 RPC 계산법(polymorphic RPC calculus)을 제안한다. 이러한 다형적 다중 계층 프로그램은 기존의 분할 컴파일 기법에 적합한 위치 상수만 포함된 프로그램으로 자동 변환될 수 있다.
+
+우리는 다형적 RPC 계산법을 위한 타입 시스템을 정식화하고, 그 타입 안전성(type soundness)을 증명하였다. 또한, 모노모픽 변환(monomorphization translation)을 설계하고, 해당 변환에 대한 타입 및 의미론적 정당성도 함께 증명하였다.
+</p>
 <p>
   The RPC calculus is a simple semantic foundation for multi-tier
   programming languages such as Links in which located functions can
@@ -78,6 +97,17 @@ translation.
 Kwanghoon Choi, Byeong-Mo Chang,
 Journal of Functional Programming (JFP), Vol.29, pp.1-39, Cambridge University Press, March 2019.
 
+<p>
+  다중 계층 프로그래밍 언어(multi-tier programming languages)를 사용하면, 프로그래머는 코드가 실행될 위치(location)를 명시할 수 있어, 클라이언트와 서버 프로그램을 별도로 작성하고 이를 함께 테스트해야 하는 웹 기반 클라이언트-서버 모델에서의 개발 부담을 줄일 수 있다.
+
+Cooper와 Wadler가 제안한 RPC 계산법(RPC calculus)은 이러한 언어들의 이론적 기반 중 하나로, 대칭적 통신(symmetric communication)을 지원하며, 프로그래머가 임의로 깊게 중첩된 클라이언트-서버 상호작용을 작성할 수 있는 특징을 가진다.
+
+그러나 기존 연구들은 동적으로 타입이 부여된 위치(dynamically typed locations)만을 다루고 있다.
+
+이에 우리는 위치를 타입 수준에서 추적할 수 있는(typed) 타입이 부여된 RPC 계산법(typed RPC calculus)을 제안한다. 새롭게 설계된 위치 기반 타입 시스템(located type system)은 클라이언트-서버 모델을 위한 RPC 계산법의 이론적 토대를 마련한다.
+<br>
+(다음에 소개할 SCP2020 및 PPDP2021에 발표된 논문들에서는, 타입이 부여된 RPC 계산법이 다형적 위치(polymorphic locations)와 타입 기반 분할 컴파일(type-based slicing compilation)을 통해 확장될 것입니다.)
+</p>
 <p>
   With multi-tier programming languages, programmers can specify the locations of code to run in order to reduce development efforts for the web-based client-server model where programmers write client and server programs separately and test the multiple programs together. The RPC calculus, one of the foundations of those languages by Cooper and Wadler, has the feature of symmetric communication in programmer's writing arbitrarily deep nested client-server interactions. However, the existing research only considers dynamically typed locations. We propose a typed RPC calculus where locations are tracked in type-level. A new located type system paves the way for a theory of RPC calculi for the client-server model.
   <br>
@@ -144,6 +174,16 @@ binary code.
     Byeong-Mo Chang, Janine Cassandra Son, Kwanghoon Choi
       KSII Transactions on Internet and Information Systems, 14(6), June 2020.
       
+       <p>
+     SmartThings는 사용자들이 자신만의 애플리케이션인 SmartApp을 만들어 개인적으로 사용하거나 공개 배포할 수 있도록 지원하는 가장 인기 있는 오픈형 홈 자동화 IoT 플랫폼 중 하나이다. 이러한 개방성은 SmartApp의 품질에 대해 높은 기준을 요구하지만, 지금까지 이를 체계적으로 평가한 연구는 많지 않다.
+
+    소프트웨어 품질 관리의 일환으로, 코드 리뷰는 코딩 표준 위반을 감지하고 모범 사례가 준수되도록 확인하는 역할을 한다. 본 연구의 목적은 잘 알려진 Goal/Question/Metric(GQM) 방법론에 기반하여 체계적으로 설계된 품질 메트릭을 제안하고, 정적 분석을 활용한 자동 코드 리뷰를 통해 SmartApp의 품질을 평가하는 것이다.
+
+    먼저 우리는 GQM 방법론에 따라 정적 분석 규칙을 구성한 후, 이를 실제 SmartApp에 적용하여 분석 및 평가를 수행하였다. 공식적으로 배포된 105개의 SmartApp과 커뮤니티에서 제작된 74개의 SmartApp을 분석한 결과, 두 종류 모두에서 높은 비율의 위반 사례가 발견되었으며, 그 중 보안 관련 위반이 가장 많았다.
+
+    본 연구의 정적 분석 도구는 신뢰성, 유지보수성, 보안 측면의 위반 사항을 효과적으로 점검할 수 있으며, 자동 코드 리뷰 결과는 SmartApp에서 흔히 발생하는 위반 유형을 파악하는 데 도움을 준다. 
+    </p>
+
       <p>
 SmartThings is one of the most popular open platforms for home
 automation IoT solutions that allows users to create their own
@@ -209,6 +249,11 @@ management of Android Apps in the market. The proposed system can be combined wi
           <h3> A Type and Effect System for Activation Flow of Components in Android Programs</h3>
 	  Kwanghoon Choi, Byeong-Mo Chang, Information Processing Letters, 114(11):620-627, November 2014. (PDF)
       
+    <p>
+      이 논문은 안드로이드 프로그램에서 인텐트(Intent)를 통한 컴포넌트 간의 활성화 흐름(activation flow)을 분석하기 위한 타입 및 이펙트 시스템(type and effect system)을 제안한다. 활성화 흐름 정보는 안드로이드 프로그램에 대한 보안 정보 흐름 분석 등 모든 안드로이드 분석에 필수적이다.
+
+      우리는 먼저, 인텐트를 통한 컴포넌트 간 상호작용을 다룰 수 있는 경량화된 안드로이드/자바(Featherweight Android/Java)의 핵심에 대한 형식 의미론(formal semantics)을 설계하였다. 이 의미론을 기반으로, 컴포넌트 간의 활성화 흐름을 분석할 수 있는 타입 및 이펙트 시스템을 설계하고, 그 타당성(soundness)을 입증하였다.
+    </p>
 <p>
   This paper proposes a type and effect system for analyzing activation flow between components through
 intents in Android programs. The activation flow information is necessary for all Android analyses such as
@@ -227,8 +272,15 @@ the formal semantics, we design a type and effect system for analyzing activatio
       <h3>Typing Zinc Machine with Generalized Algebraic Data Types</h3>
       Kwanghoon Choi and Seog Park, IEICE Transactions on Information and Systems, Vol.E94-D, No.6, pp.1190-1200, June 2011. (PDF)
       
-<p>
-The Krivine-style evaluation mechanism is well-known in the implementation of higher-order functions, allowing to avoid some useless closure building. There have been a few type systems that can verify the safety of the mechanism. The incorporation of the proposed ideas into an existing compiler, however, would require significant changes in the type system of the compiler due to the use of some dedicated form of types and typing rules in the proposals. This limitation motivates us to propose an alternative light-weight Krivine typing mechanism that does not need to extend any existing type system significantly. This paper shows how GADTs (Generalized algebraic data types) can be used for typing a ZINC machine following the Krivine-style evaluation mechanism. This idea is new as far as we know. Some existing typed compilers like GHC (Glasgow Haskell compiler) already support GADTs; they can benefit from the Krivine-style evaluation mechanism in the operational semantics with no particular extension in their type systems for the safety. We show the GHC type checker allows to prove mechanically that ZINC instructions are well-typed, which highlights the effectiveness of GADTs.
+      <p>
+        Krivine 스타일의 계산 메커니즘은 고차 함수(higher-order function)의 구현에서 잘 알려진 방식으로, 불필요한 클로저 생성을 피할 수 있게 해준다. 이 메커니즘의 안전성을 검증할 수 있는 몇몇 타입 시스템이 존재하지만, 기존 컴파일러에 이러한 제안들을 통합하려면, 제안된 타입 시스템이 전용 타입 형태와 타이핑 규칙을 사용하기 때문에 기존 타입 시스템을 대폭 변경해야 하는 문제가 있다.
+
+        이러한 한계점을 해결하고자, 우리는 기존 타입 시스템을 크게 확장하지 않고도 적용할 수 있는 경량 Krivine 타이핑 메커니즘을 새롭게 제안한다. 본 논문은 Krivine 스타일 계산 메커니즘을 따르는 ZINC 머신에 대해 GADT(Generalized Algebraic Data Type)를 활용하여 타이핑하는 방법을 제시하며, 이는 현재까지 알려진 바로는 새로운 접근이다.
+
+        GHC(Glasgow Haskell Compiler)와 같은 일부 기존의 타입 기반 컴파일러는 이미 GADT를 지원하고 있으므로, 타입 시스템의 추가 확장 없이도 운영 의미론 수준에서 Krivine 스타일 계산 메커니즘의 이점을 활용할 수 있다. 우리는 GHC의 타입 체커가 ZINC 명령어들이 타입적으로 안전함(well-typed)을 기계적으로 증명할 수 있음을 보여주며, GADT의 효과성을 부각한다.
+      </p>
+      <p>
+      The Krivine-style evaluation mechanism is well-known in the implementation of higher-order functions, allowing to avoid some useless closure building. There have been a few type systems that can verify the safety of the mechanism. The incorporation of the proposed ideas into an existing compiler, however, would require significant changes in the type system of the compiler due to the use of some dedicated form of types and typing rules in the proposals. This limitation motivates us to propose an alternative light-weight Krivine typing mechanism that does not need to extend any existing type system significantly. This paper shows how GADTs (Generalized algebraic data types) can be used for typing a ZINC machine following the Krivine-style evaluation mechanism. This idea is new as far as we know. Some existing typed compilers like GHC (Glasgow Haskell compiler) already support GADTs; they can benefit from the Krivine-style evaluation mechanism in the operational semantics with no particular extension in their type systems for the safety. We show the GHC type checker allows to prove mechanically that ZINC instructions are well-typed, which highlights the effectiveness of GADTs.
       </p>
       
       <h4> Available in:
@@ -240,13 +292,16 @@ The Krivine-style evaluation mechanism is well-known in the implementation of hi
       <h3>A Type System for the Push-Enter Model</h3>
       Kwanghoon Choi and Taisook Han, Information Processing Letters, 87(4):205-211, August 31, 2003 (PDF)      
       
-<p>
-  In this paper, we first develop a simple compilation method based on
-the push-enter model.  The compilation method uses its own states to
-indicate dynamic argument status. We design generic types for the
-states, and we develop a type system on the basis of these generic
-types. We then demonstrate how the compilation method is done within
-our type system.
+      <p>
+        이 논문에서는 먼저 push-enter 모델에 기반한 간단한 컴파일 방법을 개발한다. 이 컴파일 방법은 동적 인자의 상태를 나타내기 위해 자체적인 상태(state)를 사용한다. 우리는 이 상태들을 위해 제네릭 타입(generic types)을 설계하고, 이러한 타입들에 기반하여 타입 시스템을 개발한다. 이후, 해당 타입 시스템 내에서 컴파일 방법이 어떻게 수행되는지를 보여준다.
+      </p>
+      <p>
+          In this paper, we first develop a simple compilation method based on
+        the push-enter model.  The compilation method uses its own states to
+        indicate dynamic argument status. We design generic types for the
+        states, and we develop a type system on the basis of these generic
+        types. We then demonstrate how the compilation method is done within
+        our type system.
       </p>
       
       <h4> Available in:

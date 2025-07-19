@@ -46,11 +46,7 @@ Our findings suggest that integrating LR parsing with LLM-based completion impro
 Md Monir Ahammod Bin Atique, Kwanghoon Choi, Isao Sasano and Hyeon-Ah Moon, Improving LLM-based Code Completion Using LR Parsing-Based Candidates (Work-in-progress), Symbolic Computation in Software Science (SCSS), Tokyo, Japan, August 28-30, 2024.
 
 <p>
-  Programmers often use syntax completion and code suggestion features. Our methodology enhances code completion by combining structural candidate information from LR parsing with LLMs. These structural candidates
-are utilized to compose prompts so that ChatGPT can predict actual code under the specified structure. Tested
-on Small Basic and C benchmarks, this approach offers textual suggestions rather than just structural ones,
-showing nearly 50% prediction accuracy for Small Basic programs. While effective for Small Basic, we report that
-challenges remain with C11 programs.
+  (See <a href="publication_ai.html#syntaxcompletion_llm_cola">Improving LLM-based Code Completion Using LR Parsing</a> for the full paper.)
 </P>
 
 <h4> Available in: <a href="https://ceur-ws.org/Vol-3754/paper01.pdf">PDF</a></h4>
@@ -59,6 +55,10 @@ challenges remain with C11 programs.
 
     <a name="syntaxcompletion_scp"> <h3> Ranked Syntax Completion Using LR Parsing</h3></a>
 Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano,  ACM/SIGAPP Symposium on Applied Computing, pp.1242-1251, Avila, Spain, April 8-12, 2024
+
+<p>
+이 논문은 프로그램 작성을 위한 문법 기반 텍스트 완성 기법을 새롭게 제안한다. 이 기법은 문법 구조 후보 목록을 생성하며, 각 후보에는 정렬된 순위 정보가 함께 제공된다. 현재까지 문법 구조 완성을 위한 기존 기법들 중 후보에 순위 정보를 포함한 방식은 없었다. 우리는 LR 파싱을 기반으로 두 가지 주요 알고리즘을 개발하였다. 하나는 후보를 수집하고 순위를 매기는 알고리즘이며, 다른 하나는 이를 질의하는 알고리즘이다. 이러한 알고리즘을 이용하여 SmallBasic 커뮤니티의 프로그램들과 오픈소스 C11 프로그램들로부터 순위가 매겨진 후보들을 수집하였다. 이후 Microsoft SmallBasic 튜토리얼 프로그램들과 Kernighan and Ritchie의 C 언어 교재 예제를 활용해 코드 자동완성에서 이 기법의 효과를 평가하였다. 실험 결과, 최상위 후보가 정답인 경우가 많았으며, 전체의 96% 이상에서 정답이 상위 10개 후보 안에 포함되었다. 이는 수집된 순위 정보가 초급 프로그래밍 작업에서 사용자에게 유용한 선택 기준이 될 수 있음을 보여준다. 또한 이 기법은 문법이 LR로 정의된 언어라면 어떤 프로그래밍 언어에도 적용 가능한 ‘언어-파라메트릭’ 특성을 가진다.
+</p>
 
 <p>
   This paper introduces a novel text-based syntax completion method that generates a sorted list of syntactic structure candidates for program writing. To date, no existing methods for syntax structure completion have offered candidates with accompanying rank information. We developed two key algorithms using LR parsing: one for collecting and ranking candidates, and another for querying them. With these algorithms, we gathered ranked candidates from SmallBasic programs in its community and from C11 programs in open-source software. We then assessed their effectiveness in code completion using Microsoft SmallBasic tutorial programs and the exercises from Kernighan and Ritchie's C programming language book. Our findings revealed that the top ranked candidate is frequently the correct choice. Furthermore, in over 96% of the cases, the correct completion is within the top 10 ranked candidates. This indicates the value of the collected rank information, assisting users in candidate selection during introductory programming tasks. Moreover, our method exhibits language-parametric characteristics; it can be applied to any programming language with syntax defined by an LR grammar.
@@ -70,6 +70,11 @@ Kwanghoon Choi, Sooyeon Hwang, Hyeonah Moon, Isao Sasano,  ACM/SIGAPP Symposium 
     <a name="syntaxcompletion_scp"> <h3> A text-based syntax completion method using LR parsing and Its Evaluation</h3></a>
 Isao Sasano, Kwanghoon Choi, Science of Computer Programming, Volume 228, June 2023.
 
+<p>
+  이 논문은 LR 파서를 활용한 텍스트 기반 문법 완성(syntax completion) 기법을 제안한다. 우리는 문장의 형태(sentential forms)에 기반하여 자동완성할 텍스트 후보의 형식을 형식적으로 정의하고, LR 파싱 과정에서의 축소(reduction)를 이용해 이러한 후보를 계산하는 기본 알고리즘을 설계하였다. 이는 대부분의 기존 기법들이 후보의 정의를 비형식적으로 제공하는 것과 다르며, LR 파서를 사용하는 기존 문법 변환 기반 방식들과 달리 복잡한 변환 작업 없이도 사용이 가능하다는 점에서 차별된다. 제안된 방식은 LR 파서를 수정하지 않고 그대로 사용할 수 있으며, 추가적인 부담 없이 문법 완성 시스템을 구축할 수 있도록 한다.
+
+실용적 적용을 위해, 우리는 정제된 후보 정의와 새로운 전략을 도입하여 기본 알고리즘을 확장하였다. 이 확장된 알고리즘은 기존 기법보다 현실적인 프로그래밍 언어 문법에 더 적합한 후보들을 계산할 수 있다. 구현은 Emacs 서버 상에서 이루어졌으며, Small Basic, C, Haskell 세 가지 실제 프로그래밍 언어로 평가하였다. 평가 결과, 전체 후보의 절반은 0.2초 이내에 계산되었고, 약 89.2%는 1초 이내에 계산되었으며, 나머지는 시간이 오래 걸렸다. 우리는 이러한 평가 결과를 논문에서 자세히 논의한다.
+</p>
 <p>
   This paper presents a text-based syntax completion method that uses
   an LR parser. We propose formal definitions of candidate text to be
@@ -105,19 +110,7 @@ Isao Sasano, Kwanghoon Choi, Science of Computer Programming, Volume 228, June 2
 Isao Sasano, Kwanghoon Choi, PEPM 2021, January 2021.
 
 <p>
-  This paper presents a text-based syntax completion method using an
-  LR parser. We propose formal definitions of candidate text to be
-  completed based on the sentential forms, and we design algorithms
-  for computing candidates through reductions in the LR parsing. This
-  is in contrast to the existing methods that have not clearly stated
-  what candidates they intend to produce. This is also different from
-  a transformation approach using an LR parser, which transforms the
-  grammar of the programming language, a burdensome task at this
-  moment. The advantage of our method is that LR parsers can be
-  adopted without modification, and a syntax completion system can be
-  built using them, without incurring efforts. We implemented the
-  algorithms as an Emacs server to demonstrate the feasibility of
-  their application.
+  (See <a href="publication_ai.html#syntaxcompletion_scp">Ranked Syntax Completion Using LR Parsing</a> for the full paper.)
 </P>
 
 <h4> Available in:
@@ -163,6 +156,13 @@ Byeong-Mo Chang, Kyung-Min Lee, Ga-Young Koh, Kwanghoon Choi,
         IET Software, Vol.16, No. 6, pp. 576-602, December 2022
 
 <p>
+  사물인터넷(IoT) 애플리케이션인 SmartApp은 SmartThings 클라우드에서 실행되는 이벤트 기반 프로그램이다. 사용자는 SmartApp의 동작을 이해하기 위해 특정 이벤트에 의해 어떤 실행 흐름이 발생하는지, 또는 왜 특정 동작이 수행되었는지 등의 질문을 가질 수 있다. 하지만 SmartApp이 클라우드에서 실행되기 때문에, 이벤트 기반 실행 흐름과 같은 내부 동작을 확인하는 것은 사용자에게 어려운 일이다.
+
+이 논문에서는 SmartProvenance라는 시스템을 제안한다. 이는 IoT 애플리케이션을 위한 프로비넌스(provenance) 시스템으로, 이벤트 흐름 그래프에 기반한 질의를 지원하는 GUI 환경을 제공한다. SmartApp의 이벤트 흐름 그래프는 이벤트에 의해 유발되는 모든 실행 흐름을 시각화하며, 이는 정적 프로그램 분석을 통해 생성된다. 해당 그래프는 GUI 상에서 동적으로 수집된 이벤트 및 동작 정보를 함께 시각화하여 질의에 활용할 수 있게 한다. 사용자는 이 그래프를 클릭하는 방식으로 손쉽게 프로비넌스를 질의할 수 있다.
+
+SmartProvenance에서 GUI 형태로 제공되는 이벤트 흐름 그래프를 통해 사용자는 SmartApp 내 가능한 모든 이벤트 흐름 경로를 확인할 수 있으며, 이러한 그래프 위의 프로비넌스 정보는 IoT 서비스 문맥에서 직관적으로 이해 가능하다. 따라서 사용자는 복잡한 과정을 거치지 않고도 자신이 궁금한 프로비넌스 정보를 쉽게 확인할 수 있다.
+</p>
+<p>
 Internet of things (IoT) applications called SmartApps are
 event-driven programs running on the SmartThings cloud. To understand
 the behaviour of SmartApps, users may have questions regarding which
@@ -198,6 +198,15 @@ users can answer provenance questions themselves without difficulty.
     Na-Yeon Bak and Byeong-Mo Chang, Kwanghoon Choi,
     Journal of Computer Languages, 60(100999) October 2020.
 
+<p>
+  비주얼 블록 프로그래밍 언어는 사용자가 프로그램을 직접 작성하지 않고, 그래픽 블록을 드래그 앤 드롭하여 프로그램을 만들 수 있게 해준다. 이를 통해 프로그래밍에 익숙하지 않은 사용자도 쉽게 프로그램을 만들 수 있다. 기존 연구에서도 이러한 방식이 사물인터넷(IoT) 애플리케이션 개발에 적용되어 왔지만, 기존 도구들은 표현력, 확장성, 오류 방지 측면에서 한계를 가지고 있다.
+
+이 논문에서는 Smart Block이라는 비주얼 블록 언어와 프로그래밍 환경을 제안한다. 이는 SmartThings 홈 자동화를 위한 도구로, 표현력, 확장성, 오류 방지를 모두 지원하도록 설계되었다. 우리는 이 언어를 IoTa 계산법에 기반하여 설계했으며, 이 계산법은 이벤트-조건-행동(ECA) 규칙을 일반화한 IoT 자동화를 위한 핵심 계산 모델이다. 각 ECA 규칙은 "어떤 이벤트가 발생하고 조건이 만족되면, 특정 행동을 수행한다"는 구조를 가진다.
+
+Smart Block은 이러한 ECA 스타일의 IoT 애플리케이션 작성을 지원하며, Google Blockly(클라이언트 사이드 자바스크립트 라이브러리)를 활용해 구현되었다. 이 시스템은 SmartApp을 생성하기 전에 중복, 불일치, 순환 등의 오류를 사전에 점검해 신뢰성 있는 앱 개발을 도와준다.
+
+Smart Block은 SmartThings 공식 IDE에서 제공하는 SmartApp 중 56개 중 54개(96.4%)를 성공적으로 작성할 수 있음을 보여주었다. 또한, 33명을 대상으로 한 사용자 연구에서 이 접근 방식이 사용자에게 이해 가능하다는 것을 입증하였다.
+</p>
 <p>
 A visual block programming language allows users to make their own
 programs by dragging and dropping graphic blocks rather than by
@@ -237,6 +246,15 @@ understandable for users.
     IET Software, 14(4), August 2020.
 
 <p>
+  SmartThings는 사물인터넷(IoT)을 위한 가장 널리 사용되는 스마트 홈 플랫폼 중 하나이다. SmartApps는 SmartThings 플랫폼에서 동작하는 IoT 애플리케이션으로, 가정 내 기기를 자동화할 수 있게 해준다. SmartApp은 이벤트 기반으로 동작하며, 장치 이벤트로부터 입력을 받고, 장치를 제어하는 출력을 발생시킨다.
+
+그러나 이러한 IoT 애플리케이션의 동작을 이해하는 것은 쉽지 않다. 이는 입력과 출력이 사용자에게 잘 보이지 않기 때문이다. 이러한 문제를 해결하기 위해, 본 논문에서는 IoT 애플리케이션을 IoT 서비스의 집합으로 시각화하는 접근을 제안한다. 저자들은 이벤트에서 액션으로 이어지는 흐름을 하나의 IoT 서비스로 간주하는 이벤트 흐름 기반 시각화 기법을 제안한다.
+
+저자들은 SmartVisual이라는 도구를 구현하여 SmartApp에 대해 정적 분석을 수행하고 이벤트 흐름 다이어그램을 생성하였다. 이 도구는 SmartApp의 정적 구조를 트리 모델로 보여주며, 이벤트 기반 특성과 관련된 소프트웨어 메트릭도 제공한다.
+
+이 도구는 SmartThings에서 제공한 64개의 SmartApp 샘플에 적용되었다. 각 SmartApp은 평균적으로 4개의 이벤트 흐름을 가지고 있었고, 가장 복잡한 SmartApp은 58개의 이벤트 흐름과 2개의 입력, 2개의 출력을 포함하고 있었다. 이벤트 흐름의 평균 길이는 1.43개의 메서드였다.
+</p>
+<p>
 SmartThings is one of the most widely used smart home platforms for
 the internet of things (IoT). SmartApps are IoT applications on the
 SmartThings platform that enables automation of home
@@ -268,27 +286,36 @@ length of the event flows was 1.43 methods.
     Byeong-Mo Chang, Janine Cassandra Son, Kwanghoon Choi
       KSII Transactions on Internet and Information Systems, 14(6), June 2020.
       
-      <p>
-SmartThings is one of the most popular open platforms for home
-automation IoT solutions that allows users to create their own
-applications called SmartApps for personal use or for public
-distribution. The nature of openness demands high standards on the
-quality of SmartApps, but there have been few studies that have
-evaluated this thoroughly yet. As part of software quality practice,
-code reviews are responsible for detecting violations of coding
-standards and ensuring that best practices are followed. The purpose
-of this research is to propose systematically designed quality metrics
-under the well-known Goal/Question/Metric methodology and to evaluate
-the quality of SmartApps through automatic code reviews using a static
-analysis. We first organize our static analysis rules by following the
-GQM methodology, and then we apply the rules to real-world SmartApps
-to analyze and evaluate them. A study of 105 officially published and
-74 community-created real-world SmartApps found a high ratio of
-violations in both types of SmartApps, and of all violations, security
-violations were most common. Our static analysis tool can effectively
-inspect reliability, maintainability, and security violations. The
-results of the automatic code review indicate the common violations
-among SmartApps.
+    <p>
+     SmartThings는 사용자들이 자신만의 애플리케이션인 SmartApp을 만들어 개인적으로 사용하거나 공개 배포할 수 있도록 지원하는 가장 인기 있는 오픈형 홈 자동화 IoT 플랫폼 중 하나이다. 이러한 개방성은 SmartApp의 품질에 대해 높은 기준을 요구하지만, 지금까지 이를 체계적으로 평가한 연구는 많지 않다.
+
+    소프트웨어 품질 관리의 일환으로, 코드 리뷰는 코딩 표준 위반을 감지하고 모범 사례가 준수되도록 확인하는 역할을 한다. 본 연구의 목적은 잘 알려진 Goal/Question/Metric(GQM) 방법론에 기반하여 체계적으로 설계된 품질 메트릭을 제안하고, 정적 분석을 활용한 자동 코드 리뷰를 통해 SmartApp의 품질을 평가하는 것이다.
+
+    먼저 우리는 GQM 방법론에 따라 정적 분석 규칙을 구성한 후, 이를 실제 SmartApp에 적용하여 분석 및 평가를 수행하였다. 공식적으로 배포된 105개의 SmartApp과 커뮤니티에서 제작된 74개의 SmartApp을 분석한 결과, 두 종류 모두에서 높은 비율의 위반 사례가 발견되었으며, 그 중 보안 관련 위반이 가장 많았다.
+
+    본 연구의 정적 분석 도구는 신뢰성, 유지보수성, 보안 측면의 위반 사항을 효과적으로 점검할 수 있으며, 자동 코드 리뷰 결과는 SmartApp에서 흔히 발생하는 위반 유형을 파악하는 데 도움을 준다. 
+    </p>
+    <p>
+        SmartThings is one of the most popular open platforms for home
+        automation IoT solutions that allows users to create their own
+        applications called SmartApps for personal use or for public
+        distribution. The nature of openness demands high standards on the
+        quality of SmartApps, but there have been few studies that have
+        evaluated this thoroughly yet. As part of software quality practice,
+        code reviews are responsible for detecting violations of coding
+        standards and ensuring that best practices are followed. The purpose
+        of this research is to propose systematically designed quality metrics
+        under the well-known Goal/Question/Metric methodology and to evaluate
+        the quality of SmartApps through automatic code reviews using a static
+        analysis. We first organize our static analysis rules by following the
+        GQM methodology, and then we apply the rules to real-world SmartApps
+        to analyze and evaluate them. A study of 105 officially published and
+        74 community-created real-world SmartApps found a high ratio of
+        violations in both types of SmartApps, and of all violations, security
+        violations were most common. Our static analysis tool can effectively
+        inspect reliability, maintainability, and security violations. The
+        results of the automatic code review indicate the common violations
+        among SmartApps.
       </p>
       
       <h4> Available in:
@@ -299,19 +326,33 @@ among SmartApps.
       
       <h3>A Practical Intent Fuzzing Tool for Robustness of Inter-Component Communication in Android Apps</h3>
 	Kwanghoon Choi, Myungpil Ko, Byeong-Mo Chang, KSII Transactions on Internet and Information Systems, Vol.12, Issue 9, pp.4248-4270, September 30, 2018.
-  <p>This research aims at a new practical Intent fuzzing tool for detecting Intent vulnerabilities
-of Android apps causing the robustness problem. We proposed two new ideas. First, we
-designed an Intent specification language to describe the structure of Intent, which makes our
-Intent fuzz testing tool flexible. Second, we proposed an automatic tally method classifying
-unique failures. With the two ideas, we implemented an Intent fuzz testing tool called Hwacha,
-and evaluated it with 50 commercial Android apps. Our tool offers an arbitrary combination of
-automatic and manual Intent generators with executors such as ADB and JUnit due to the use
-of the Intent specification language. The automatic tally method excluded almost 80% of
-duplicate failures in our experiment, reducing efforts of testers very much in review of failures.
-The tool uncovered more than 400 unique failures including what is unknown so far. We also
-measured execution time for Intent fuzz testing, which has been rarely reported before. Our
-tool is practical because the whole procedure of fuzz testing is fully automatic and the tool is
-applicable to the large number of Android apps with no human intervention.
+    <p>
+      본 연구는 안드로이드 앱의 견고성 문제를 유발하는 Intent 취약점을 탐지하기 위한 실용적인 Intent 퍼징(Fuzzing) 도구를 개발하는 것을 목표로 한다. 우리는 두 가지 새로운 아이디어를 제안하였다.
+
+      첫째, Intent의 구조를 기술할 수 있는 **Intent 명세 언어(Intent specification language)**를 설계하여 퍼징 도구의 유연성을 확보하였다.
+
+      둘째, 고유한 실패를 자동으로 분류할 수 있는 자동 분류(tally) 방법을 제안하였다.
+
+      이 두 가지 아이디어를 바탕으로 Hwacha라는 Intent 퍼징 도구를 구현하였고, 50개의 상용 안드로이드 앱을 대상으로 평가를 수행하였다. Intent 명세 언어를 활용함으로써 이 도구는 자동 및 수동 Intent 생성기와 ADB, JUnit과 같은 실행기를 자유롭게 조합할 수 있다.
+
+      실험 결과, 자동 분류 방법은 전체 실패 중 약 80%에 해당하는 중복 실패를 제거하여, 테스터가 실패를 검토하는 데 드는 노력을 크게 줄였다. 이 도구는 지금까지 알려지지 않은 사례를 포함하여 400개 이상의 고유한 실패를 발견하였다.
+
+      또한, 기존 연구에서는 거의 보고되지 않았던 Intent 퍼징 테스트의 실행 시간도 측정하였다. 전체 퍼징 테스트 과정이 완전 자동화되어 있으며, 사람의 개입 없이 다수의 안드로이드 앱에 적용 가능하다는 점에서 이 도구는 매우 실용적이다.
+    </p>
+      <p>
+            This research aims at a new practical Intent fuzzing tool for detecting Intent vulnerabilities
+        of Android apps causing the robustness problem. We proposed two new ideas. First, we
+        designed an Intent specification language to describe the structure of Intent, which makes our
+        Intent fuzz testing tool flexible. Second, we proposed an automatic tally method classifying
+        unique failures. With the two ideas, we implemented an Intent fuzz testing tool called Hwacha,
+        and evaluated it with 50 commercial Android apps. Our tool offers an arbitrary combination of
+        automatic and manual Intent generators with executors such as ADB and JUnit due to the use
+        of the Intent specification language. The automatic tally method excluded almost 80% of
+        duplicate failures in our experiment, reducing efforts of testers very much in review of failures.
+        The tool uncovered more than 400 unique failures including what is unknown so far. We also
+        measured execution time for Intent fuzz testing, which has been rarely reported before. Our
+        tool is practical because the whole procedure of fuzz testing is fully automatic and the tool is
+        applicable to the large number of Android apps with no human intervention.
     </p>
 
   <h4> Available in:
@@ -360,7 +401,18 @@ generated scenarios on the Android BLE emulator.
       Kwanghoon Choi, Byeong-Mo Chang, Computer Languages, Systems, and Structures, Vol.44, Part C, P.283-298, December 2015.
       
       <p>
-	Recent researches have reported that Android programs are vulnerable to unexpected exceptions. One reason is that the current design of Android platform solely depends on Java exception mechanism, which is unaware of the component-based structure of Android programs. This paper proposes a component-level exception mechanism for programmers to build robust Android programs with. With the mechanism, they can define an intra-component handler for each component to recover from exceptions, and they can propagate uncaught exceptions to caller component along the reverse of component activation flow. Theoretically, we have formalized an Android semantics with exceptions to prove the robustness property of the mechanism. In practice, we have implemented the mechanism with a domain-specific library that extends existing Android components. This lightweight approach does not demand the change of the Android platform. In our experiment with Android benchmark programs, the library is found to catch a number of runtime exceptions that would otherwise get the programs terminated abnormally. We also measure the overhead of using the library to show that it is very small. Our proposal is a new mechanism for defending Android programs from unexpected exceptions.
+      최근 연구들에 따르면, 안드로이드 프로그램은 **예상치 못한 예외(unexpected exceptions)**에 취약하다는 보고가 있다. 그 원인 중 하나는, 현재 안드로이드 플랫폼의 설계가 Java의 예외 처리 메커니즘에만 의존하고 있으며, 이는 안드로이드 프로그램의 컴포넌트 기반 구조를 인식하지 못한다는 점이다.
+
+      이 논문에서는 프로그래머가 보다 견고한 안드로이드 프로그램을 구축할 수 있도록 하기 위해 **컴포넌트 수준의 예외 처리 메커니즘(component-level exception mechanism)**을 제안한다. 이 메커니즘을 통해 각 컴포넌트 내에서 발생한 예외에 대해 **컴포넌트 내부 핸들러(intra-component handler)**를 정의해 복구할 수 있으며, 처리되지 않은 예외는 컴포넌트 활성화 흐름의 역방향을 따라 호출한 컴포넌트로 전파할 수 있다.
+
+      이론적으로는, 예외를 포함한 안드로이드 의미론(Android semantics)을 형식화하여 이 메커니즘의 견고성(robustness) 특성을 증명하였다. 실용적으로는, 기존 안드로이드 컴포넌트를 확장하는 도메인 특화 라이브러리(domain-specific library) 형태로 메커니즘을 구현하였다. 이 경량 접근 방식은 안드로이드 플랫폼 자체를 변경할 필요가 없다.
+
+      안드로이드 벤치마크 프로그램을 활용한 실험에서는, 해당 라이브러리가 기존이라면 비정상 종료되었을 여러 런타임 예외를 포착할 수 있음을 확인하였다. 또한 라이브러리 사용에 따른 성능 오버헤드도 매우 작다는 점을 측정하였다.
+
+      결론적으로, 본 연구는 안드로이드 프로그램을 예상치 못한 예외로부터 방어할 수 있는 새로운 메커니즘을 제안한다.  
+      </p>
+      <p>
+        Recent researches have reported that Android programs are vulnerable to unexpected exceptions. One reason is that the current design of Android platform solely depends on Java exception mechanism, which is unaware of the component-based structure of Android programs. This paper proposes a component-level exception mechanism for programmers to build robust Android programs with. With the mechanism, they can define an intra-component handler for each component to recover from exceptions, and they can propagate uncaught exceptions to caller component along the reverse of component activation flow. Theoretically, we have formalized an Android semantics with exceptions to prove the robustness property of the mechanism. In practice, we have implemented the mechanism with a domain-specific library that extends existing Android components. This lightweight approach does not demand the change of the Android platform. In our experiment with Android benchmark programs, the library is found to catch a number of runtime exceptions that would otherwise get the programs terminated abnormally. We also measure the overhead of using the library to show that it is very small. Our proposal is a new mechanism for defending Android programs from unexpected exceptions.
     </p>
 
   <h4> Available in:
