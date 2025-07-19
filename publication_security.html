@@ -173,6 +173,15 @@ binary code.
     Byeong-Mo Chang, Janine Cassandra Son, Kwanghoon Choi
       KSII Transactions on Internet and Information Systems, 14(6), June 2020.
       
+          <p>
+     SmartThings는 사용자들이 자신만의 애플리케이션인 SmartApp을 만들어 개인적으로 사용하거나 공개 배포할 수 있도록 지원하는 가장 인기 있는 오픈형 홈 자동화 IoT 플랫폼 중 하나이다. 이러한 개방성은 SmartApp의 품질에 대해 높은 기준을 요구하지만, 지금까지 이를 체계적으로 평가한 연구는 많지 않다.
+
+    소프트웨어 품질 관리의 일환으로, 코드 리뷰는 코딩 표준 위반을 감지하고 모범 사례가 준수되도록 확인하는 역할을 한다. 본 연구의 목적은 잘 알려진 Goal/Question/Metric(GQM) 방법론에 기반하여 체계적으로 설계된 품질 메트릭을 제안하고, 정적 분석을 활용한 자동 코드 리뷰를 통해 SmartApp의 품질을 평가하는 것이다.
+
+    먼저 우리는 GQM 방법론에 따라 정적 분석 규칙을 구성한 후, 이를 실제 SmartApp에 적용하여 분석 및 평가를 수행하였다. 공식적으로 배포된 105개의 SmartApp과 커뮤니티에서 제작된 74개의 SmartApp을 분석한 결과, 두 종류 모두에서 높은 비율의 위반 사례가 발견되었으며, 그 중 보안 관련 위반이 가장 많았다.
+
+    본 연구의 정적 분석 도구는 신뢰성, 유지보수성, 보안 측면의 위반 사항을 효과적으로 점검할 수 있으며, 자동 코드 리뷰 결과는 SmartApp에서 흔히 발생하는 위반 유형을 파악하는 데 도움을 준다. 
+    </p>
       <p>
 SmartThings is one of the most popular open platforms for home
 automation IoT solutions that allows users to create their own
@@ -204,6 +213,21 @@ among SmartApps.
       
       <h3>A Practical Intent Fuzzing Tool for Robustness of Inter-Component Communication in Android Apps</h3>
 	Kwanghoon Choi, Myungpil Ko, Byeong-Mo Chang, KSII Transactions on Internet and Information Systems, Vol.12, Issue 9, pp.4248-4270, September 30, 2018.
+
+    <p>
+      본 연구는 안드로이드 앱의 견고성 문제를 유발하는 Intent 취약점을 탐지하기 위한 실용적인 Intent 퍼징(Fuzzing) 도구를 개발하는 것을 목표로 한다. 우리는 두 가지 새로운 아이디어를 제안하였다.
+
+      첫째, Intent의 구조를 기술할 수 있는 **Intent 명세 언어(Intent specification language)**를 설계하여 퍼징 도구의 유연성을 확보하였다.
+
+      둘째, 고유한 실패를 자동으로 분류할 수 있는 자동 분류(tally) 방법을 제안하였다.
+
+      이 두 가지 아이디어를 바탕으로 Hwacha라는 Intent 퍼징 도구를 구현하였고, 50개의 상용 안드로이드 앱을 대상으로 평가를 수행하였다. Intent 명세 언어를 활용함으로써 이 도구는 자동 및 수동 Intent 생성기와 ADB, JUnit과 같은 실행기를 자유롭게 조합할 수 있다.
+
+      실험 결과, 자동 분류 방법은 전체 실패 중 약 80%에 해당하는 중복 실패를 제거하여, 테스터가 실패를 검토하는 데 드는 노력을 크게 줄였다. 이 도구는 지금까지 알려지지 않은 사례를 포함하여 400개 이상의 고유한 실패를 발견하였다.
+
+      또한, 기존 연구에서는 거의 보고되지 않았던 Intent 퍼징 테스트의 실행 시간도 측정하였다. 전체 퍼징 테스트 과정이 완전 자동화되어 있으며, 사람의 개입 없이 다수의 안드로이드 앱에 적용 가능하다는 점에서 이 도구는 매우 실용적이다.
+    </p>
+
   <p>This research aims at a new practical Intent fuzzing tool for detecting Intent vulnerabilities
 of Android apps causing the robustness problem. We proposed two new ideas. First, we
 designed an Intent specification language to describe the structure of Intent, which makes our
@@ -264,6 +288,17 @@ generated scenarios on the Android BLE emulator.
       <h3>A Lightweight Approach to Component-Level Exception Mechanism for Robust Android Apps</h3>
       Kwanghoon Choi, Byeong-Mo Chang, Computer Languages, Systems, and Structures, Vol.44, Part C, P.283-298, December 2015.
       
+      <p>
+      최근 연구들에 따르면, 안드로이드 프로그램은 **예상치 못한 예외(unexpected exceptions)**에 취약하다는 보고가 있다. 그 원인 중 하나는, 현재 안드로이드 플랫폼의 설계가 Java의 예외 처리 메커니즘에만 의존하고 있으며, 이는 안드로이드 프로그램의 컴포넌트 기반 구조를 인식하지 못한다는 점이다.
+
+      이 논문에서는 프로그래머가 보다 견고한 안드로이드 프로그램을 구축할 수 있도록 하기 위해 **컴포넌트 수준의 예외 처리 메커니즘(component-level exception mechanism)**을 제안한다. 이 메커니즘을 통해 각 컴포넌트 내에서 발생한 예외에 대해 **컴포넌트 내부 핸들러(intra-component handler)**를 정의해 복구할 수 있으며, 처리되지 않은 예외는 컴포넌트 활성화 흐름의 역방향을 따라 호출한 컴포넌트로 전파할 수 있다.
+
+      이론적으로는, 예외를 포함한 안드로이드 의미론(Android semantics)을 형식화하여 이 메커니즘의 견고성(robustness) 특성을 증명하였다. 실용적으로는, 기존 안드로이드 컴포넌트를 확장하는 도메인 특화 라이브러리(domain-specific library) 형태로 메커니즘을 구현하였다. 이 경량 접근 방식은 안드로이드 플랫폼 자체를 변경할 필요가 없다.
+
+      안드로이드 벤치마크 프로그램을 활용한 실험에서는, 해당 라이브러리가 기존이라면 비정상 종료되었을 여러 런타임 예외를 포착할 수 있음을 확인하였다. 또한 라이브러리 사용에 따른 성능 오버헤드도 매우 작다는 점을 측정하였다.
+
+      결론적으로, 본 연구는 안드로이드 프로그램을 예상치 못한 예외로부터 방어할 수 있는 새로운 메커니즘을 제안한다.  
+      </p>      
       <p>
 	Recent researches have reported that Android programs are vulnerable to unexpected exceptions. One reason is that the current design of Android platform solely depends on Java exception mechanism, which is unaware of the component-based structure of Android programs. This paper proposes a component-level exception mechanism for programmers to build robust Android programs with. With the mechanism, they can define an intra-component handler for each component to recover from exceptions, and they can propagate uncaught exceptions to caller component along the reverse of component activation flow. Theoretically, we have formalized an Android semantics with exceptions to prove the robustness property of the mechanism. In practice, we have implemented the mechanism with a domain-specific library that extends existing Android components. This lightweight approach does not demand the change of the Android platform. In our experiment with Android benchmark programs, the library is found to catch a number of runtime exceptions that would otherwise get the programs terminated abnormally. We also measure the overhead of using the library to show that it is very small. Our proposal is a new mechanism for defending Android programs from unexpected exceptions.
     </p>
