@@ -15,8 +15,55 @@
 
 <hr>
 
+<a name="llm_vulnerability_checklist"> <h3>최주언, 차건진, 김미수, 엄익채, 최광훈, 
+LLM으로 침해사고 보고서와 취약점 점검 목록을
+분석하여 사고 연관 점검 항목을 선별하는 방법
+(A Method for Selecting Security Checklist Items
+Associated with Incidents by Analyzing Security Incident
+Reports and Vulnerability Checklists Using LLM), 
+WISA 2025 포스터 발표, 제주, 8월20일-8월22일.</h3></a>
+      <p> IT 시스템 보안을 위해 취약점 점검 항목을 기반으로 주기적인
+분석과 테스트를 수행하는 방식이 활용된다. 이 접근이 효과적이기
+위해서는 실제 공격 방식과 연관된 항목이 포함되어야 하며, 이에 대한
+평가가 필요하다. 기존에는 모의 침투 테스트나 점검 통계를 활용해
+왔지만, 인력 비용과 도구의 한계라는 문제가 있다. 본 연구에서는
+대형언어모델(LLM)을 활용해 침해사고 보고서와 취약점 점검 목록을
+분석하고, 사고와 관련된 점검 항목을 자동으로 선별하는 방법을
+제안한다. 이 방식은 도구 의존성을 줄이고 자동화가 가능하며, 점검
+항목의 우선순위 평가에 기초 자료로 활용될 수 있다. 실증을 위해 국내
+정보보안 업체가 작성한 187건의 침해사고 보고서를
+한국인터넷진흥원의 347개 세부 항목 기준으로 분석하고, 보고된 공격과
+항목 간 관련성을 1~5단계로 평가하는 시스템을 구현하였다. 그 결과,
+특정 보안 분야에 공격이 집중되었고, 반복적으로 등장한 항목을
+기반으로 현장에서 우선 관리할 취약점을 데이터 기반으로 도출할 수
+있음을 확인하였다.
+      </p>
+      <p>
+        Periodic analysis and testing based on vulnerability checklists are
+widely used to enhance IT system security. For this approach to be effective, the
+checklist must include items closely related to actual attack techniques, and a
+systematic evaluation of their relevance is required. Traditional methods such as
+penetration testing and statistical analysis of assessment results have been used,
+but these approaches face challenges such as high personnel costs and the 
+limitations of automated tools. This study proposes a method that leverages large
+language models (LLMs) to analyze security incident reports and vulnerability
+checklists, enabling the automatic identification of checklist items associated
+with real-world incidents. This approach reduces tool dependency, enables automation, 
+and provides a data-driven foundation for prioritizing security checklist
+items. For validation, we analyzed 187 security incident reports produced by do-
+mestic security firms, evaluating their relevance to 347 detailed checklist items
+from the Korea Internet & Security Agency (KISA) on a five-point scale. The
+results revealed that certain security domains are repeatedly targeted, and that
+incident-prioritized vulnerabilities can be systematically identified based on fre
+quently recurring items in the data.
+      </p>
+	  <h4> Available in: 
+	  </h4>
+
+<hr>
+
 <a name="syntaxcompletion_llm_cola"> <h3> Improving LLM-based Code Completion Using LR Parsing</h3></a>
-Md Monir Ahammod Bin Atique, Hyeon-Ah Moon, Isao Sasano and Kwanghoon Choi, Journal of Computer Languages, July 18, 2025.
+Md Monir Ahammod Bin Atique, Hyeon-Ah Moon, Isao Sasano and Kwanghoon Choi, Journal of Computer Languages, July 18, 2025, doi: 10.1016/j.cola.2025.101352.
 
 <p>
   코드 자동 완성은 현대 IDE에서 프로그래밍 효율성을 높이는 핵심 기능입니다. 기존 방식은 접두어 기반 필터링과 정적 순위에 의존하지만, 알파벳 순의 긴 목록을 제시해 사용자에게 부담을 줍니다. 최근에는 LR 파싱 기반 방법이 제안되어 언어 문법을 바탕으로 후보를 생성하고, 오픈소스 프로그램 데이터를 활용해 순위를 계산하지만, 이는 구조적인 후보만 제시하며 실제 코드로의 수동 보완이 필요합니다.
@@ -39,7 +86,8 @@ We also demonstrate our method through VSCode extensions for Microsoft Small Bas
 Our findings suggest that integrating LR parsing with LLM-based completion improves both accuracy and usability, paving the way for more effective code completion in modern IDEs.
 </P>
 
-<h4> Accpeted for publication </h4>
+<h4> Available in 
+      <a href="https://doi.org/10.1016/j.cola.2025.101352">LINK</a> </h4>
 
 <hr>
 
