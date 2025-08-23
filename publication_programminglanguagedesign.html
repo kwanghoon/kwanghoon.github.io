@@ -14,6 +14,38 @@
 <h1> Programming Language Design </h1>
 <hr>
     
+    <a name="rechtml"> <h3>naMultitier Actor Programming Language</h3></a>
+    Hyeon-Jin Lee, SPLASH Student Research Competition, Singapore, October 16, 2025.
+    
+    <p>
+      액터 모델은 메시지 전달을 위한 강력한 추상화를 제공하지만, 
+      통신의 일관성을 보장하지 못하고 액터를 고립적으로 작성하도록 강제한다. 
+      반면, RPC 계산 기반의 멀티티어 프로그래밍은 원격 호출을 통해 정합성을 보장하고 
+      전역적 프로그래밍 관점을 가능하게 한다. 우리는 전통적인 액터 모델을 위치 투명한 
+      RPC 추상화와 통합하는 멀티티어 액터 언어를 제안한다. 각 액터는 하나의 위치로 취급되어 
+      원격 변수 접근과 함수 호출을 지원한다. Cloud Haskell 기반 프로토타입 인터프리터가 
+      실행 가능한 의미론을 제공하며, 네 가지 벤치마크와 하나의 암호 프로토콜을 통해 검증되었다.
+    </p>
+
+      <p>
+         The actor model offers a powerful abstraction for message
+ passing but lacks a guarantee of communication consistency
+ and forces actors to be written in isolation. By contrast, mul
+titier programming with RPC calculi ensures correctness
+ through remote calls and enables a global programming per
+spective. We propose a multitier actor language unifying the
+ classic actor model with location-transparent RPC abstrac
+tions. Each actor is treated as a location, supporting remote
+ variable access and function calls. A Cloud Haskell prototype
+ interpreter serves as its executable semantics, validated by
+ four benchmarks and a cryptographic protocol.
+      </p>
+      
+      <h4>Available in: <a href="https://docs.google.com/presentation/d/1UYKPNxpSdFOO2i2CBI3z9lsEEBddGvY2LFlhEtHPpDU/edit?usp=sharing">SIGPL 여름학교 2025 발표</a></h4>
+
+
+<hr>
+    
     <a name="rechtml"> <h3>RecHTML: A Typed Declarative HTML</h3></a>
     Bob Reynder, Kwanghoon Choi, ProWeb21, March 2021.
     
