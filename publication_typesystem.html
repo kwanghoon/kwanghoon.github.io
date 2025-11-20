@@ -1,0 +1,239 @@
+
+<html> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<head> 
+<TITLE>Publication</TITLE> 
+<base href="https://kwanghoon.github.io"> 
+</head> 
+ 
+<body > 
+
+
+<div id="topic_typesystem"></div>
+
+<h1> Type Systems for Programming Languages, Compilation, and Security </h1>
+
+
+<hr>
+
+    <a name="typedslicingcomilation"> 
+    <h3>A typed slicing compilation of the polymorphic RPC calculus</h3> </a>
+      Kwanghoon Choi, James Cheney, Sam Lindley, Bob Reynders, 
+      PPDP, 6 September 2021.
+
+      <p>
+      다형적 RPC 계산법(polymorphic RPC calculus)은 프로그래머가 다형적 위치(polymorphic location) 구성 요소를 이용해 간결한 다중 계층(multitier) 프로그램을 작성할 수 있도록 해준다. 하지만 지금까지는 이를 실제로 구현한 사례가 없었다.
+
+      본 논문에서는 다형적 RPC 계산법에 기반한 실험적 프로그래밍 언어를 개발한다. 우리는 클라이언트(client)와 서버(server) 부분이 분리된 다형적 클라이언트-서버(CS) 계산법을 제안한다. 기존의 비타입(untyped) CS 계산법과 달리, 우리가 제안하는 계산법은 다형적 위치를 정적으로뿐만 아니라 동적으로도 해석할 수 있다.
+
+      또한, 우리는 다형적 RPC 계산법을 이 CS 계산법으로 타입 기반 분할 컴파일(type-based slicing compilation)하는 방식을 설계하고, 타입 및 의미론적 정당성(type and semantic correctness)을 증명하였다.
+
+      아울러, 실행에 불필요한 타입 정보를 제거하고, 실행 시 위치(location)는 유지하는 기법을 제안하며, 이를 통해 다형적 CS 계산법을 비타입 CS 계산법으로 변환하고, 그에 대한 의미론적 정당성도 입증하였다.
+    </p>
+
+    <p>
+        The polymorphic RPC calculus allows programmers to write
+        succinct multitier programs using polymorphic location
+        constructs. However, until now it lacked an implementation. We
+        develop an experimental programming language based on the
+        polymorphic RPC calculus. We introduce a polymorphic
+        Client-Server (CS) calculus with the client and server parts
+        separated. In contrast to existing untyped CS calculi, our
+        calculus is not only able to resolve polymorphic locations
+        statically, but it is also able to do so dynamically. We
+        design a type-based slicing compilation of the polymorphic RPC
+        calculus into this CS calculus, proving type and semantic
+        correctness. We propose a method to erase types unnecessary
+        for execution but retaining locations at runtime by
+        translating the polymorphic CS calculus into an untyped CS
+        calculus, proving semantic correctness.
+      </p>
+
+    <h4>Available in:
+      <a href="https://doi.org/10.1145/3479394.3479406">DOI</a>,
+      <a href="https://arxiv.org/abs/2107.10793">ArXiv</a></h4>
+
+<hr>
+<a name="polymorphicrpccalculus">
+  <h3>A Polymorphic RPC Calculus</h3> </a>
+
+   Kwanghoon Choi, James Cheney, Simon Fowler, and Sam Lindley,
+Science of Computer Programming, Vol.197(102499), October 2020.
+<p>
+  RPC 계산법(RPC calculus)은 클라이언트-서버 모델을 위한 위치 함수(located function)를 작성할 수 있는 다중 계층(multi-tier) 프로그래밍 언어(예: Links)의 간단한 의미론적 기반이다. 이후, 타입이 부여된 RPC 계산법(typed RPC calculus)이 설계되어, 함수의 위치 정보를 타입으로 표현하고, 이를 기반으로 한 위치 타입 기반 분할 컴파일(location type-directed slicing compilation)을 수행할 수 있게 되었다.
+
+그러나 현재까지의 위치 사용은 단일형(monomorphic) 위치에 한정되어 있어, RPC 계산법 이론을 클라이언트-서버 모델에 실제로 적용하기 위해서는 이 한계를 극복해야 한다.
+
+본 논문에서는 프로그래머가 다형적 위치(polymorphic location) 구문을 사용하여 간결한 다중 계층 프로그램을 작성할 수 있도록 하는 다형적 RPC 계산법(polymorphic RPC calculus)을 제안한다. 이러한 다형적 다중 계층 프로그램은 기존의 분할 컴파일 기법에 적합한 위치 상수만 포함된 프로그램으로 자동 변환될 수 있다.
+
+우리는 다형적 RPC 계산법을 위한 타입 시스템을 정식화하고, 그 타입 안전성(type soundness)을 증명하였다. 또한, 모노모픽 변환(monomorphization translation)을 설계하고, 해당 변환에 대한 타입 및 의미론적 정당성도 함께 증명하였다.
+</p>
+<p>
+  The RPC calculus is a simple semantic foundation for multi-tier
+  programming languages such as Links in which located functions can
+  be written for the client-server model. Subsequently, the typed RPC
+  calculus is designed to capture the location information of
+  functions by types and to drive location type-directed slicing
+  compilations. However, the use of locations is currently limited to
+  monomorphic ones, which is one of the gaps to overcome to put into
+  practice the theory of RPC calculi for client-server model.
+  This paper proposes a polymorphic RPC calculus to allow programmers
+to write succinct multi-tier programs using polymorphic location
+constructs. Then the polymorphic multi-tier programs can be
+automatically translated into programs only containing location
+constants amenable to the existing slicing compilation methods. We
+formulate a type system for the polymorphic RPC calculus, and prove
+its type soundness. Also, we design a monomorphization translation
+together with proofs on its type and semantic correctness for the
+translation.
+</p>
+
+<h4> Available in:
+  <a href="https://www.sciencedirect.com/science/article/pii/S0167642320301088">LINK</a>
+  <a href="https://arxiv.org/abs/1910.10988">arXiv</a>  </h4>
+
+<hr>
+    
+<a name="typedrpccalculus"><h3>A theory of RPC calculi for client-server model</h3></a>
+Kwanghoon Choi, Byeong-Mo Chang,
+Journal of Functional Programming (JFP), Vol.29, pp.1-39, Cambridge University Press, March 2019.
+
+<p>
+  다중 계층 프로그래밍 언어(multi-tier programming languages)를 사용하면, 프로그래머는 코드가 실행될 위치(location)를 명시할 수 있어, 클라이언트와 서버 프로그램을 별도로 작성하고 이를 함께 테스트해야 하는 웹 기반 클라이언트-서버 모델에서의 개발 부담을 줄일 수 있다.
+
+Cooper와 Wadler가 제안한 RPC 계산법(RPC calculus)은 이러한 언어들의 이론적 기반 중 하나로, 대칭적 통신(symmetric communication)을 지원하며, 프로그래머가 임의로 깊게 중첩된 클라이언트-서버 상호작용을 작성할 수 있는 특징을 가진다.
+
+그러나 기존 연구들은 동적으로 타입이 부여된 위치(dynamically typed locations)만을 다루고 있다.
+
+이에 우리는 위치를 타입 수준에서 추적할 수 있는(typed) 타입이 부여된 RPC 계산법(typed RPC calculus)을 제안한다. 새롭게 설계된 위치 기반 타입 시스템(located type system)은 클라이언트-서버 모델을 위한 RPC 계산법의 이론적 토대를 마련한다.
+<br>
+(다음에 소개할 SCP2020 및 PPDP2021에 발표된 논문들에서는, 타입이 부여된 RPC 계산법이 다형적 위치(polymorphic locations)와 타입 기반 분할 컴파일(type-based slicing compilation)을 통해 확장될 것입니다.)
+</p>
+
+<p>
+  With multi-tier programming languages, programmers can specify the locations of code to run in order to reduce development efforts for the web-based client-server model where programmers write client and server programs separately and test the multiple programs together. The RPC calculus, one of the foundations of those languages by Cooper and Wadler, has the feature of symmetric communication in programmer's writing arbitrarily deep nested client-server interactions. However, the existing research only considers dynamically typed locations. We propose a typed RPC calculus where locations are tracked in type-level. A new located type system paves the way for a theory of RPC calculi for the client-server model.
+  <br>
+(In the following papers published in SCP2020 and PPDP2021, the typed RPC calculus will be enhanced with polymorphic locations and a type-based slicing compilation.)  
+</p>
+
+<h4> Available in:
+  <a href="https://arxiv.org/abs/2110.15183">ArXiv</a>,
+  <a href="https://www.cambridge.org/core/journals/journal-of-functional-programming/article/theory-of-rpc-calculi-for-clientserver-model/15DC9096F78E604ABD5F34A96F277EFE">LINK</a>
+</h4>  
+
+<hr>
+<a name="typingzincwithgadt"><h3>Typing Zinc Machine with Generalized Algebraic Data Types (Keywords: Algebraic data types)</h3></a>
+Kwanghoon Choi,  Seog Park,
+IEICE Transactions on Information and Systems, Vol.E94-D, No.6, pp.1190-1200, June 2011.
+
+<p>
+  Krivine 스타일의 평가 메커니즘은 고차 함수를 구현할 때 잘 알려진 기법으로, 불필요한 클로저 생성을 피할 수 있게 해준다. 
+  이 메커니즘의 안전성을 검증할 수 있는 몇 가지 타입 시스템이 제안된 바 있다. 그러나 이러한 제안들을 기존 컴파일러에 통합하려면, 
+  제안들에서 사용되는 전용 형태의 타입과 타입 규칙 때문에 컴파일러의 타입 시스템에 상당한 변화를 가해야 한다. 이 한계점이, 
+  기존 타입 시스템을 크게 확장할 필요가 없는 또 다른 경량 Krivine 타입 메커니즘을 제안하게 된 동기가 된다.
+
+본 논문은 Krivine 스타일 평가 메커니즘을 따르는 ZINC 머신에 대해, GADT(Generalized Algebraic Data Type, 일반화 대수적 데이터 타입)를 
+이용해 타입을 부여하는 방법을 보인다. 우리가 아는 한, 이러한 아이디어는 새롭다. GADT를 이미 지원하는 GHC(Glasgow Haskell Compiler)와 
+같은 기존의 타입드(typed) 컴파일러들은, 안전성을 위해 타입 시스템에 별도의 확장을 도입하지 않고도, 
+운영 의미론에서 Krivine 스타일 평가 메커니즘의 이점을 활용할 수 있다. 우리는 GHC 타입 체커가 ZINC 명령어들이 
+잘 형식(well-typed)임을 기계적으로 증명할 수 있음을 보이며, 이를 통해 GADT의 효율성을 부각한다.
+</p>
+
+<p>
+ The Krivine-style evaluation mechanism is well-known in the implementation of higher-order functions, 
+ allowing to avoid some useless closure building. There have been a few type systems that can verify 
+ the safety of the mechanism. The incorporation of the proposed ideas into an existing compiler, however,
+  would require significant changes in the type system of the compiler due to the use of some dedicated form 
+  of types and typing rules in the proposals. This limitation motivates us to propose an alternative 
+  light-weight Krivine typing mechanism that does not need to extend any existing type system significantly. 
+  This paper shows how GADTs (Generalized algebraic data types) can be used for typing a ZINC machine 
+  following the Krivine-style evaluation mechanism. This idea is new as far as we know. Some existing typed 
+  compilers like GHC (Glasgow Haskell compiler) already support GADTs; they can benefit from the Krivine-style 
+  evaluation mechanism in the operational semantics with no particular extension in their type systems for the 
+  safety. We show the GHC type checker allows to prove mechanically that ZINC instructions are well-typed, 
+  which highlights the effectiveness of GADTs.
+</p>
+
+<h4> Available in:
+  <a href="https://kwanghoon.github.io/paper/ieice2011.pdf">ArXiv</a>,
+  <a href="https://www.jstage.jst.go.jp/article/transinf/E94.D/6/E94.D_6_1190/_article/-char/en">LINK</a>
+</h4>  
+
+<hr>
+<a name="typingzincwithgadt"><h3> A Type System for the Push-Enter Model</h3></a>
+Kwanghoon Choi and Taisook Han,
+Information Processing Letters, 87(4):205-211, August 31, 2003.
+
+<p>
+  이 논문은 고차 함수 컴파일에서 중요한 push-enter 모델에 대해, 지금까지는 
+  이 모델의 동적인 인자 전달 방식을 정적 타입으로 다루는 타입 시스템이 존재하지 않았다는 점을 지적하고, 
+  이를 해결하기 위해 동적으로 변하는 인자 상태를 정적으로 기술할 수 있는 상태(state) 타입 설계에 초점을 맞춘다. 
+  저자들은 먼저 push-enter 모델에 기반한 간단한 컴파일 방법을 제시하고, 
+  이 방법에서 사용되는 상태들이 나타내는 인자 상태를 정확히 표현할 수 있도록 일반적인 상태 타입과 
+  그 위에 구축된 타입 시스템을 설계한 뒤, 이 타입 시스템 안에서 해당 컴파일 방법이 어떻게 수행되는지 보인다. 
+  이를 통해, 기존의 eval-apply 모델에만 의존하던 타입 기반 컴파일 기법들로는 다루지 못했던 push-enter 
+  모델의 장점을 타입 보존적(compilation with typed intermediate languages) 방식에서도 활용할 수 있는 가능성을 제시한다.
+</p>
+
+<p>
+ This paper points out that, in the context of compiling higher-order functions, 
+ there has so far been no type system that can handle the push-enter model’s 
+ dynamic argument-passing behavior in a static way, and it focuses on designing 
+ state types that can statically describe these dynamically changing argument 
+ states. The authors first present a simple compilation method based on the 
+ push-enter model and then design generic types for the states so that the argument 
+ status each state represents can be specified precisely; on top of these types, 
+ they construct a type system and demonstrate how the compilation method works 
+ within it. In doing so, they suggest that the advantages of the push-enter 
+ model—previously unreachable by typed compilation approaches that relied only 
+ on the eval-apply model—can also be exploited in a type-preserving, 
+ typed-intermediate-language compilation framework.
+</p>
+
+<h4> Available in:
+  <a href="https://kwanghoon.github.io/paper/IPL2003.pdf">ArXiv</a>,
+  <a href="https://www.sciencedirect.com/science/article/pii/S0020019003002825">LINK</a>
+</h4>  
+ 
+<hr>
+<a name="typingzincwithgadt"><h3> A Typed Compilation of Higher-Order Functions with Dynamic Argument Passing</h3></a>
+Kwanghoon Choi,
+ PhD Thesis, KAIST, August 2003.
+
+<p>
+  기존 타입 기반 컴파일 방법론이 모두 Eval-apply 모델에만 기반하고 있어서, 
+  Push-enter 모델 기반의 고차 함수 컴파일과는 함께 쓰기 어렵다는 문제를 지적한다. 
+  Push-enter 모델에서는 함수가 “실제 몇 개의 인자가 넘어왔는지”에 대한 상태 정보를 런타임에 유지해야 하고, 
+  이 상태는 “실제 인자가 없는 상태” 하나가 여러 타입 문맥에서 다형적으로 사용되기 때문에, 
+  기존 타입 언어만으로는 이 상태 정보를 자연스럽게 표현하기 어렵다.
+
+이에 대해 논문은 이 다형적인 상태 정보를 표현할 수 있는 새로운 타입 어휘와 그에 기반한 타입 시스템을 제안한다. 
+이를 통해 Push-enter 모델에 기반한 컴파일 방법(MPS 변환, ZINC 머신 등)에 대해, 
+함수 간 인자 전달과 상태 정보가 타입 수준에서 일관되게 잘 맞도록 보장할 수 있으며, 
+결과적으로 Push-enter 기반 컴파일과 타입 기반 컴파일 방법론을 함께 사용하는 길을 연다.
+</p>
+
+<p>
+ Existing type-based compilation methods are all based on the eval-apply model, 
+ which makes them difficult to use together with higher-order function compilation 
+ based on the push-enter model. In the push-enter model, the runtime must maintain 
+ state information about “how many actual arguments have been passed” to a function, 
+ and the special state representing “no actual arguments present” is used 
+ polymorphically in multiple type contexts, which makes it hard to express this state information naturally using existing type languages.
+
+In response, the paper proposeExisting type-based compilation methods are all based on the eval-apply model, which makes them difficult to use together with higher-order function compilation based on the push-enter model. In the push-enter model, the runtime must maintain state information about “how many actual arguments have been passed” to a function, and the special state representing “no actual arguments present” is used polymorphically in multiple type contexts, which makes it hard to express this state information naturally using existing type languages.
+
+In response, the paper proposes a new type vocabulary capable of expressing this polymorphic state information, along with a type system built on it. This allows us to ensure, for compilation methods based on the push-enter model (such as MPS conversion and the ZINC machine), that argument passing between functions and the associated state information are kept consistent at the type level, thereby opening the way to combining push-enter–based compilation with type-based compilation methods.s a new type vocabulary capable of expressing this 
+polymorphic state information, along with a type system built on it. This allows 
+us to ensure, for compilation methods based on the push-enter model (such as MPS 
+conversion and the ZINC machine), that argument passing between functions and the 
+associated state information are kept consistent at the type level, thereby 
+opening the way to combining push-enter–based compilation with type-based compilation methods.
+</p>
+
+<h4> Available in:
+  <a href="https://library.kaist.ac.kr/search/detail/view.do?bibCtrlNo=231147&flag=dissertation">LINK</a>
+</h4>  
+  
+</html> 
+
