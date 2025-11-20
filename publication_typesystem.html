@@ -160,6 +160,46 @@ IEICE Transactions on Information and Systems, Vol.E94-D, No.6, pp.1190-1200, Ju
 </h4>  
 
 <hr>
+<a name="krivinestyletyping"><h3>A Type Theory for Krivine-style Evaluation and Compilation</h3></a>
+Kwanghoon Choi,  Atsushi Ohori,
+The Second Asian Symposium on Programming Languages and Systems (APLAS2004), Taipei, Taiwan, 
+Volume 3302 of Lecture Notes in Computer Science, Springer-Verlag, pages 213-228, November 4-6, 2004.
+
+<p>
+  이 논문은 Krivine 스타일의 평가 및 컴파일을 위한 타입 이론을 전개한다.
+먼저, 람다 추상을 “스파인 스택(spine stack)을 팝(pop)한 뒤 실행을 이어가는 코드”로 해석하는, 람다 식을 위한 정적 타입 시스템을 정의한다.
+고차(higher-order) 기능은, 코드를 클로저(closure)로 변환하는 타이핑 규칙(typing rule)을 도입함으로써 얻는다.
+
+이는, 람다 추상이 항상 고차 함수를 생성한다고 보는 전통적인 람다 계산(type theory for the lambda calculus)의 타입 이론과는 대조적이다.
+
+다음으로, Krivine 스타일의 저수준 머신(low-level machine)을 위한 타입 시스템을 정의하고, 항(term) 계산법에서 Krivine 스타일 머신으로 가는 
+타입 지향 컴파일(type-directed compilation)을 개발한다. 우리는 이 컴파일이 정적 의미와 동적 의미(static and dynamic semantics)를 모두 보존한다는 사실을 보인다.
+
+이러한 타입 이론적 프레임워크는 컴파일의 여러 성질을 분석하기 위한 적절한 기반을 제공한다.
+우리의 프레임워크가 지니는 강점을 보이기 위해, 우리는 두 가지 버전의 저수준 머신에 대해 위의 전개를 수행한다. 
+하나는 스파인 스택을 정적으로 결정하는 머신이고, 다른 하나는 런타임 마크(runtime mark)를 사용해 스파인 스택을 동적으로 결정하는 머신이다. 그리고 이 둘의 상대적인 장단점을 분석한다.
+</p>
+
+<p>
+ This paper develops a type theory for Krivine-style evaluation and compilation. We first define a static type system for lambda
+terms where lambda abstraction is interpreted as a code to pop the “spine
+stack” and to continue execution. Higher-order feature is obtained by introducing a typing rule to convert a code to a closure. This is in contrast
+with the conventional type theory for the lambda calculus, where lambda
+abstraction always creates higher-order function. We then define a type
+system for Krivine-style low-level machine, and develops type-directed
+compilation from the term calculus to the Krivine-style machine. We
+establish that the compilation preserves both static and dynamic semantics. This type theoretical framework provides a proper basis to analyze
+various properties of compilation. To demonstrate the strength of our
+framework, we perform the above development for two versions of lowlevel machines, one of which statically determines the spine stack, and
+the other of which dynamically determines the spine stack using a runtime mark, and analyze their relative merit.
+</p>
+
+<h4> Available in:
+  <a href="https://kwanghoon.github.io/paper/aplas2004slide.pdf">Slide</a>,
+  <a href="https://kwanghoon.github.io/paper/APLAS2004LNCSVersion.pdf">LINK</a>
+</h4>
+
+<hr>
 <a name="typingzincwithgadt"><h3> A Type System for the Push-Enter Model</h3></a>
 Kwanghoon Choi and Taisook Han,
 Information Processing Letters, 87(4):205-211, August 31, 2003.
