@@ -18,6 +18,35 @@
 
 <hr>
 
+<a name="syntaxcompletion_llm_cola"> <h3> Improving LLM-based Code Completion Using LR Parsing</h3></a>
+Md Monir Ahammod Bin Atique, Hyeon-Ah Moon, Isao Sasano and Kwanghoon Choi, Journal of Computer Languages, Vol.84, September 2025, doi: 10.1016/j.cola.2025.101352.
+
+<p>
+  코드 자동 완성은 현대 IDE에서 프로그래밍 효율성을 높이는 핵심 기능입니다. 기존 방식은 접두어 기반 필터링과 정적 순위에 의존하지만, 알파벳 순의 긴 목록을 제시해 사용자에게 부담을 줍니다. 최근에는 LR 파싱 기반 방법이 제안되어 언어 문법을 바탕으로 후보를 생성하고, 오픈소스 프로그램 데이터를 활용해 순위를 계산하지만, 이는 구조적인 후보만 제시하며 실제 코드로의 수동 보완이 필요합니다.
+
+이에 본 연구에서는 LR 파싱과 대형 언어 모델(LLM)을 결합한 하이브리드 방식을 제안합니다. 먼저 LR 파싱을 통해 구조적 후보를 생성한 뒤, LLM을 이용해 이를 실제 코드 형태로 보완하며, 오픈소스 데이터베이스의 순위 정보를 활용해 정밀도를 높입니다. 이를 통해 문법 기반 정확성과 생성 기반 유연성을 결합합니다.
+
+우리는 LLM이 LR 구조적 후보로부터 실제 혜택을 얻는지 분석하고, 후보 없이 직접 생성한 결과와 비교하여 그 효과를 평가합니다. 또한 순위가 높은 구조적 후보를 활용할 때 LLM 기반 완성의 정확도가 얼마나 향상되는지도 탐구합니다.
+
+Microsoft Small Basic과 C 언어를 대상으로 한 VSCode 확장 기능을 통해 제안 방식을 실증하며, 이 시스템은 LR 문법이 정의된 모든 언어에 적용 가능한 범용적 솔루션입니다. 실험 결과, LR 파싱과 LLM 결합은 코드 완성의 정확성과 사용성을 모두 향상시키는 것으로 나타났습니다.
+</p>
+<p>
+Code completion is a crucial feature in modern IDEs, improving programming efficiency. Traditional systems rely on prefix filtering and static ranking but often overwhelm users with lengthy, alphabetically sorted lists. 
+Recent research has introduced LR-parsing-based approaches that derive completion candidates from language syntax and compute their ranks using open-source programs; however, these methods only suggest structural candidates, requiring manual refinement into complete code.
+
+To address this, we propose a hybrid method that integrates LR parsing with LLMs to enhance accuracy and usability. Our approach refines structural candidates using LR parsing into textual code suggestions via an LLM, referencing a database of ranked candidates from open-source programs. This combines the syntactic precision of LR parsing with the generative capabilities of LLMs. 
+
+This study examines whether LLMs benefit from LR structural candidates in code completion. By comparing completions with and without these candidates, we assess their impact. Building on prior research, we also explore how leveraging top-ranked structural candidates can effectively enhance LLM-based code completion precision.
+We also demonstrate our method through VSCode extensions for Microsoft Small Basic and C. As a language-agnostic solution, our system applies to any language with a defined LR grammar.
+
+Our findings suggest that integrating LR parsing with LLM-based completion improves both accuracy and usability, paving the way for more effective code completion in modern IDEs.
+</P>
+
+<h4> Available in 
+      <a href="https://doi.org/10.1016/j.cola.2025.101352">LINK</a> </h4>
+
+<hr>
+
     <h3> A text-based syntax completion method using LR parsing and Its Evaluation</h3></a>
 Isao Sasano, Kwanghoon Choi, Science of Computer Programming, Volume 228, June 2023.
 
