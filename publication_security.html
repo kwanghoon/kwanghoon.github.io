@@ -370,6 +370,38 @@ generated scenarios on the Android BLE emulator.
 	<a href="/paper/KIISE2017_BLE_1217_final.pdf">PDF</a></h4>
       <hr>
 
+      <h3>유해사이트를 접속하는 안드로이드 앱을 문자열 분석으로 검사하는 시스템</h3>
+
+  최광훈, 고광만, 박희완, 윤종희, 정보처리학회 논문지A,Vol.19-A, No.4, pp187-194, August 2012. 
+  문현아,박수용,최광훈, 정보과학회 컴퓨팅의 실제 논문지(KTCP), 2018년2월. 
+
+
+      <p>안드로이드 기반 스마트폰 앱의 바이너리 코드를 오프라인 상에서
+      분석하여 유해 사이트 목록에 포함된 서버에 접속하는지
+      여부를판단하는 시스템을 제안하고, 실제 앱에 대해 적용한 실험
+      결과를 제시한다. 주어진 앱의 바이너리 코드를 Java 바이트 코드로
+      역 컴파일하고, 문자열분석을 적용하여 프로그램에서 사용하는 모든
+      문자열 집합을 계산한 다음, 유해 매체물을 제공하는 사이트 URL을
+      포함하는지 확인하는방법이다. 이 시스템은 앱을 실행하지 않고 배포
+      단계에서 검사할 수 있고 앱 마켓 관리에서 유해 사이트를 접속하는
+      앱을 분류하는 작업을자동화할 수 있는 장점이 있다. DNS 서버를
+      이용하거나 스마트폰에 모니터링 모듈을 설치하여 차단하는 기존
+      방법들과 서로 다른 단계에서유해앱을 차단함으로써 상호 보완할 수
+      있는 방법이 될 수 있다.
+      </p>
+      <p>This paper proposes a string analysis based system for classifying Android Apps that may access so called harmful sites, and shows
+an experiment result for real Android apps on the market. The system first transforms Android App binary codes into Java byte codes, it
+performs string analysis to compute a set of strings at all program points, and it classifies the Android App as bad ones if the computed
+set contains URLs that are classified because the sites provide inappropriate contents. In the proposed approach, the system performs such
+a classification in the stage of distribution before installing and executing the Apps. Furthermore, the system is suitable for the automatic
+management of Android Apps in the market. The proposed system can be combined with the existing methods using DNS servers or
+	monitoring modules to identify harmful Android apps better in different stages.
+	</p>
+
+      <h4>Available in:
+	<a href="/paper/KIPS2012_3.pdf">PDF</a></h4>
+      <hr>
+
       <h3>A Lightweight Approach to Component-Level Exception Mechanism for Robust Android Apps</h3>
       Kwanghoon Choi, Byeong-Mo Chang, Computer Languages, Systems, and Structures, Vol.44, Part C, P.283-298, December 2015.
       
