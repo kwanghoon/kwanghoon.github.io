@@ -1,0 +1,17 @@
+title: "Software Languages and Systems Laboratory for Security"
+description: "Kwanghoon Choi, Chonnam National University, Gwangju"
+url: "https://kwanghoon.github.io"
+baseurl: ""
+
+author:
+  name: "Kwanghoon Choi"
+  position: "Professor (September 2021 - )"
+  affiliation: "Chonnam National University"
+  address: "77 Yongbong-ro, Buk-gu, Gwangju, 61186, Korea"
+  email_user: "kwanghoon.choi"
+  email_domain: "jnu.ac.kr"
+  tel: "{+82,0} 62-530-3421"
+  fax: "{+82,0} 62-530-3439"
+  office: "No.442, Engineering Building 7"
+
+markdown: kramdown

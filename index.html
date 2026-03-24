@@ -1,198 +1,139 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Home
+---
 
-<html lang="en">
+<hr>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Kwanghoon Choi, Software Languages and Systems Laboratory, Chonnam National University, Gwangju</title>
-    <base href="http://kwanghoon.github.io">
-</head>
-
-<body>
-
-    <hr>
-
-    <h1>Software Languages and Systems Laboratory for Security</h1>
-
-    <ul>
-        <li>Kwanghoon Choi (<a href="https://kwanghoon.github.io/cv.html">CV</a>)</li>
-        <li>Professor (September 2021 - ), Chonnam National University </li>
-        <li>Address: 77 Yongbong-ro, Buk-gu, Gwangju, 61186, Korea</li>
-        <li>Email: kwanghoon.choiXjnu.ac.kr (where X is @)</li>
-        <li>Tel: {+82,0} 62-530-3421</li>
-        <li>Fax: {+82,0} 62-530-3439</li>
-        <li>Office: No.442, Engineering Building 7</li>
-    </ul>
-
-    <hr>
-
-    <h3>Research interests</h3>
+<h1>{{ site.title }}</h1>
 
 <ul>
-
-    <li>
-      <a href="https://kwanghoon.github.io/publication_security.html">Software/AI Security</a>,
-      <!-- <a href="https://kwanghoon.github.io/publication_ai.html">AI/LLM</a>,  -->
-      <a href="https://kwanghoon.github.io/publication_fuzzing.html">Fuzzing</a>
-    </li>
-    <li> 
-      <a href="https://kwanghoon.github.io/publication_programminglanguagedesign.html">Programming language design</a>, 
-      <a href="https://kwanghoon.github.io/publication_compiler.html">Compiler</a>,
-      <a href="https://kwanghoon.github.io/publication_typesystem.html">Type system</a>
-    </li>
-    <!-- <li>
-        <a href="https://kwanghoon.github.io/publication_functionalprogramming.html">Functional programming</a>
-    </li> -->
-    <li>
-        <a href="https://kwanghoon.github.io/publication_softwareengineering.html">Software engineering</a>
-    </li>
-    <!-- <li>
-        <a href="https://kwanghoon.github.io/publication_compiler.html">Compiler</a>
-        <a href="https://kwanghoon.github.io/publication_staticanalysis.html">Static Analysis</a>    
-    </li> -->
-    
-
+    <li>{{ site.author.name }} (<a href="{{ site.url }}/cv.html">CV</a>)</li>
+    <li>{{ site.author.position }}, {{ site.author.affiliation }}</li>
+    <li>Address: {{ site.author.address }}</li>
+    <li>Email: {{ site.author.email_user }}X{{ site.author.email_domain }} (where X is @)</li>
+    <li>Tel: {{ site.author.tel }}</li>
+    <li>Fax: {{ site.author.fax }}</li>
+    <li>Office: {{ site.author.office }}</li>
 </ul>
 
-    <ul>
-        <!-- <li>Visit <a href="introduction.html">here</a> for more information if you are interested in my laboratory.</li>
-    -->
-    </ul>
+<hr>
 
-    <hr>
+<h3>Research interests</h3>
 
-    <h3>Publications</h3>
+<ul>
+    <li>
+      <a href="{{ site.url }}/publication_security.html">Software/AI Security</a>,
+      <a href="{{ site.url }}/publication_fuzzing.html">Fuzzing</a>
+    </li>
+    <li>
+      <a href="{{ site.url }}/publication_programminglanguagedesign.html">Programming language design</a>,
+      <a href="{{ site.url }}/publication_compiler.html">Compiler</a>,
+      <a href="{{ site.url }}/publication_typesystem.html">Type system</a>
+    </li>
+    <li>
+        <a href="{{ site.url }}/publication_softwareengineering.html">Software engineering</a>
+    </li>
+</ul>
 
-    <ul>
-    <li> Recent Publications</li>
+<hr>
+
+<h3>Publications</h3>
+
+<ul>
+    <li>Recent Publications</li>
     <ul>
         <li>
-            A Visual Block Programming Environment for Home Assistant: A Progress Report, 8th Int'l Workshop on 
-            Software Engineering Research and Practices for the Iot, Rio De Janeiro, Brazil, April 12-18, 2026. 
+            A Visual Block Programming Environment for Home Assistant: A Progress Report, 8th Int'l Workshop on
+            Software Engineering Research and Practices for the Iot, Rio De Janeiro, Brazil, April 12-18, 2026.
         </li>
-        <!-- <li>
-            멀티티어 액터 프로그래밍 언어의 설계 및 구현, 2025년 한국소프트웨어종합학술대회(KSC 2025), 12월 16-19일, 여수엑스포컨벤션센터, 2025. 
-            (<a href="/paper/ksc2025PosterHyeonJin.pdf">PDF</a>)
-        </li>
-        <li>
-            Home Assistant 자동화를 위한 시각 편집 환경 구현, 2025년 한국소프트웨어종합학술대회(KSC 2025), 12월 16-19일, 여수엑스포컨벤션센터, 2025. 
-            (<a href="/paper/ksc2025PosterMihyeon.pdf">PDF</a>)
-        </li> -->
-        <!-- <li>
-            파생 프로젝트 취약점 탐지를 위한 다중 시드 풀 퍼저, 2025년 한국정보보호학회 동계학술대회(CISC-W 2025), 11월 27-28일, 
-            곤지암 리조트 EW 빌리지, 2025. 
-            (<a href="/paper/CISCW2025SeokJeon.pdf">PDF</a>)
-        </li> -->
 
         <li>
-            On a Multitier Actor Programming Language. In SPLASH Companion '25. ACM, October 16-18, New York, NY, USA, 40–42 (by HyeonJin Lee). 
+            On a Multitier Actor Programming Language. In SPLASH Companion '25. ACM, October 16-18, New York, NY, USA, 40–42 (by HyeonJin Lee).
         </li>
 
         <li>
             Improving LLM-based Code Completion Using LR Parsing, Journal of Computer Languages, September, 2025.
             (<a href="https://doi.org/10.1016/j.cola.2025.101352">LINK</a>)
         </li>
-        <!-- <li>
-            Analyzing the Limitations of CVE‑Based Source‑Code Vulnerability Slice Extraction, August 20-22, WISA 2025 (Poster). 
-        </li>
-        <li>
-            A Method for Selecting Security Checklist Items Associated with Incidents by Analyzing Security 
-            Incident Reports and Vulnerability Checklists Using LLM, August 20-22, WISA 2025 (Poster). 
-        </li> -->
-
 
         <li>
             Certified Robustness of Antenna Selecting Neural Networks for Massive MIMO Wireless Communications, IEEE Access, May, 2025.
             (<a href="https://ieeexplore.ieee.org/document/11006645">PDF</a>)
         </li>
-
-        <!-- <li>  
-           Towards a Portable Implementation of a Visual Block Language for IoT Applications,
-           SERP4IoT 2025, April, 2025. 
-        </li> -->
-    </ul>
-          
-        <li> 
-            <a href="https://kwanghoon.github.io/publication.html">by Dates</a> /  
-            <a href="https://kwanghoon.github.io/publication_category.html">by Categories</a> / 
-            <a href="https://scholar.google.co.kr/citations?user=ftqCZ2IAAAAJ&hl=ko&oi=ao">Google Scholar</a> /
-            <a href="https://dblp.uni-trier.de/pers/hd/c/Choi_0001:Kwanghoon">DBLP</a>
-        </li>
-
-
     </ul>
 
-    <hr>
+    <li>
+        <a href="{{ site.url }}/publication.html">by Dates</a> /
+        <a href="{{ site.url }}/publication_category.html">by Categories</a> /
+        <a href="https://scholar.google.co.kr/citations?user=ftqCZ2IAAAAJ&hl=ko&oi=ao">Google Scholar</a> /
+        <a href="https://dblp.uni-trier.de/pers/hd/c/Choi_0001:Kwanghoon">DBLP</a>
+    </li>
+</ul>
 
-    <h3>Laboratory</h3>
+<hr>
 
-    <ul>
-        <li>
-            <a href="https://kwanghoon.github.io/news.html">News</a> /
-            <a href="https://kwanghoon.github.io/awards.html">Projects</a> /
-            <a href="https://kwanghoon.github.io/students.html">Students</a> /
-            <a href="https://photos.app.goo.gl/mjqojUZFZH67Pkro6">Photos</a>
-            <!-- <a href="https://kwanghoon.github.io/seminar.html">Seminar</a> -->
-        </li>
-	    <!--
-        <li>
-            <a href="https://kwanghoon.github.io/ideas.html">Project ideas for undergraduate/graduate students</a>
-        </li>
-	    -->
-    </ul>
+<h3>Laboratory</h3>
 
-    <hr>
+<ul>
+    <li>
+        <a href="{{ site.url }}/news.html">News</a> /
+        <a href="{{ site.url }}/awards.html">Projects</a> /
+        <a href="{{ site.url }}/students.html">Students</a> /
+        <a href="https://photos.app.goo.gl/mjqojUZFZH67Pkro6">Photos</a>
+    </li>
+</ul>
 
-    <h3><a href="https://kwanghoon.github.io/lecture.html">Lecture</a></h3>
+<hr>
 
-    <ul>
-        <!-- Note: The list items have been closed properly -->
-        <li>
-            <a href="https://github.com/kwanghoon/Lecture_EOPL">프로그래밍언어 설계 및 구현(Programming Languages)</a>:
-            <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99982CpQoam-z9tqJ6qi_hw0">YouTube </a>,
-        </li>
-	    <li>애플리케이션보안-웹 보안(Application Security-Web Security)
-            <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-ZUutt7OUo4QCJCzli0eqC">YouTube </a>
-        </li>
-        <li>
-            <a href="https://github.com/kwanghoon/Lecture_Compiler_MiniJava">컴파일러</a>:
-            <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_Ixq6JKZrdwWaeRoX4CNGH">YouTube </a>
-        </li>
-        <li><a href="https://github.com/kwanghoon/Lecture_SAV">프로그램 분석 기법(Program Analysis Techniques)</a>:
-            <a href="https://kwanghoon.github.io/paper/프로그램_분석_강의_노트.pdf">강의 노트</a></li>
-        <li>
-            <a href="https://haskell.mooc.fi/">함수형 프로그래밍/하스켈(Haskell)</a>:
-            <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_NphAX7k5OqcM1fXLZne8t">YouTube(Part1 Lecture 1-4)</a>
-        </li>
-        <li>
-            <a href="https://sel.jnu.ac.kr">E-class</a>
-        </li>
-    </ul>
+<h3><a href="{{ site.url }}/lecture.html">Lecture</a></h3>
 
-    <hr>
+<ul>
+    <li>
+        <a href="https://github.com/kwanghoon/Lecture_EOPL">프로그래밍언어 설계 및 구현(Programming Languages)</a>:
+        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99982CpQoam-z9tqJ6qi_hw0">YouTube</a>
+    </li>
+    <li>애플리케이션보안-웹 보안(Application Security-Web Security)
+        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-ZUutt7OUo4QCJCzli0eqC">YouTube</a>
+    </li>
+    <li>
+        <a href="https://github.com/kwanghoon/Lecture_Compiler_MiniJava">컴파일러</a>:
+        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_Ixq6JKZrdwWaeRoX4CNGH">YouTube</a>
+    </li>
+    <li>
+        <a href="https://github.com/kwanghoon/Lecture_SAV">프로그램 분석 기법(Program Analysis Techniques)</a>:
+        <a href="{{ site.url }}/paper/프로그램_분석_강의_노트.pdf">강의 노트</a>
+    </li>
+    <li>
+        <a href="https://haskell.mooc.fi/">함수형 프로그래밍/하스켈(Haskell)</a>:
+        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_NphAX7k5OqcM1fXLZne8t">YouTube(Part1 Lecture 1-4)</a>
+    </li>
+    <li>
+        <a href="https://sel.jnu.ac.kr">E-class</a>
+    </li>
+</ul>
 
-    <h3><a href="https://kwanghoon.github.io/software.html">Software</a></h3>    
+<hr>
 
-    <hr>
-    <h3><a href="https://kwanghoon.github.io/services.html">Service</a></h3>
+<h3><a href="{{ site.url }}/software.html">Software</a></h3>
 
-    <hr>
+<hr>
 
-    <h3>Etc.</h3>
+<h3><a href="{{ site.url }}/services.html">Service</a></h3>
 
-    <ul>
-        <li>
-            <a href="https://kwanghoon.github.io/webpages.html">Links</a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-zAbBaBzmSlEAiyqBLtyK3">Memories</a>
-        </li>
-    </ul>
+<hr>
 
-    <hr>
+<h3>Etc.</h3>
 
-Last Updated: 9 March 2026.
+<ul>
+    <li>
+        <a href="{{ site.url }}/webpages.html">Links</a>
+    </li>
+    <li>
+        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-zAbBaBzmSlEAiyqBLtyK3">Memories</a>
+    </li>
+</ul>
 
-</body>
+<hr>
 
-</html>
+Last Updated: {{ site.time | date: "%-d %B %Y" }}.
