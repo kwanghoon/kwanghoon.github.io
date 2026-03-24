@@ -16,14 +16,17 @@ title: Students
         text-align: center;
         padding: 0.8rem 0.5rem;
         border-radius: 8px;
-        transition: background 0.2s;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        transition: box-shadow 0.2s, transform 0.2s;
     }
     .member-card:hover {
-        background: var(--bg);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transform: translateY(-2px);
     }
     .member-photo {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         object-fit: cover;
         background: var(--border);
@@ -32,17 +35,17 @@ title: Students
         border: 2px solid var(--border);
     }
     .member-placeholder {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #c8d6e5, #dfe6e9);
+        background: linear-gradient(135deg, var(--primary), #274c77);
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 auto 0.6rem;
         border: 2px solid var(--border);
-        color: #8395a7;
-        font-size: 2rem;
+        color: #fff;
+        font-size: 1.8rem;
     }
     .member-name {
         font-weight: 600;
@@ -71,10 +74,26 @@ title: Students
         font-weight: 600;
         color: var(--primary);
         margin-bottom: 0.5rem;
-        padding-left: 0.2rem;
-        border-left: 3px solid var(--accent);
         padding-left: 0.6rem;
+        border-left: 3px solid var(--accent);
     }
+
+    /* Nested lists for student details */
+    .section ul ul {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+    .section ul ul li {
+        font-size: 0.88rem;
+        color: var(--text-light);
+        padding-left: 1rem;
+    }
+    .section ul ul li::before {
+        content: '–';
+        color: var(--text-light);
+        font-weight: normal;
+    }
+
     @media (max-width: 600px) {
         .member-grid {
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -85,15 +104,11 @@ title: Students
 
 <header class="site-header">
     <div class="container">
-        <h1>{{ site.title }} — 현재 연구실 구성원</h1>
-        <!-- <div class="contact-grid">
-            <span>{{ site.author.name }} (<a href="{{ site.url }}/cv.html">CV</a>)</span>
-            <span>{{ site.author.position }}, {{ site.author.affiliation }}</span>
-            <span>📍 {{ site.author.address }}</span>
-            <span>✉️ {{ site.author.email_user }}X{{ site.author.email_domain }} (X → @)</span>
-            <span>📞 {{ site.author.tel }}</span>
-            <span>🏢 {{ site.author.office }}</span>
-        </div> -->
+        <h1>{{ site.title }}</h1>
+        <div class="contact-grid">
+            <span><a href="{{ site.url }}/index.html">Home</a></span>
+            <span>{{ site.author.name }}, {{ site.author.affiliation }}</span>
+        </div>
     </div>
 </header>
 
