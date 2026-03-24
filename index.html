@@ -3,133 +3,115 @@ layout: default
 title: Home
 ---
 
-<hr>
+<header class="site-header">
+    <div class="container">
+        <h1>{{ site.title }}</h1>
+        <div class="contact-grid">
+            <span>{{ site.author.name }} (<a href="{{ site.url }}/cv.html">CV</a>)</span>
+            <span>{{ site.author.position }}, {{ site.author.affiliation }}</span>
+            <span>📍 {{ site.author.address }}</span>
+            <span>✉️ {{ site.author.email_user }}X{{ site.author.email_domain }} (X → @)</span>
+            <span>📞 {{ site.author.tel }}</span>
+            <span>🏢 {{ site.author.office }}</span>
+        </div>
+    </div>
+</header>
 
-<h1>{{ site.title }}</h1>
+<div class="container">
 
-<ul>
-    <li>{{ site.author.name }} (<a href="{{ site.url }}/cv.html">CV</a>)</li>
-    <li>{{ site.author.position }}, {{ site.author.affiliation }}</li>
-    <li>Address: {{ site.author.address }}</li>
-    <li>Email: {{ site.author.email_user }}X{{ site.author.email_domain }} (where X is @)</li>
-    <li>Tel: {{ site.author.tel }}</li>
-    <li>Fax: {{ site.author.fax }}</li>
-    <li>Office: {{ site.author.office }}</li>
-</ul>
+    <div class="section">
+        <h2>Research Interests</h2>
+        <div class="tag-links">
+            <a href="{{ site.url }}/publication_security.html">Software/AI Security</a>
+            <a href="{{ site.url }}/publication_fuzzing.html">Fuzzing</a>
+            <a href="{{ site.url }}/publication_programminglanguagedesign.html">Programming Language Design</a>
+            <a href="{{ site.url }}/publication_compiler.html">Compiler</a>
+            <a href="{{ site.url }}/publication_typesystem.html">Type System</a>
+            <a href="{{ site.url }}/publication_softwareengineering.html">Software Engineering</a>
+        </div>
+    </div>
 
-<hr>
+    <div class="section">
+        <h2>Publications</h2>
+        <ul class="pub-list">
+            <li>
+                A Visual Block Programming Environment for Home Assistant: A Progress Report, 8th Int'l Workshop on
+                Software Engineering Research and Practices for the Iot, Rio De Janeiro, Brazil, April 12-18, 2026.
+            </li>
+            <li>
+                Improving LLM-based Code Completion Using LR Parsing, Journal of Computer Languages, September, 2025.
+                (<a href="https://doi.org/10.1016/j.cola.2025.101352">LINK</a>)
+            </li>
+            <li>
+                Certified Robustness of Antenna Selecting Neural Networks for Massive MIMO Wireless Communications, IEEE Access, May, 2025.
+                (<a href="https://ieeexplore.ieee.org/document/11006645">PDF</a>)
+            </li>
+        </ul>
+        <div class="tag-links">
+            <a href="{{ site.url }}/publication.html">by Dates</a>
+            <a href="{{ site.url }}/publication_category.html">by Categories</a>
+            <a href="https://scholar.google.co.kr/citations?user=ftqCZ2IAAAAJ&hl=ko&oi=ao">Google Scholar</a>
+            <a href="https://dblp.uni-trier.de/pers/hd/c/Choi_0001:Kwanghoon">DBLP</a>
+        </div>
+    </div>
 
-<h3>Research interests</h3>
+    <div class="section">
+        <h2>Laboratory</h2>
+        <div class="nav-links">
+            <a href="{{ site.url }}/news.html">News</a>
+            <a href="{{ site.url }}/awards.html">Projects</a>
+            <a href="{{ site.url }}/students.html">Students</a>
+            <a href="https://photos.app.goo.gl/mjqojUZFZH67Pkro6">Photos</a>
+        </div>
+    </div>
 
-<ul>
-    <li>
-      <a href="{{ site.url }}/publication_security.html">Software/AI Security</a>,
-      <a href="{{ site.url }}/publication_fuzzing.html">Fuzzing</a>
-    </li>
-    <li>
-      <a href="{{ site.url }}/publication_programminglanguagedesign.html">Programming language design</a>,
-      <a href="{{ site.url }}/publication_compiler.html">Compiler</a>,
-      <a href="{{ site.url }}/publication_typesystem.html">Type system</a>
-    </li>
-    <li>
-        <a href="{{ site.url }}/publication_softwareengineering.html">Software engineering</a>
-    </li>
-</ul>
+    <div class="section">
+        <h2><a href="{{ site.url }}/lecture.html">Lectures</a></h2>
+        <ul>
+            <li>
+                <a href="https://github.com/kwanghoon/Lecture_EOPL">프로그래밍언어 설계 및 구현(Programming Languages)</a> —
+                <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99982CpQoam-z9tqJ6qi_hw0">YouTube</a>
+            </li>
+            <li>
+                애플리케이션보안-웹 보안(Application Security-Web Security) —
+                <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-ZUutt7OUo4QCJCzli0eqC">YouTube</a>
+            </li>
+            <li>
+                <a href="https://github.com/kwanghoon/Lecture_Compiler_MiniJava">컴파일러(Compiler)</a> —
+                <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_Ixq6JKZrdwWaeRoX4CNGH">YouTube</a>
+            </li>
+            <li>
+                <a href="https://github.com/kwanghoon/Lecture_SAV">프로그램 분석 기법(Program Analysis Techniques)</a> —
+                <a href="{{ site.url }}/paper/프로그램_분석_강의_노트.pdf">강의 노트</a>
+            </li>
+            <li>
+                <a href="https://haskell.mooc.fi/">함수형 프로그래밍/하스켈(Haskell)</a> —
+                <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_NphAX7k5OqcM1fXLZne8t">YouTube(Part1 Lecture 1-4)</a>
+            </li>
+            <li>
+                <a href="https://sel.jnu.ac.kr">E-class</a>
+            </li>
+        </ul>
+    </div>
 
-<hr>
+    <div class="section">
+        <h2><a href="{{ site.url }}/software.html">Software</a></h2>
+    </div>
 
-<h3>Publications</h3>
+    <div class="section">
+        <h2><a href="{{ site.url }}/services.html">Service</a></h2>
+    </div>
 
-<ul>
-    <li>Recent Publications</li>
-    <ul>
-        <li>
-            A Visual Block Programming Environment for Home Assistant: A Progress Report, 8th Int'l Workshop on
-            Software Engineering Research and Practices for the Iot, Rio De Janeiro, Brazil, April 12-18, 2026.
-        </li>
+    <div class="section">
+        <h2>Etc.</h2>
+        <ul>
+            <li><a href="{{ site.url }}/webpages.html">Links</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-zAbBaBzmSlEAiyqBLtyK3">Memories</a></li>
+        </ul>
+    </div>
 
-        <li>
-            Improving LLM-based Code Completion Using LR Parsing, Journal of Computer Languages, September, 2025.
-            (<a href="https://doi.org/10.1016/j.cola.2025.101352">LINK</a>)
-        </li>
+    <footer class="site-footer">
+        Last Updated: {{ site.time | date: "%-d %B %Y" }}
+    </footer>
 
-        <li>
-            Certified Robustness of Antenna Selecting Neural Networks for Massive MIMO Wireless Communications, IEEE Access, May, 2025.
-            (<a href="https://ieeexplore.ieee.org/document/11006645">PDF</a>)
-        </li>
-    </ul>
-
-    <li>
-        <a href="{{ site.url }}/publication.html">by Dates</a> /
-        <a href="{{ site.url }}/publication_category.html">by Categories</a> /
-        <a href="https://scholar.google.co.kr/citations?user=ftqCZ2IAAAAJ&hl=ko&oi=ao">Google Scholar</a> /
-        <a href="https://dblp.uni-trier.de/pers/hd/c/Choi_0001:Kwanghoon">DBLP</a>
-    </li>
-</ul>
-
-<hr>
-
-<h3>Laboratory</h3>
-
-<ul>
-    <li>
-        <a href="{{ site.url }}/news.html">News</a> /
-        <a href="{{ site.url }}/awards.html">Projects</a> /
-        <a href="{{ site.url }}/students.html">Students</a> /
-        <a href="https://photos.app.goo.gl/mjqojUZFZH67Pkro6">Photos</a>
-    </li>
-</ul>
-
-<hr>
-
-<h3><a href="{{ site.url }}/lecture.html">Lecture</a></h3>
-
-<ul>
-    <li>
-        <a href="https://github.com/kwanghoon/Lecture_EOPL">프로그래밍언어 설계 및 구현(Programming Languages)</a>:
-        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99982CpQoam-z9tqJ6qi_hw0">YouTube</a>
-    </li>
-    <li>애플리케이션보안-웹 보안(Application Security-Web Security)
-        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-ZUutt7OUo4QCJCzli0eqC">YouTube</a>
-    </li>
-    <li>
-        <a href="https://github.com/kwanghoon/Lecture_Compiler_MiniJava">컴파일러</a>:
-        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_Ixq6JKZrdwWaeRoX4CNGH">YouTube</a>
-    </li>
-    <li>
-        <a href="https://github.com/kwanghoon/Lecture_SAV">프로그램 분석 기법(Program Analysis Techniques)</a>:
-        <a href="{{ site.url }}/paper/프로그램_분석_강의_노트.pdf">강의 노트</a>
-    </li>
-    <li>
-        <a href="https://haskell.mooc.fi/">함수형 프로그래밍/하스켈(Haskell)</a>:
-        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99_NphAX7k5OqcM1fXLZne8t">YouTube(Part1 Lecture 1-4)</a>
-    </li>
-    <li>
-        <a href="https://sel.jnu.ac.kr">E-class</a>
-    </li>
-</ul>
-
-<hr>
-
-<h3><a href="{{ site.url }}/software.html">Software</a></h3>
-
-<hr>
-
-<h3><a href="{{ site.url }}/services.html">Service</a></h3>
-
-<hr>
-
-<h3>Etc.</h3>
-
-<ul>
-    <li>
-        <a href="{{ site.url }}/webpages.html">Links</a>
-    </li>
-    <li>
-        <a href="https://www.youtube.com/playlist?list=PLhbaMvGyp99-zAbBaBzmSlEAiyqBLtyK3">Memories</a>
-    </li>
-</ul>
-
-<hr>
-
-Last Updated: {{ site.time | date: "%-d %B %Y" }}.
+</div>

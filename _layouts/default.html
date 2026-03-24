@@ -2,8 +2,158 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <base href="{{ site.url }}{{ site.baseurl }}/">
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --accent: #2e7d32;
+            --bg: #fafbfc;
+            --card-bg: #ffffff;
+            --text: #333;
+            --text-light: #666;
+            --border: #e0e4e8;
+            --link: #1565c0;
+            --link-hover: #0d47a1;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        a { color: var(--link); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--link-hover); text-decoration: underline; }
+
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, var(--primary), #274c77);
+            color: #fff;
+            padding: 2.5rem 0;
+            margin-bottom: 2rem;
+        }
+        .site-header .container { padding-top: 0; padding-bottom: 0; }
+        .site-header h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .site-header a { color: #bbdefb; }
+        .site-header a:hover { color: #fff; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.3rem 2rem;
+            font-size: 0.9rem;
+            opacity: 0.92;
+        }
+        .contact-grid span { display: block; }
+        .contact-grid .label { font-weight: 600; display: inline; }
+
+        /* Sections */
+        .section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .section h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+        .section h2 a { color: var(--primary); }
+        .section h2 a:hover { color: var(--accent); text-decoration: none; }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .section ul li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Publication list */
+        .pub-list { margin-top: 0.5rem; }
+        .pub-list li {
+            font-size: 0.92rem;
+            padding: 0.4rem 0 0.4rem 1rem;
+            border-left: 3px solid var(--border);
+            margin-bottom: 0.4rem;
+            margin-left: 0;
+        }
+        .pub-list li::before { content: none; }
+
+        /* Tag links */
+        .tag-links { margin-top: 0.8rem; font-size: 0.9rem; }
+        .tag-links a {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.83rem;
+            transition: all 0.2s;
+        }
+        .tag-links a:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Nav links */
+        .nav-links a {
+            display: inline-block;
+            margin-right: 0.6rem;
+            font-weight: 500;
+        }
+
+        /* Inline list */
+        .inline-list li { display: inline; padding-left: 0; }
+        .inline-list li::before { content: none; }
+        .inline-list li + li::before { content: ' / '; color: var(--text-light); font-weight: normal; }
+
+        /* Footer */
+        .site-footer {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+            .site-header h1 { font-size: 1.3rem; }
+            .section { padding: 1rem 1.2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
