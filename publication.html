@@ -1,17 +1,24 @@
 
-<html> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<head> 
-<TITLE>Publication</TITLE> 
-<base href="https://kwanghoon.github.io"> 
-</head> 
- 
-<body > 
-<center> 
-<h2>Publications</h2> 
-</center> 
- 
-<ul> 
+---
+layout: default
+title: Publications by Date
+---
+
+<header class="site-header">
+  <div class="container">
+    <h1>Publications</h1>
+    <div class="contact-grid">
+      <span>Publication archive by year</span>
+      <span><a href="{{ site.url }}/index.html">Home</a> / <a href="{{ site.url }}/publication_category.html">by Categories</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="section">
+    <h2>Publications by Date</h2>
+
+<ul>
   <li> 2026
     <ul>
       <li>
@@ -443,5 +450,10 @@ Languages), MS. Thesis, KAIST, February 1996.
  
 </ul> 
  
-</html> 
+  </div>
+
+  <footer class="site-footer">
+    Last Updated: {{ site.time | date: "%-d %B %Y" }}
+  </footer>
+</div>
 
