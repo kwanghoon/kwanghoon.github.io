@@ -1,22 +1,32 @@
+---
+layout: default
+title: Compiler Publications
+---
 
-<html> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<head> 
-<TITLE>Publication</TITLE> 
-<base href="https://kwanghoon.github.io"> 
-</head> 
- 
-<body > 
+<header class="site-header">
+  <div class="container">
+    <h1>Compiler</h1>
+    <div class="contact-grid">
+      <span>Publication archive for compiler and parsing research</span>
+      <span><a href="{{ site.url }}/publication.html">by Dates</a> / <a href="{{ site.url }}/publication_category.html">by Categories</a></span>
+    </div>
+  </div>
+</header>
 
+<div class="container" id="topic_compiler">
+  <div class="section" id="compiler-overview">
+    <h2>Overview</h2>
+    <p>Compiler publications are organized by year with concise summaries and expandable details.</p>
+    <div class="tag-links" id="compiler-tags"></div>
+    <ul id="compiler-stats"></ul>
+  </div>
 
-<hr>
-    
+  <div class="section" id="compiler-archive">
+    <h2>Archive</h2>
+    <div id="compiler-year-groups"></div>
+  </div>
 
-<div id="topic_compiler"></div>
-
-<h1> Compiler  </h1>
-
-<hr>
+  <div id="compiler-legacy" style="display:none;">
 
 <a name="syntaxcompletion_llm_cola"> <h3> Improving LLM-based Code Completion Using LR Parsing</h3></a>
 Md Monir Ahammod Bin Atique, Hyeon-Ah Moon, Isao Sasano and Kwanghoon Choi, Journal of Computer Languages, Vol.84, September 2025, doi: 10.1016/j.cola.2025.101352.
@@ -209,5 +219,187 @@ binary code.
 
 <hr>
   
-</html> 
+  </div>
+
+  <script>
+    (function () {
+      var legacy = document.getElementById('compiler-legacy');
+      var groupsRoot = document.getElementById('compiler-year-groups');
+      var statsRoot = document.getElementById('compiler-stats');
+      var tagsRoot = document.getElementById('compiler-tags');
+      if (!legacy || !groupsRoot || !statsRoot || !tagsRoot) {
+        return;
+      }
+
+      function textOf(html) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        return (div.textContent || '').replace(/\s+/g, ' ').trim();
+      }
+
+      function findYear(text) {
+        var m = text.match(/(19|20)\d{2}/g);
+        if (!m || !m.length) {
+          return 'Unknown';
+        }
+        return m[m.length - 1];
+      }
+
+      function startEntry(node) {
+        var h3 = node.tagName === 'A' ? node.querySelector('h3') : node;
+        if (!h3) {
+          return null;
+        }
+        return {
+          anchor: node.tagName === 'A' ? (node.getAttribute('name') || '') : '',
+          titleHtml: h3.innerHTML.trim(),
+          titleText: textOf(h3.innerHTML),
+          metaHtml: '',
+          paragraphs: [],
+          availableHtml: ''
+        };
+      }
+
+      var entries = [];
+      var current = null;
+      Array.from(legacy.childNodes).forEach(function (node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          var t = node.textContent.replace(/\s+/g, ' ').trim();
+          if (t && current && !current.metaHtml) {
+            current.metaHtml = t;
+          }
+          return;
+        }
+        if (node.nodeType !== Node.ELEMENT_NODE) {
+          return;
+        }
+
+        var tag = node.tagName;
+        var hasH3 = tag === 'H3' || (tag === 'A' && node.querySelector('h3'));
+        if (hasH3) {
+          if (current) {
+            entries.push(current);
+          }
+          current = startEntry(node);
+          return;
+        }
+
+        if (!current) {
+          return;
+        }
+
+        if (tag === 'P') {
+          current.paragraphs.push(node.innerHTML.trim());
+        } else if (tag === 'H4') {
+          current.availableHtml = node.innerHTML.trim();
+        } else if (tag === 'HR') {
+          entries.push(current);
+          current = null;
+        } else {
+          var extra = node.innerHTML ? node.innerHTML.trim() : '';
+          if (extra && !current.metaHtml) {
+            current.metaHtml = extra;
+          }
+        }
+      });
+      if (current) {
+        entries.push(current);
+      }
+
+      entries = entries.filter(function (e) { return e && e.titleText; });
+
+      var byYear = {};
+      entries.forEach(function (e) {
+        var year = findYear((e.titleText + ' ' + textOf(e.metaHtml)).trim());
+        if (!byYear[year]) {
+          byYear[year] = [];
+        }
+        byYear[year].push(e);
+      });
+
+      var years = Object.keys(byYear).sort(function (a, b) {
+        if (a === 'Unknown') return 1;
+        if (b === 'Unknown') return -1;
+        return parseInt(b, 10) - parseInt(a, 10);
+      });
+
+      var total = entries.length;
+      var recentYear = years[0] || '-';
+      statsRoot.innerHTML = '<li>Total publications: ' + total + '</li>' +
+        '<li>Years covered: ' + years.filter(function (y) { return y !== 'Unknown'; }).length + '</li>' +
+        '<li>Most recent year: ' + recentYear + '</li>';
+
+      ['Code Completion', 'LR Parsing', 'LLVM', 'Parser Generation'].forEach(function (tag) {
+        var a = document.createElement('a');
+        a.href = '#';
+        a.textContent = tag;
+        a.addEventListener('click', function (ev) { ev.preventDefault(); });
+        tagsRoot.appendChild(a);
+      });
+
+      years.forEach(function (year) {
+        var section = document.createElement('div');
+        section.className = 'section';
+        section.style.marginBottom = '0.9rem';
+
+        var h3 = document.createElement('h2');
+        h3.textContent = year === 'Unknown' ? 'Year Not Specified' : year;
+        section.appendChild(h3);
+
+        var list = document.createElement('ul');
+        list.className = 'pub-list';
+
+        byYear[year].forEach(function (e) {
+          var li = document.createElement('li');
+          if (e.anchor) {
+            li.id = e.anchor;
+          }
+
+          var title = document.createElement('div');
+          title.innerHTML = '<strong>' + e.titleHtml + '</strong>';
+          li.appendChild(title);
+
+          if (e.metaHtml) {
+            var meta = document.createElement('div');
+            meta.style.marginTop = '0.2rem';
+            meta.innerHTML = e.metaHtml;
+            li.appendChild(meta);
+          }
+
+          if (e.availableHtml || e.paragraphs.length) {
+            var details = document.createElement('details');
+            details.style.marginTop = '0.35rem';
+            var summary = document.createElement('summary');
+            summary.textContent = 'Abstract / Links';
+            details.appendChild(summary);
+
+            e.paragraphs.forEach(function (pHtml) {
+              var p = document.createElement('p');
+              p.style.margin = '0.45rem 0 0';
+              p.innerHTML = pHtml;
+              details.appendChild(p);
+            });
+
+            if (e.availableHtml) {
+              var avail = document.createElement('p');
+              avail.style.margin = '0.45rem 0 0';
+              avail.innerHTML = e.availableHtml;
+              details.appendChild(avail);
+            }
+            li.appendChild(details);
+          }
+
+          list.appendChild(li);
+        });
+
+        section.appendChild(list);
+        groupsRoot.appendChild(section);
+      });
+    })();
+  </script>
+
+  <footer class="site-footer">
+    Last Updated: {{ site.time | date: "%-d %B %Y" }}
+  </footer>
+</div>
 
