@@ -78,19 +78,19 @@ title: Members
     }
     .member-feature-grid {
         display: grid;
-        grid-template-columns: minmax(220px, 320px);
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 1rem;
         margin-top: 1rem;
     }
     .member-feature-grid .member-card {
-        text-align: left;
-        padding: 1rem;
+        text-align: center;
+        padding: 0.8rem 0.5rem;
     }
     .member-feature-grid .member-photo {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 0.9rem;
-        border-radius: 18px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 0.6rem;
+        border-radius: 50%;
     }
     .member-links {
         margin-top: 0.45rem;
@@ -154,6 +154,10 @@ title: Members
 
     @media (max-width: 600px) {
         .member-grid {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.8rem;
+        }
+        .member-feature-grid {
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             gap: 0.8rem;
         }
