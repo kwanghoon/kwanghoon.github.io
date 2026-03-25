@@ -1,15 +1,96 @@
 
-<html> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<head> 
-<TITLE>News</TITLE> 
-<base href="https://kwanghoon.github.io"> 
-</head> 
- 
-<body>
+---
+layout: default
+title: Awards & Projects
+---
 
-<H3> 연구실 프로젝트 </H3> 
-<ul>
+<header class="site-header">
+  <div class="container">
+    <h1>Awards & Projects</h1>
+    <div class="contact-grid">
+      <span>SWLAB 연구실 프로젝트 및 수상 실적</span>
+      <span><a href="{{ site.url }}/index.html">Home</a> / <a href="{{ site.url }}/students.html">Students</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <style>
+    .awards-tree,
+    .awards-tree ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .awards-tree {
+      margin-top: 0.6rem;
+      padding-left: 0;
+    }
+    .legacy-awards {
+      display: none;
+    }
+    .news-archive {
+      margin-top: 0.7rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .news-year-block {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      padding: 0.75rem 0.95rem 0.9rem;
+    }
+    .news-year-title {
+      margin: 0 0 0.45rem;
+      color: var(--primary);
+      font-size: 1.02rem;
+      font-weight: 700;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-year-list,
+    .news-year-list li {
+      list-style: none;
+    }
+    .news-year-list {
+      padding-left: 0;
+      margin: 0;
+    }
+    .news-year-list li {
+      position: relative;
+      padding-left: 0.95rem;
+      margin: 0.2rem 0;
+      line-height: 1.7;
+    }
+    .news-year-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .awards-tree > li {
+      margin-bottom: 0.9rem;
+    }
+    .awards-tree li {
+      position: relative;
+      padding-left: 0.95rem;
+      margin: 0.2rem 0;
+      line-height: 1.7;
+    }
+    .awards-tree li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+  </style>
+
+  <div class="section">
+    <h2>연구실 프로젝트</h2>
+    <div id="projects-archive" class="news-archive"></div>
+    <ul class="awards-tree legacy-awards" id="projects-source">
   <li> LR 파싱 기반 구문 통계를 활용한 LLM 기반 코드 완성 향상 기법 (중견연구-창의연구형 연구과제, 2억5천만원, 3년 2025년9월-2028년8월, 한국연구재단 과학기술정보통신부)
   <li> S/HBOM 기반 산업제어시스템 공급망 보호 및 보안성 강화기술개발-ICS 공급망 보안을 위한 통합 보안 위협 관리 기술 (사이버보안 국제협력기반 기술개발, 2025.7~2029.7, IITP)
   <li> 전기 자동차 충전기 보안 위협 대응 기술 개발-충전 SW  취약성 분석 서비스 플랫폼(케이사인 위탁과제, 2024년~2027년, 4년 2억4천만원)
@@ -19,10 +100,13 @@
   <li> 교육용 코딩 환경을 위한 오픈소스 소프트웨어 개발 (교내신진연구자과제, 3천만원, 2년, 2017년3월-2019년2월, 전남대학교)
   <li> 악성 모바일 앱 자동 탐지를 위한 안드로이드 프로그램 정적 분석 방법 (신진연구자 연구과제, 2.5년, 2014년11월-2017년7월, 한국연구재단 교육부)
   <li> 모바일 디바이스에서 NFC 응용프로그램을 위한 안전한 실행 플랫폼 (지역대학우수과학자 연구과제, 3년, 2011년5월-2014년4월, 한국연구재단 과기부)
-</ul>
+    </ul>
+  </div>
 
-<H3> 수상 실적 </H3> 
-<ul>
+  <div class="section">
+    <h2>수상 실적</h2>
+    <div id="awards-archive" class="news-archive"></div>
+    <ul class="awards-tree legacy-awards" id="awards-source">
 
     <li> 2025년
     <ul>
@@ -136,12 +220,128 @@
 	
     </ul>
     
-</ul>
+    </ul>
+  </div>
+
+  <script>
+    (function () {
+      function normalizeText(text) {
+        return (text || '').replace(/\s+/g, ' ').trim();
+      }
+
+      function directText(li) {
+        var raw = '';
+        Array.from(li.childNodes).forEach(function (node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            raw += ' ' + node.textContent;
+          }
+        });
+        return normalizeText(raw);
+      }
+
+      function makeItem(text) {
+        var li = document.createElement('li');
+        li.textContent = text;
+        return li;
+      }
+
+      function renderProjects() {
+        var source = document.getElementById('projects-source');
+        var target = document.getElementById('projects-archive');
+        if (!source || !target) {
+          return;
+        }
+
+        var block = document.createElement('div');
+        block.className = 'news-year-block';
+
+        var title = document.createElement('h3');
+        title.className = 'news-year-title';
+        title.textContent = '주요 과제';
+        block.appendChild(title);
+
+        var list = document.createElement('ul');
+        list.className = 'news-year-list';
+        Array.from(source.children).forEach(function (node) {
+          if (node.tagName !== 'LI') {
+            return;
+          }
+          var text = normalizeText(node.textContent);
+          if (!text) {
+            return;
+          }
+          list.appendChild(makeItem(text));
+        });
+
+        if (list.children.length) {
+          block.appendChild(list);
+          target.appendChild(block);
+        }
+      }
+
+      function renderAwardsByYear() {
+        var source = document.getElementById('awards-source');
+        var target = document.getElementById('awards-archive');
+        if (!source || !target) {
+          return;
+        }
+
+        var yearItems = Array.from(source.children).filter(function (el) {
+          return el.tagName === 'LI';
+        });
+
+        yearItems.forEach(function (yearItem, idx) {
+          var yearLabel = directText(yearItem) || ('Awards ' + (idx + 1));
+          var block = document.createElement('div');
+          block.className = 'news-year-block';
+
+          var title = document.createElement('h3');
+          title.className = 'news-year-title';
+          title.textContent = yearLabel;
+          block.appendChild(title);
+
+          var list = document.createElement('ul');
+          list.className = 'news-year-list';
+
+          var leafItems = Array.from(yearItem.querySelectorAll('li')).filter(function (li) {
+            return !li.querySelector('ul');
+          });
+
+          var seen = new Set();
+          leafItems.forEach(function (leaf) {
+            var text = directText(leaf) || normalizeText(leaf.textContent);
+            if (!text || /^\d{4}년$/.test(text)) {
+              return;
+            }
+            if (seen.has(text)) {
+              return;
+            }
+            seen.add(text);
+            list.appendChild(makeItem(text));
+          });
+
+          if (!list.children.length) {
+            var fallback = normalizeText(yearItem.textContent);
+            if (fallback) {
+              list.appendChild(makeItem(fallback));
+            }
+          }
+
+          if (list.children.length) {
+            block.appendChild(list);
+            target.appendChild(block);
+          }
+        });
+      }
+
+      renderProjects();
+      renderAwardsByYear();
+    })();
+  </script>
 
 
 
-<hr>
-Updated October 20, 2025.
-  
-</body>
-</html>
+  <footer class="site-footer">
+    Updated October 20, 2025.
+  </footer>
+</div>

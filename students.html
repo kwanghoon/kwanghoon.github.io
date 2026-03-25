@@ -77,6 +77,38 @@ title: Students
         border-left: 3px solid var(--accent);
     }
 
+    .student-history {
+        padding: 1rem 1.15rem;
+    }
+    .student-history h2 {
+        font-size: 1.02rem;
+        margin-bottom: 0.55rem;
+    }
+    .student-history ul,
+    .student-history li {
+        list-style: none;
+    }
+    .student-history ul {
+        padding-left: 0;
+        margin: 0;
+    }
+    .student-history li {
+        position: relative;
+        padding-left: 0.95rem;
+        margin: 0.22rem 0;
+        line-height: 1.65;
+    }
+    .student-history li::before {
+        content: '›';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+    }
+    .student-history .detail-inline {
+        color: var(--text-light);
+    }
+
     /* Nested lists for student details */
     .section ul ul {
         margin-top: 0.2rem;
@@ -103,10 +135,10 @@ title: Students
 
 <header class="site-header">
     <div class="container">
-        <h1>{{ site.title }}</h1>
+        <h1>Students</h1>
         <div class="contact-grid">
-            <span><a href="{{ site.url }}/index.html">Home</a></span>
-            <span>{{ site.author.affiliation }}</span>
+            <span>SWLAB 구성원 및 졸업생 현황</span>
+            <span><a href="{{ site.url }}/index.html">Home</a> / <a href="{{ site.url }}/news.html">News</a></span>
         </div>
     </div>
 </header>
@@ -214,7 +246,7 @@ title: Students
         </div>
     </div>
 
-    <div class="section">
+    <div class="section student-history" id="students-graduate">
         <h2>대학원생</h2>
         <ul>
             <li>학석사통합과정: 김지환, 조영진 (2026년 3월 ~)
@@ -316,7 +348,7 @@ title: Students
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section student-history" id="students-postdoc">
         <h2>포닥 연구원</h2>
         <ul>
             <li>포닥연구원: 봅 렌더스, 벨기 KU Leuven 대학 박사 (2020년 2월 ~ 2021년 2월)
@@ -330,7 +362,7 @@ title: Students
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section student-history" id="students-undergrad-jnu">
         <h2>학부생 (2016.9~현재, 전남대학교)</h2>
         <ul>
             <li>김지환, 조영진 (2025.12~현재): 머신러닝 컴파일러(MLIR/IREE)</li>
@@ -369,7 +401,7 @@ title: Students
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section student-history" id="students-undergrad-yonsei">
         <h2>학부생 (2011.3~2016.8, 연세대학교 원주캠퍼스 컴퓨터정보통신공학부)</h2>
         <ul>
             <li>이승휘 (2016, 슈어소프트테크 취업): 인텐트 퍼징 테스트 기반 안드로이드 테스트케이스 자동 생성 방법</li>
@@ -385,6 +417,71 @@ title: Students
             <li>김용강 (2011, GIST 박사, 공주대학교 천안캠퍼스 소프트웨어학과 교수): 모바일 폰 기반 NFC를 활용한 도서관 시스템</li>
         </ul>
     </div>
+
+    <script>
+        (function () {
+            function flattenTopLevelList(sectionId) {
+                var section = document.getElementById(sectionId);
+                if (!section) {
+                    return;
+                }
+
+                var topList = section.querySelector(':scope > ul');
+                if (!topList) {
+                    return;
+                }
+
+                var items = Array.from(topList.children).filter(function (node) {
+                    return node.tagName === 'LI';
+                });
+
+                items.forEach(function (item) {
+                    var childLists = Array.from(item.children).filter(function (node) {
+                        return node.tagName === 'UL';
+                    });
+
+                    if (!childLists.length) {
+                        return;
+                    }
+
+                    var detailNodes = [];
+                    childLists.forEach(function (list) {
+                        Array.from(list.children).forEach(function (detail) {
+                            if (detail.tagName !== 'LI') {
+                                return;
+                            }
+                            var frag = document.createDocumentFragment();
+                            Array.from(detail.childNodes).forEach(function (n) {
+                                frag.appendChild(n.cloneNode(true));
+                            });
+                            detailNodes.push(frag);
+                        });
+                        list.remove();
+                    });
+
+                    if (!detailNodes.length) {
+                        return;
+                    }
+
+                    var wrap = document.createElement('span');
+                    wrap.className = 'detail-inline';
+                    wrap.appendChild(document.createTextNode(' - '));
+
+                    detailNodes.forEach(function (frag, idx) {
+                        if (idx > 0) {
+                            wrap.appendChild(document.createTextNode(' / '));
+                        }
+                        wrap.appendChild(frag);
+                    });
+
+                    item.appendChild(wrap);
+                });
+            }
+
+            flattenTopLevelList('students-graduate');
+            flattenTopLevelList('students-postdoc');
+        })();
+    </script>
 
     <footer class="site-footer">
         Last Updated: {{ site.time | date: "%-d %B %Y" }}

@@ -1,15 +1,99 @@
 
-<html> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<head> 
-<TITLE>News</TITLE> 
-<base href="https://kwanghoon.github.io"> 
-</head> 
- 
-<body>
+---
+layout: default
+title: News
+---
 
-<H3> 연구실 뉴스 </H3> 
-<ul>
+<header class="site-header">
+	<div class="container">
+		<h1>News</h1>
+		<div class="contact-grid">
+			<span>SWLAB 연구실 소식 아카이브</span>
+			<span><a href="{{ site.url }}/index.html">Home</a> / <a href="{{ site.url }}/students.html">Students</a></span>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+	<div class="section">
+		<h2>연구실 뉴스</h2>
+		<style>
+			.news-tree,
+			.news-tree ul {
+				list-style: none;
+				margin: 0;
+				padding-left: 1.1rem;
+			}
+			.news-tree {
+				margin-top: 0.6rem;
+				padding-left: 0;
+			}
+			.legacy-news {
+				display: none;
+			}
+			.news-archive {
+				margin-top: 0.7rem;
+				display: grid;
+				gap: 1rem;
+			}
+			.news-year-block {
+				border: 1px solid var(--border);
+				border-radius: 8px;
+				background: #fff;
+				padding: 0.75rem 0.95rem 0.9rem;
+			}
+			.news-year-title {
+				margin: 0 0 0.45rem;
+				color: var(--primary);
+				font-size: 1.02rem;
+				font-weight: 700;
+				padding-bottom: 0.35rem;
+				border-bottom: 1px solid var(--border);
+			}
+			.news-year-list,
+			.news-year-list li {
+				list-style: none;
+			}
+			.news-year-list {
+				padding-left: 0;
+				margin: 0;
+			}
+			.news-year-list li {
+				position: relative;
+				padding-left: 0.95rem;
+				margin: 0.2rem 0;
+				line-height: 1.7;
+			}
+			.news-year-list li::before {
+				content: '›';
+				position: absolute;
+				left: 0;
+				color: var(--accent);
+				font-weight: 700;
+			}
+			.news-tree > li {
+				margin-bottom: 0.9rem;
+			}
+			.news-tree li {
+				position: relative;
+				padding-left: 0.95rem;
+				margin: 0.2rem 0;
+				line-height: 1.7;
+			}
+			.news-tree li::before {
+				content: '›';
+				position: absolute;
+				left: 0;
+				color: var(--accent);
+				font-weight: 700;
+			}
+			.news-tree a {
+				word-break: break-word;
+			}
+		</style>
+
+		<div id="news-archive" class="news-archive"></div>
+		<ul class="news-tree legacy-news" id="news-source">
   
   <li> 2026년
 	<ul>
@@ -717,7 +801,98 @@ IEEE International Workshop on Smart Computing and Applications, COMPSAC)
     
 
     
-</ul>
-  
-</body>
-</html>
+		</ul>
+
+		<script>
+			(function () {
+				var source = document.getElementById('news-source');
+				var archive = document.getElementById('news-archive');
+				if (!source || !archive) {
+					return;
+				}
+
+				function normalizeText(text) {
+					return text.replace(/\s+/g, ' ').trim();
+				}
+
+				function directText(li) {
+					var raw = '';
+					Array.from(li.childNodes).forEach(function (node) {
+						if (node.nodeType === Node.TEXT_NODE) {
+							raw += ' ' + node.textContent;
+						}
+					});
+					return normalizeText(raw);
+				}
+
+				function findMonthLabel(node, yearItem) {
+					var current = node;
+					while (current && current !== yearItem) {
+						if (current.tagName === 'LI') {
+							var label = directText(current);
+							if (/^\d{1,2}월$/.test(label)) {
+								return label;
+							}
+						}
+						current = current.parentElement;
+					}
+					return '';
+				}
+
+				var yearItems = Array.from(source.children).filter(function (el) {
+					return el.tagName === 'LI';
+				});
+
+				yearItems.forEach(function (item, idx) {
+					var yearLabel = directText(item) || ('News ' + (idx + 1));
+					var yearBlock = document.createElement('div');
+					yearBlock.className = 'news-year-block';
+
+					var title = document.createElement('h3');
+					title.className = 'news-year-title';
+					title.textContent = yearLabel;
+					yearBlock.appendChild(title);
+
+					var yearList = document.createElement('ul');
+					yearList.className = 'news-year-list';
+
+					var leafItems = Array.from(item.querySelectorAll('li')).filter(function (li) {
+						return !li.querySelector('ul');
+					});
+
+					var seen = new Set();
+					leafItems.forEach(function (leaf) {
+						var text = directText(leaf) || normalizeText(leaf.textContent || '');
+						if (!text || /^\d{1,4}년$/.test(text) || /^\d{1,2}월$/.test(text)) {
+							return;
+						}
+
+						var month = findMonthLabel(leaf, item);
+						var line = month ? (month + ' - ' + text) : text;
+						if (seen.has(line)) {
+							return;
+						}
+						seen.add(line);
+
+						var li = document.createElement('li');
+						li.textContent = line;
+						yearList.appendChild(li);
+					});
+
+					if (!yearList.children.length) {
+						var fallback = document.createElement('li');
+						fallback.textContent = normalizeText(item.textContent || '');
+						yearList.appendChild(fallback);
+					}
+
+					yearBlock.appendChild(yearList);
+					archive.appendChild(yearBlock);
+				});
+			})();
+		</script>
+	</div>
+
+	<footer class="site-footer">
+		Last Updated: {{ site.time | date: "%-d %B %Y" }}
+	</footer>
+</div>
