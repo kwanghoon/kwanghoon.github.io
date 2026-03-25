@@ -1,0 +1,534 @@
+---
+layout: default
+title: Members
+---
+
+<style>
+    /* Student card grid */
+    .member-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1.2rem;
+        margin-top: 1rem;
+    }
+    .member-card {
+        text-align: center;
+        padding: 0.8rem 0.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .member-card:hover {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transform: translateY(-2px);
+    }
+    .member-photo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--border);
+        display: block;
+        margin: 0 auto 0.6rem;
+        border: 2px solid var(--border);
+    }
+    .member-placeholder {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), #274c77);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.6rem;
+        border: 2px solid var(--border);
+        color: #fff;
+        font-size: 1.8rem;
+    }
+    .member-name {
+        font-weight: 600;
+        font-size: 0.92rem;
+        color: var(--primary);
+        margin-bottom: 0.15rem;
+    }
+    .member-name a { color: var(--primary); }
+    .member-name a:hover { color: var(--accent); text-decoration: none; }
+    .member-role {
+        font-size: 0.78rem;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 0.2rem;
+    }
+    .member-interest {
+        font-size: 0.78rem;
+        color: var(--text-light);
+        line-height: 1.4;
+    }
+    .member-subsection {
+        margin-top: 1rem;
+    }
+    .member-subsection h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        padding-left: 0.6rem;
+        border-left: 3px solid var(--accent);
+    }
+    .member-feature-grid {
+        display: grid;
+        grid-template-columns: minmax(220px, 320px);
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .member-feature-grid .member-card {
+        text-align: left;
+        padding: 1rem;
+    }
+    .member-feature-grid .member-photo {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 0.9rem;
+        border-radius: 18px;
+    }
+    .member-links {
+        margin-top: 0.45rem;
+        font-size: 0.8rem;
+        color: var(--text-light);
+    }
+    .member-links a {
+        color: var(--link);
+    }
+    .member-links a + a {
+        margin-left: 0.6rem;
+    }
+
+    .student-history {
+        padding: 1rem 1.15rem;
+    }
+    .student-history h2 {
+        font-size: 1.02rem;
+        margin-bottom: 0.55rem;
+    }
+    .student-history ul,
+    .student-history li {
+        list-style: none;
+    }
+    .student-history ul {
+        padding-left: 0;
+        margin: 0;
+    }
+    .student-history li {
+        position: relative;
+        padding-left: 0.95rem;
+        margin: 0.22rem 0;
+        line-height: 1.65;
+    }
+    .student-history li::before {
+        content: '›';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
+    }
+    .student-history .detail-inline {
+        color: var(--text-light);
+    }
+
+    /* Nested lists for student details */
+    .section ul ul {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+    .section ul ul li {
+        font-size: 0.88rem;
+        color: var(--text-light);
+        padding-left: 1rem;
+    }
+    .section ul ul li::before {
+        content: '–';
+        color: var(--text-light);
+        font-weight: normal;
+    }
+
+    @media (max-width: 600px) {
+        .member-grid {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.8rem;
+        }
+    }
+</style>
+
+<header class="site-header">
+    <div class="container">
+        <h1>Members</h1>
+        <div class="contact-grid">
+            <span>SWLAB 구성원 및 졸업생 현황</span>
+            <span><a href="{{ site.url }}/index.html">Home</a> / <a href="{{ site.url }}/news.html">News</a></span>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- 현재 연구실 구성원 -->
+    <div class="section">
+        <h2>현재 연구실 구성원</h2>
+
+        <div class="member-subsection">
+            <h3>최광훈 교수</h3>
+            <div class="member-feature-grid">
+                <div class="member-card">
+                    <img class="member-photo" src="{{ site.url }}/photo/choi_at_library.jpg" alt="최광훈 교수">
+                    <div class="member-name"><a href="{{ site.url }}/index.html">최광훈</a></div>
+                    <div class="member-role">Professor</div>
+                    <div class="member-interest">프로그래밍언어, 컴파일러, 소프트웨어 보안, 정적 분석, 자동 코드 완성</div>
+                    <div class="member-links">
+                        <a href="mailto:khchoi@jnu.ac.kr">Email</a>
+                        <a href="https://dblp.uni-trier.de/pers/hd/c/Choi_0001:Kwanghoon">DBLP</a>
+                        <a href="{{ site.url }}/cv.html">CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="member-subsection">
+            <h3>박사과정</h3>
+            <div class="member-grid">
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">김석휘</a></div>
+                    <div class="member-role">박사과정</div>
+                    <div class="member-interest">오픈소스SW 취약점 전파 탐지</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="member-subsection">
+            <h3>석사과정</h3>
+            <div class="member-grid">
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">전세옥</a></div>
+                    <div class="member-role">석사과정</div>
+                    <div class="member-interest">소프트웨어 취약점 탐지</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">이현진</a></div>
+                    <div class="member-role">석사과정</div>
+                    <div class="member-interest">자동 코드 완성</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">최주언</a></div>
+                    <div class="member-role">석사과정</div>
+                    <div class="member-interest">인공지능보안 (LLM 기반 공격 시나리오)</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">오다영</a></div>
+                    <div class="member-role">석사과정</div>
+                    <div class="member-interest">오픈소스SW 취약점 전파 탐지</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">김지환</a></div>
+                    <div class="member-role">학석사통합과정</div>
+                    <div class="member-interest">머신러닝 컴파일러 (MLIR/IREE)</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">조영진</a></div>
+                    <div class="member-role">학석사통합과정</div>
+                    <div class="member-interest">머신러닝 컴파일러 (MLIR/IREE)</div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="member-subsection">
+            <h3>학부 연구생</h3>
+            <div class="member-grid">
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">윤상권</a></div>
+                    <div class="member-role">학부 연구생</div>
+                    <div class="member-interest">소스코드 취약점 탐지</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">정민수</a></div>
+                    <div class="member-role">학부 연구생</div>
+                    <div class="member-interest">바이너리 코드 취약점 탐지</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">서미현</a></div>
+                    <div class="member-role">학부 연구생</div>
+                    <div class="member-interest">홈어시스턴트 비주얼 블럭 프로그래밍 환경</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">김송헌</a></div>
+                    <div class="member-role">학부 연구생</div>
+                    <div class="member-interest">신경망 검증</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">노정균</a></div>
+                    <div class="member-role">학부 연구생</div>
+                    <div class="member-interest">신경망 검증</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-placeholder">👤</div>
+                    <div class="member-name"><a href="#">이찬희</a></div>
+                    <div class="member-role">학부 연구생</div>
+                    <div class="member-interest">신경망 검증</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section student-history" id="students-graduate">
+        <h2>대학원생</h2>
+        <ul>
+            <li>학석사통합과정: 김지환, 조영진 (2026년 3월 ~)
+                <ul><li>머신러닝 컴파일러(MLIR/IREE)</li></ul>
+            </li>
+            <li>석사과정: 최주언 (2026년 3월 ~)
+                <ul><li>인공지능보안: LLM기반 Caldera 공격 시나리오 생성</li></ul>
+            </li>
+            <li>석사과정: 오다영 (2026년 3월 ~)
+                <ul><li>오픈소소SW 취약점 전파 탐지 분석 방법</li></ul>
+            </li>
+            <li>박사과정: 김석휘 (2026년 3월 ~)
+                <ul>
+                    <li>오픈소소SW 취약점 전파 탐지 분석 방법</li>
+                    <li>케이사인</li>
+                </ul>
+            </li>
+            <li>석사과정: 이현진 (2025년 3월 ~ 현재)
+                <ul><li>분산 프로그래밍 언어 Multi-tier Actor 설계 및 구현</li></ul>
+            </li>
+            <li>석사과정: 전세옥 (2024년 9월 ~ 현재)
+                <ul><li>퍼징 기반 소프트웨어 취약점 탐지</li></ul>
+            </li>
+            <li>석사: Md Monir Ahammod Bin Atique (2024년 3월 ~ 2025년 8월, 조기 졸업)
+                <ul>
+                    <li>A Study on Improving LLM-based Code Completion Using LR Parsing
+                        (<a href="/paper/MSThesisMonir2025.pdf">PDF</a>,
+                         <a href="/paper/MSThesisMonir2025Presentation.pdf">TalkPDF</a>,
+                         <a href="https://github.com/monircse061/ChatGPT-Code-Completion-Work">SW</a>)
+                    </li>
+                    <li>Lecturer, <a href="https://www.uttara.ac.bd/">Uttara University</a>, Dhaka, Bangladesh</li>
+                </ul>
+            </li>
+            <li>석사 수료 (융합보안대학원): 박승찬 (2022년 8월 ~ 현재)
+                <ul>
+                    <li>기호실행 기반 홈오토메이션 프로그램 취약점 분석</li>
+                    <li>한전 KDN</li>
+                </ul>
+            </li>
+            <li>석사 (융합보안대학원): 이아현 (2022년 3월 ~ 2024년 2월)
+                <ul>
+                    <li>비식별 적용을 통한 소프트웨어 보안약점 공유 및 활용방안 연구
+                        (<a href="https://dcollection.jnu.ac.kr/srch/srchDetail/000000070720">링크</a>)
+                    </li>
+                    <li>한국인터넷진흥원</li>
+                </ul>
+            </li>
+            <li>석사: 유재일 (2020년 3월 ~ 2023년 2월)
+                <ul>
+                    <li>LLVM 프레임워크 기반 자체 수정 코드 정적 분석 (악성 바이너리 코드 분석 분야)
+                        (<a href="/paper/MSthesis_YooJI2023.pdf">PDF</a>,
+                         <a href="https://github.com/dbwodlf3/SMC">SW</a>)
+                    </li>
+                    <li>Dent bird/Imagoworks(병역 특례)</li>
+                </ul>
+            </li>
+            <li>석사 (융합보안대학원): 이규해 (2020년 8월 ~ 2023년 2월)
+                <ul>
+                    <li>다계층 프로그래밍언어 LINKS의 웹 취약점 분석 (웹 보안 분야)
+                        (<a href="/paper/MSthesis_LeeKY2023.pdf">PDF</a>)
+                    </li>
+                    <li>인공지능사관학교</li>
+                </ul>
+            </li>
+            <li>석사 (융합보안대학원): 서동찬 (2020년 2월 ~ 2022년 2월)
+                <ul>
+                    <li>분산분석을 이용한 속성 선택 및 최적의 스태킹 모델링을 통한 네트워크 이상탐지 기법 연구
+                        (<a href="https://dcollection.jnu.ac.kr/srch/srchDetail/000000066549">링크</a>)
+                    </li>
+                </ul>
+            </li>
+            <li>석사: 임진택 (2020년 8월, 전남대학교)
+                <ul>
+                    <li>추상 구문 트리의 단말 노드 간 경로에 타입 정보를 추가한 특징을 사용하는 딥러닝 기반 코드 이해
+                        (<a href="/paper/MSthesis_Lim2020.pdf">PDF</a>,
+                         <a href="https://github.com/limjintack/Type-based-code-analyze">SW</a>)
+                    </li>
+                    <li>LIG 넥스원</li>
+                </ul>
+            </li>
+            <li>석사: 김가영 (2019년 8월, 전남대학교)
+                <ul>
+                    <li>코딩 교육을 위한 프로그래밍 언어 환경 설계 및 구현
+                        (<a href="/paper/MSthesis_Kim2019.pdf">PDF</a>,
+                         <a href="https://github.com/kwanghoon/MySmallBasic">SW</a>)
+                    </li>
+                    <li>캐스트이즈 웹 개발자</li>
+                </ul>
+            </li>
+            <li>석사: 고명필 (2015년 8월, 연세대학교 원주캠퍼스)
+                <ul>
+                    <li>강건한 안드로이드 앱을 위한 인텐트 스펙의 설계와 구현
+                        (<a href="/paper/MSthesis_Ko2015.pdf">PDF</a>,
+                         <a href="/paper/hwacha.html">SW</a>)
+                    </li>
+                    <li>서울대 이러닝시스탬 개발 부서</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section student-history" id="students-postdoc">
+        <h2>포닥 연구원</h2>
+        <ul>
+            <li>포닥연구원: 봅 렌더스, 벨기 KU Leuven 대학 박사 (2020년 2월 ~ 2021년 2월)
+                <ul>
+                    <li>다계층 웹 프로그래밍언어 설계 및 구현, PolyRPC
+                        (<a href="https://arxiv.org/abs/1910.10988">PDF</a>,
+                         <a href="https://github.com/tzbob/rrpc">SW-web</a>)
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section student-history" id="students-undergrad-jnu">
+        <h2>학부생 (2016.9~현재, 전남대학교)</h2>
+        <ul>
+            <li>김지환, 조영진 (2025.12~현재): 머신러닝 컴파일러(MLIR/IREE)</li>
+            <li>최주언 (2025.5~2026.2): LLM 기반 취약점 진단 항목 평가</li>
+            <li>오다영 (2024.7~2026.2): 오픈소스SW 취약점 전파 탐지</li>
+            <li>윤상권 (2025.5~현재): 소스코드 취약점 탐지</li>
+            <li>정민수 (2025.9~현재): 바이너리 코드 취약점 탐지</li>
+            <li>김경재 (2024.9~2025.11, 오션드라이브 스튜디오): Tree-sitter 엔진 해킹, SmartBlock, ChatGPT기반 VSCode UI</li>
+            <li>강효정 (2022.12~2025.2, 한전 KDN, 일본 IT기업 인턴쉽): ChatGPT기반 코드 완성 VSCode 플러그인, 스몰베이직 파서 tree-sitter 오픈소스 기여</li>
+            <li>신효원 (2022.12~2025.2, 소상공인진흥공단, 구글 GCP 교육): ChatGPT기반 코드 완성 VSCode 플러그인, 스몰베이직 파서 tree-sitter 오픈소스 기여</li>
+            <li>양석우 (2022.12~2025.2, GS 네오텍): ChatGPT기반 코드 완성 VSCode 플러그인, 스몰베이직 파서 tree-sitter 오픈소스 기여</li>
+            <li>전세옥 (2023.3~2024.8, 코어시큐리티 인턴): 퍼징</li>
+            <li>황수연 (2022.9~2024.2, 취업 준비): 데이터기반 스몰베이직 프로그램 자동완성 프로그래밍 환경</li>
+            <li>노수지 (2022.9~2024.8, 뎁시스터즈-킹덤 팀, 퍼듀대학교 계절학기 교환학생)</li>
+            <li>김은총 (2022.9~2024.8, 한전 KDN, 보안 전문가 그룹 BoB, SQL 인젝션 웹 취약점 퍼징 테스팅)</li>
+            <li>임채승 (2022.3~2022.9, 스타트업 창업)</li>
+            <li>최명선 (2022.3~2022.9, 스타트업 창업)</li>
+            <li>황지우 (2022.3~2022.9, 스타트업 창업)</li>
+            <li>진성호 (2021.1~2024.8, 넥슨 서버 개발자 - 웹 개발, 구름 인턴십): 정적 분석 Cubic solver C++ 구현, C++ 과제 자동 채점</li>
+            <li>이정석 (2021.1~2022.12, 넥슨 취업 - 게임 개발)</li>
+            <li>배성희 (2020.2~2021.2, 네이버웍스 취업): 스마트블록 사용자 경험 평가</li>
+            <li>이지용 (2019.6~2020.3, 마이다스 아이티 취업 - 건설 토목 분야 구조설계 소프트웨어 국내 1위)</li>
+            <li>정현수 (2019.6~2020.3, 학부 졸업)</li>
+            <li>김상엽 (2019.8~2022.2, 카카오 커머스 취업): Self-modifying code (SMC) x86과 C 벤치마크</li>
+            <li>홍예진 (2018.3~2019.3, 학부 졸업)</li>
+            <li>조민우 (2018.3~2020.7, 카카오 모빌리티 취업, 현재 당근마켓 근무)</li>
+            <li>이호진 (2018.11~2021.7, 네이버 취업 - BIZ CIC): 블록체인 ERC20 평가 도구 웹 사이트</li>
+            <li>조혜빈 (2018.11~2021.6, KB캐피털 취업): 스마트블록 사용자 경험 평가</li>
+            <li>신승현 (2018.11~2021.7, 네이버 취업): 파서 YAPB C++ 개발</li>
+            <li>조문영 (2017.1~2019.2, 다음카카오 취업, 카카오톡 앱 개발): 마이스몰베이직 코딩 환경 디버거</li>
+            <li>박세영 (2017.1~2019.2, 한국 전력 취업): 마이스몰베이직 코딩 환경</li>
+            <li>김지용 (2016.10~2019.2, 학부 졸업): 마이스몰베이직 코딩 환경</li>
+            <li>조성모 (2016.12~2019.2, 학부 졸업): 마이스몰베이직 코딩 환경</li>
+            <li>정승완 (2016.11~2019.2, 성균관대 AI 대학원 진학): 마이스몰베이직 코딩 환경</li>
+            <li>김가영 (2016.10~2019.8, 학부 졸업 후 연구실 석사 진학): 마이스몰베이직 코딩 환경</li>
+        </ul>
+    </div>
+
+    <div class="section student-history" id="students-undergrad-yonsei">
+        <h2>학부생 (2011.3~2016.8, 연세대학교 원주캠퍼스 컴퓨터정보통신공학부)</h2>
+        <ul>
+            <li>이승휘 (2016, 슈어소프트테크 취업): 인텐트 퍼징 테스트 기반 안드로이드 테스트케이스 자동 생성 방법</li>
+            <li>전현지 (2015, 학부 졸업): 스몰베이직 코딩 교육 튜터</li>
+            <li>이화중 (2016, 슈어소프트테크 취업): 인텐트 퍼징 테스트 기반 안드로이드 테스트케이스 자동 생성 방법</li>
+            <li>김현순 (2015~2016, 삼성전자): 코드 중복없이 안드로이드 컴포넌트에 예외처리를 추가하는 클래스 설계 방법에 관한 연구, 안드로이드애 앱의 랜덤 인텐트 테스트에서 유사한 에러 로그를 자동으로 그룹화하는 연구</li>
+            <li>윤성빈 (2015, 학부 졸업): 안드로이드애 앱의 랜덤 인텐트 테스트에서 유사한 에러 로그를 자동으로 그룹화하는 연구</li>
+            <li>최지선 (2015, 학부 졸업): 안드로이드애 앱의 랜덤 인텐트 테스트에서 유사한 에러 로그를 자동으로 그룹화하는 연구</li>
+            <li>권찬우 (2013, 학부 졸업): 연세대 원주캠퍼스 소프트웨어공학 연구실 석사 진학, 안드로이드 NFC 프로그래밍</li>
+            <li>박경득 (2012, 학부 졸업 후 석사, SK 하이닉스): 유해사이트를 접속하는 안드로이드 앱을 문자열 분석으로 검사하는 시스템</li>
+            <li>이정현 (2011, 학부 졸업): 모바일 폰 기반 NFC를 활용한 도서관 시스템</li>
+            <li>박재영 (2011, 연세대학교 원주캠퍼스 박사, 삼성전자): 모바일 폰 기반 NFC를 활용한 도서관 시스템</li>
+            <li>김용강 (2011, GIST 박사, 공주대학교 천안캠퍼스 소프트웨어학과 교수): 모바일 폰 기반 NFC를 활용한 도서관 시스템</li>
+        </ul>
+    </div>
+
+    <script>
+        (function () {
+            function flattenTopLevelList(sectionId) {
+                var section = document.getElementById(sectionId);
+                if (!section) {
+                    return;
+                }
+
+                var topList = section.querySelector(':scope > ul');
+                if (!topList) {
+                    return;
+                }
+
+                var items = Array.from(topList.children).filter(function (node) {
+                    return node.tagName === 'LI';
+                });
+
+                items.forEach(function (item) {
+                    var childLists = Array.from(item.children).filter(function (node) {
+                        return node.tagName === 'UL';
+                    });
+
+                    if (!childLists.length) {
+                        return;
+                    }
+
+                    var detailNodes = [];
+                    childLists.forEach(function (list) {
+                        Array.from(list.children).forEach(function (detail) {
+                            if (detail.tagName !== 'LI') {
+                                return;
+                            }
+                            var frag = document.createDocumentFragment();
+                            Array.from(detail.childNodes).forEach(function (n) {
+                                frag.appendChild(n.cloneNode(true));
+                            });
+                            detailNodes.push(frag);
+                        });
+                        list.remove();
+                    });
+
+                    if (!detailNodes.length) {
+                        return;
+                    }
+
+                    var wrap = document.createElement('span');
+                    wrap.className = 'detail-inline';
+                    wrap.appendChild(document.createTextNode(' - '));
+
+                    detailNodes.forEach(function (frag, idx) {
+                        if (idx > 0) {
+                            wrap.appendChild(document.createTextNode(' / '));
+                        }
+                        wrap.appendChild(frag);
+                    });
+
+                    item.appendChild(wrap);
+                });
+            }
+
+            flattenTopLevelList('students-graduate');
+            flattenTopLevelList('students-postdoc');
+        })();
+    </script>
+
+    <footer class="site-footer">
+        Last Updated: {{ site.time | date: "%-d %B %Y" }}
+    </footer>
+
+</div>
