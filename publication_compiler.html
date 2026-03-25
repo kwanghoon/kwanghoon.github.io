@@ -221,8 +221,19 @@ binary code.
   
   </div>
 
+  <script src="{{ '/publication_topic_archive.js' | relative_url }}"></script>
   <script>
     (function () {
+      if (window.initPublicationTopicArchive) {
+        window.initPublicationTopicArchive({
+          legacyId: 'compiler-legacy',
+          groupsId: 'compiler-year-groups',
+          statsId: 'compiler-stats',
+          tagsId: 'compiler-tags'
+        });
+        return;
+      }
+
       var legacy = document.getElementById('compiler-legacy');
       var groupsRoot = document.getElementById('compiler-year-groups');
       var statsRoot = document.getElementById('compiler-stats');

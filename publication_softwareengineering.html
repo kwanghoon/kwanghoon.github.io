@@ -499,8 +499,19 @@ management of Android Apps in the market. The proposed system can be combined wi
   
   </div>
 
+  <script src="{{ '/publication_topic_archive.js' | relative_url }}"></script>
   <script>
     (function () {
+      if (window.initPublicationTopicArchive) {
+        window.initPublicationTopicArchive({
+          legacyId: 'softwareengineering-legacy',
+          groupsId: 'softwareengineering-year-groups',
+          statsId: 'softwareengineering-stats',
+          tagsId: 'softwareengineering-tags'
+        });
+        return;
+      }
+
       var legacy = document.getElementById('softwareengineering-legacy');
       var groupsRoot = document.getElementById('softwareengineering-year-groups');
       var statsRoot = document.getElementById('softwareengineering-stats');

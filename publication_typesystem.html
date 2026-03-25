@@ -313,8 +313,19 @@ opening the way to combining push-enter–based compilation with type-based comp
   
   </div>
 
+  <script src="{{ '/publication_topic_archive.js' | relative_url }}"></script>
   <script>
     (function () {
+      if (window.initPublicationTopicArchive) {
+        window.initPublicationTopicArchive({
+          legacyId: 'typesystem-legacy',
+          groupsId: 'typesystem-year-groups',
+          statsId: 'typesystem-stats',
+          tagsId: 'typesystem-tags'
+        });
+        return;
+      }
+
       var legacy = document.getElementById('typesystem-legacy');
       var groupsRoot = document.getElementById('typesystem-year-groups');
       var statsRoot = document.getElementById('typesystem-stats');

@@ -325,8 +325,19 @@ of using MySmallBasic in a coding education lecture.
   
   </div>
 
+  <script src="{{ '/publication_topic_archive.js' | relative_url }}"></script>
   <script>
     (function () {
+      if (window.initPublicationTopicArchive) {
+        window.initPublicationTopicArchive({
+          legacyId: 'programminglanguagedesign-legacy',
+          groupsId: 'programminglanguagedesign-year-groups',
+          statsId: 'programminglanguagedesign-stats',
+          tagsId: 'programminglanguagedesign-tags'
+        });
+        return;
+      }
+
       var legacy = document.getElementById('programminglanguagedesign-legacy');
       var groupsRoot = document.getElementById('programminglanguagedesign-year-groups');
       var statsRoot = document.getElementById('programminglanguagedesign-stats');

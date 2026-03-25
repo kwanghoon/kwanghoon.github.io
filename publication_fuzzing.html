@@ -153,8 +153,19 @@ This paper proposes a test method for compliance of SMS encoder and decoder modu
   
   </div>
 
+  <script src="{{ '/publication_topic_archive.js' | relative_url }}"></script>
   <script>
     (function () {
+      if (window.initPublicationTopicArchive) {
+        window.initPublicationTopicArchive({
+          legacyId: 'fuzzing-legacy',
+          groupsId: 'fuzzing-year-groups',
+          statsId: 'fuzzing-stats',
+          tagsId: 'fuzzing-tags'
+        });
+        return;
+      }
+
       var legacy = document.getElementById('fuzzing-legacy');
       var groupsRoot = document.getElementById('fuzzing-year-groups');
       var statsRoot = document.getElementById('fuzzing-stats');
